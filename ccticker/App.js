@@ -5,11 +5,16 @@ import Footer from './src/components/Footer';
 import Content from './src/components/Content';
 
 export default class App extends React.Component {
+  getDate(){
+    let myDate = new Date().toJSON().slice(0,19).replace(/T/g,' (UTC) ');
+    return myDate.replace(/-/g,'/');
+     
+  }
   render() {
     return (
       <View style={styles.container}>
         <Header />
-        <Content title='API.cc'/>
+        <Content title='Market.API.cc' myDate={this.getDate()}/>
         <Footer />
       </View>
     );
