@@ -11,7 +11,7 @@ class Content extends Component {
       return (
         <View style={styles.box}>
           <Text style={styles.headline}>CryptoTicker Content </Text>
-          <Text style={{fontSize:16}}>{this.props.title}</Text>
+          <Text style={{fontSize:16}}>{this.props.title}  - {this.props.myDate}</Text>
           <FlatList
             style={{marginTop:20, width:'100%'}}
             data={[
@@ -497,10 +497,10 @@ class Content extends Component {
             }
             ]}
             renderItem={({item}) => 
-              <View style={{flex: 1, flexDirection: 'row', justifyContent:'flex-start'}} key={item.id}>
-                <Text style={styles.colRank}>
+              <View style={{flex: 1, flexDirection: 'row', justifyContent:'flex-start', marginTop:5}} key={item.id}>
+                {/* <Text style={styles.colRank}>
                 {item.rank}. 
-                </Text>
+                </Text> */}
                 <Text style={styles.colSym}>
                 {item.symbol}
                 </Text>
@@ -513,7 +513,8 @@ class Content extends Component {
                 <Text style={styles.colPrice}>
                 ${item.price_usd}
                 </Text>                
-                <Text style={{fontSize:16, width:100}}>
+                <Text 
+                  style={styles.colInfo}>
                 INFO
                 </Text> 
               </View>
@@ -529,7 +530,7 @@ class Content extends Component {
 
 const styles = StyleSheet.create({
     box: {
-      backgroundColor: '#999',
+      backgroundColor: '#dbdbdb',
       flex: 6,
       alignItems:'center',
       width: '100%'
@@ -538,14 +539,23 @@ const styles = StyleSheet.create({
       fontSize: 26,
     },
     colRank: {
-      fontSize:16, 
+      fontSize:12, 
       textAlign:'left', 
       width:25
     },
     colSym: {
+      color: '#00e61d',
+      backgroundColor:'#1d1d1d',
+      borderColor:'#c0c0c0',
+      borderWidth:1, 
       fontSize:16, 
+      marginLeft: 3,
+      marginRight: 5,
       textAlign:'left', 
-      width:55
+      width:55,
+
+      marginLeft:2, 
+      textAlign:'center', 
     },
     colName: {
       fontSize:16, 
@@ -557,9 +567,20 @@ const styles = StyleSheet.create({
       width:65  
     },
     colPrice: {
+      color: '#3f3f3f',
       fontSize:16, 
-      width:100
-    },      
+      width:80
+    },
+    colInfo: {
+      fontSize:16, 
+      width:60, 
+      color:'#888',
+      borderColor:'#c0c0c0',
+      borderWidth:1, 
+      marginLeft:2, 
+      padding:2, 
+      textAlign:'center'
+    }
   });
 
 export default Content;
