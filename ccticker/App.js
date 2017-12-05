@@ -9,9 +9,8 @@ export default class App extends React.Component {
     return (
       <View style={styles.container}>
         <Header />
-        <Content />
+        <Content title='API.cc'/>
         <Footer />
-
       </View>
     );
   }

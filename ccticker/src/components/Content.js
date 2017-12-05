@@ -5,7 +5,8 @@ class Content extends Component {
     render() {
         return (
           <View style={styles.box}>
-            <Text style={styles.headline}>CryptoTicker Content</Text>
+            <Text style={styles.headline}>CryptoTicker Content </Text>
+            <Text style={{fontSize:20}}>{this.props.title}</Text>
           </View>
         );
     }
@@ -14,12 +15,12 @@ class Content extends Component {
 const styles = StyleSheet.create({
     box: {
       backgroundColor: '#999',
-      height: '80%',
+      flex: 6,
+      alignItems:'center',
       width: '100%'
     },
     headline: {
       fontSize: 40,
-      
     }
   });
 

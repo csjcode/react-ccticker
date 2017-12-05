@@ -2,19 +2,22 @@ import React, { Component } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
 class Header extends Component {
-    render() {
-        return (
-          <View style={styles.box}>
-            <Text style={styles.headline}>CryptoTicker Header</Text>
-          </View>
-        );
-    }
+  constructor(props, context) {
+    super(props, context)
+  }
+  render() {
+      return (
+        <View style={styles.box}>
+          <Text style={styles.headline}>CryptoTicker Header</Text>
+        </View>
+      );
+  }
 }
 
 const styles = StyleSheet.create({
     box: {
       backgroundColor: '#fefaaf',
-      height: '10%',
+      flex: 1,
       width: '100%'
     },
     headline: {
