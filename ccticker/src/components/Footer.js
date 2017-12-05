@@ -17,12 +17,12 @@ class Footer extends Component {
 
 const styles = StyleSheet.create({
     box: {
-      backgroundColor: '#7abfe0',
-      flex: 1,
+      backgroundColor: '#626262',
+      flex: 0.5,
       width: '100%'
     },
     headline: {
-      fontSize: 40,
+      fontSize: 20,
       margin: 10
     }
   });

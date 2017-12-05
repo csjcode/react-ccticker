@@ -16,13 +16,15 @@ class Header extends Component {
 
 const styles = StyleSheet.create({
     box: {
-      backgroundColor: '#fefaaf',
+      backgroundColor: '#282828',
       flex: 1,
+      alignItems: 'center',
       width: '100%'
     },
     headline: {
-      fontSize: 40,
-      margin: 20
+      color:'white',
+      fontSize: 22,
+      margin:40
     }
   });
 
