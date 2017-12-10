@@ -6,7 +6,7 @@ Experimenting with a Cryptocurrency ticker in React
 I'll fill this in more when I get a chance.
 
 
-### This is ongoing project in development, not a finished product yet. 
+### This is an ongoing project in development, not a finished product yet. 
 
 ### Preliminary ideas for mobile app mashup:
 
