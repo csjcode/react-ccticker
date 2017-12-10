@@ -1,13 +1,12 @@
 # react-ccticker
 Experimenting with a Cryptocurrency ticker in React
 
-
-This is ongoing project in development, not a finished product yet. 
-
 ## Coin.API.cc
 
 I'll fill this in more when I get a chance.
 
+
+### This is ongoing project in development, not a finished product yet. 
 
 ### Preliminary ideas for mobile app mashup:
 
