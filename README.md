@@ -8,7 +8,11 @@ I'll fill this in more when I get a chance.
 
 ### This is an ongoing project in development, not a finished product yet. 
 
-### Preliminary ideas for mobile app mashup:
+* I have currently done the API calls.
+* The data collection and processing.
+* React Native interface (initial, needs design work)
+
+### Preliminary ideas for mobile app mashup, and general roadmap:
 
 * Front-end UI is React Native.
 * Backend Node.js cryptocurrency API/JSON retrieval
