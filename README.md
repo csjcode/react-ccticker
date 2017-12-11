@@ -11,6 +11,7 @@ I'll fill this in more when I get a chance.
 * I have currently done the API calls.
 * The data collection and processing.
 * React Native interface (initial, needs design work)
+* Working on Node.js middleware for aggregating APIs
 
 ### Preliminary ideas for mobile app mashup, and general roadmap:
 
