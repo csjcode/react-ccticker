@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import './MenuAppBar.css';
 import PropTypes from 'prop-types';
 import { withStyles } from 'material-ui/styles';
 import AppBar from 'material-ui/AppBar';
@@ -8,6 +9,7 @@ import IconButton from 'material-ui/IconButton';
 import MenuIcon from 'material-ui-icons/Menu';
 import AccountCircle from 'material-ui-icons/AccountCircle';
 import Menu, { MenuItem } from 'material-ui/Menu';
+
 
 const styles = {
   root: {
@@ -47,13 +49,13 @@ class MenuAppBar extends Component {
 
     return (
       <div className={classes.root}>
-        <AppBar position="static">
+        <AppBar className='MenuAppBar--AppBar-container' position="static">
           <Toolbar>
             <IconButton className={classes.menuButton} color="contrast" aria-label="Menu">
               <MenuIcon />
             </IconButton>
             <Typography type="title" color="inherit" className={classes.flex}>
-              Title
+              Coin.API.cc
             </Typography>
             {auth && (
               <div>
