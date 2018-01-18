@@ -531,6 +531,7 @@ class Content extends Component {
 const styles = StyleSheet.create({
     box: {
       backgroundColor: '#dbdbdb',
+      borderBottomWidth:2,
       flex: 6,
       alignItems:'center',
       width: '100%'
