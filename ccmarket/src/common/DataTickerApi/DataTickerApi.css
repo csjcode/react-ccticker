@@ -1,0 +1,14 @@
+.DataTickerApi--col {
+   height: 40px;
+   padding:0 !important;
+   text-align: left !important;
+   max-width:100px;
+}
+
+.redNum {
+   color:red;
+}
+
+.greenNum {
+   color:green;
+}
