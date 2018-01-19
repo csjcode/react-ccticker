@@ -1,3 +1,22 @@
 .ContentSection--container {
+   margin: 0 auto;
+   max-width: 1600px;
    padding:30px 50px;
+}
+
+.ContentSection--intro {
+   font-size: 16px;
+   line-height: 1.5;
+   margin-bottom:10px;
+}
+
+.ContentSection--header {
+   font-size: 32px;
+   font-weight: 700;
+   line-height: 1.3;
+}
+
+.ContentSection--price-table {
+   margin: 0 auto;
+   max-width: 1600px;
 }
