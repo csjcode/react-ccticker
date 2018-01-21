@@ -1,11 +1,32 @@
 .MenuAppBar--AppBar-container {
    background-color: indianred;
+   width: 50%; margin: 0 auto;
 }
 
-.MenuAppBar--AppBar-menuButtons {
+/* .MenuAppBar--AppBar-menuButtons {
    margin: 0 10px 0 0;
    border: 1px solid #666;
    padding:8px;
    text-decoration: none;
    color: black;
+   transition-duration: 0.3s;
+} */
+
+.MenuAppBar--AppBar-menuButtons-mui {
+   margin: 0 15px 0 0;
+   border: 1px solid #666;
+   padding:8px;
+   text-decoration: none;
+   color: black;
+   transition-duration: 0.3s;
+}
+
+.MenuAppBar--AppBar-menuButtons:hover {
+   background-color: silver;
+}
+
+.MenuAppBar--AppBar-button-container {
+   border: 0px solid red;
+   margin: 0 auto 0 30px;;
+   width: 100%;
 }

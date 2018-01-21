@@ -6,10 +6,12 @@ import AppBar from 'material-ui/AppBar';
 import Toolbar from 'material-ui/Toolbar';
 import Typography from 'material-ui/Typography';
 import IconButton from 'material-ui/IconButton';
+import Button from 'material-ui/Button';
 import MenuIcon from 'material-ui-icons/Menu';
 import AccountCircle from 'material-ui-icons/AccountCircle';
 import Menu, { MenuItem } from 'material-ui/Menu';
 import Link from 'react-router-dom/Link';
+import {Divider} from 'material-ui'
 
 
 const styles = {
@@ -58,12 +60,17 @@ class MenuAppBar extends Component {
             <Typography type="title" color="inherit" className={classes.flex}>
               Coin.API.cc
             </Typography>
-            <Typography type="title" color="inherit" className={classes.flex}>
-              <Link to="/market" className="MenuAppBar--AppBar-menuButtons img-rounded"><span>Market Monitor</span></Link>
-              <Link to="/list" className="MenuAppBar--AppBar-menuButtons img-rounded"><span>List of Coins</span></Link>
-              <Link to="/news" className="MenuAppBar--AppBar-menuButtons img-rounded"><span>Coin News</span></Link>
-              <Link to="/blog" className="MenuAppBar--AppBar-menuButtons img-rounded"><span >Blog</span></Link>
-            </Typography>
+            <div className="MenuAppBar--AppBar-button-container">
+              <Link to="/market"><Button raised className="MenuAppBar--AppBar-menuButtons-mui">Market Monitor</Button></Link>   
+
+              <Link to="/list"><Button raised className="MenuAppBar--AppBar-menuButtons-mui">List of Coins</Button></Link>   
+
+              <Link to="/news"><Button raised className="MenuAppBar--AppBar-menuButtons-mui">Coin News</Button></Link>  
+
+              <Link to="/Blog"><Button raised className="MenuAppBar--AppBar-menuButtons-mui">Blog</Button></Link>  
+
+              </div>
+
             {auth && (
               <div>
                 <IconButton
