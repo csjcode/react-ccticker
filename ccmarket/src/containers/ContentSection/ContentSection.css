@@ -14,9 +14,28 @@
    font-size: 42px;
    font-weight: 700;
    line-height: 1.3;
+   animation-name: leftShift;
+   animation-duration: 3s;
+}
+
+.ContentSection--subheader {
+   margin-bottom:10px;
 }
 
 .ContentSection--price-table {
    margin: 0 auto;
    max-width: 1600px;
 }
+
+
+@keyframes leftShift {
+   from {
+      margin-left:100px;
+      opacity:0;
+   }
+   to {
+      margin-left:0;
+      opacity:1;
+   }
+}
+
