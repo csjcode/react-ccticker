@@ -9,6 +9,7 @@ import IconButton from 'material-ui/IconButton';
 import MenuIcon from 'material-ui-icons/Menu';
 import AccountCircle from 'material-ui-icons/AccountCircle';
 import Menu, { MenuItem } from 'material-ui/Menu';
+import Link from 'react-router-dom/Link';
 
 
 const styles = {
@@ -56,6 +57,12 @@ class MenuAppBar extends Component {
             </IconButton>
             <Typography type="title" color="inherit" className={classes.flex}>
               Coin.API.cc
+            </Typography>
+            <Typography type="title" color="inherit" className={classes.flex}>
+              <Link to="/market" className="MenuAppBar--AppBar-menuButtons img-rounded"><span>Market Monitor</span></Link>
+              <Link to="/list" className="MenuAppBar--AppBar-menuButtons img-rounded"><span>List of Coins</span></Link>
+              <Link to="/news" className="MenuAppBar--AppBar-menuButtons img-rounded"><span>Coin News</span></Link>
+              <Link to="/blog" className="MenuAppBar--AppBar-menuButtons img-rounded"><span >Blog</span></Link>
             </Typography>
             {auth && (
               <div>
