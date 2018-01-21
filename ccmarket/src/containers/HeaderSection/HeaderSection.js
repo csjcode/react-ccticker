@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 // import logo from '../images/logo.svg';
 import './HeaderSection.css';
 import MenuAppBar from '../../common/MenuAppBar/MenuAppBar';

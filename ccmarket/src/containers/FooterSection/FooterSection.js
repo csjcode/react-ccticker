@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 // import logo from '../images/logo.svg';
 import './FooterSection.css';
 import FooterAppBar from '../../common/FooterAppBar/FooterAppBar';
