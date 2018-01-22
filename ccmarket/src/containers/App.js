@@ -3,7 +3,6 @@ import './App.css';
 import ContentSection from './ContentSection/ContentSection';
 
 
-
 const App = (props) => {
    return (
       <div>

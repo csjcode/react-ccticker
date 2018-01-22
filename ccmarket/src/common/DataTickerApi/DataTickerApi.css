@@ -1,9 +1,43 @@
+.DataTickerApi--main-table{
+   cursor: pointer;
+}
+
+.DataTickerApi--col-head {
+   height: 40px;
+   padding:0 !important;
+   text-align: left !important;
+   max-width:100px;
+}
+
 .DataTickerApi--col {
    height: 40px;
    padding:0 !important;
    text-align: left !important;
    max-width:100px;
 }
+
+.DataTickerApi--col:hover {
+   
+}
+
+
+.DataTickerApi--row:hover {
+   background-color:#fffddd;
+   border-top: 2px solid #333;
+   border-bottom: 2px solid #333;
+   
+}
+
+.DataTickerApi--row:hover .DataTickerApi--col  {
+   background-color:#fffddd;
+   border-top: 2px solid #333;
+   border-bottom: 2px solid #333;
+   font-size: 16px;
+   /* font-weight: bold; */
+}
+
+
+
 
 .redNum {
    color:red;

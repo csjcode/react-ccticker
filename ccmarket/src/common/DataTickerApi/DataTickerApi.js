@@ -27,7 +27,7 @@ const ErrorView = () => <div>I'm sorry! Please try again.</div>;
 const DataView = ({ id, title, url, thumbnailUrl }) => (
   <div>
     <Paper style={{marginTop: 20, padding:40}}>
-      <Table>
+      <Table className="DataTickerApi--main-table">
         <DataTableHead />
         <TableBody>
           <DataTableRows />
@@ -42,18 +42,18 @@ const DataTableHead = () => {
   return(
     <TableHead>
       <TableRow>
-        <TableCell className="DataTickerApi--col">Rank</TableCell> 
-        <TableCell className="DataTickerApi--col">Name</TableCell>
-        <TableCell className="DataTickerApi--col">Symbol</TableCell> 
-        <TableCell className="DataTickerApi--col">USD</TableCell> 
-        <TableCell className="DataTickerApi--col">BTC</TableCell> 
-        <TableCell className="DataTickerApi--col">1 Hr &Delta;</TableCell> 
-        <TableCell className="DataTickerApi--col">24 Hr &Delta;</TableCell> 
-        <TableCell className="DataTickerApi--col" style={{width:80}}>7 Day &Delta;</TableCell>
-        <TableCell className="DataTickerApi--col">Volume (1k)</TableCell> 
-        <TableCell className="DataTickerApi--col">Market Cap</TableCell> 
+        <TableCell className="DataTickerApi--col-head" style={{width:50}}>Rank</TableCell> 
+        <TableCell className="DataTickerApi--col-head" style={{width:100}}>Name</TableCell>
+        <TableCell className="DataTickerApi--col-head" style={{width:60}}>Symbol</TableCell> 
+        <TableCell className="DataTickerApi--col-head" style={{width:100}}>USD</TableCell> 
+        <TableCell className="DataTickerApi--col-head" style={{width:60}}>1 Hr &Delta;</TableCell> 
+        <TableCell className="DataTickerApi--col-head" style={{width:60}}>24 Hr &Delta;</TableCell> 
+        <TableCell className="DataTickerApi--col-head" style={{width:60}}>7 Day &Delta;</TableCell>
+        <TableCell className="DataTickerApi--col-head" style={{width:100}}>Volume (1k)</TableCell> 
+        <TableCell className="DataTickerApi--col-head" style={{width:100}}>Market Cap</TableCell> 
+        <TableCell className="DataTickerApi--col-head" style={{width:100}}>BTC</TableCell> 
 
-        <TableCell className="DataTickerApi--col" style={{width:80}}>Updated</TableCell> 
+        <TableCell className="DataTickerApi--col-head" style={{width:80}}>Updated</TableCell> 
       </TableRow>
     </TableHead>
   );
@@ -81,12 +81,12 @@ const DataTableRows = (props) => {
     
     
     return (
-        <TableRow key={data.id} >
-          <TableCell className="DataTickerApi--col" style={{fontSize:16}}>{data.rank}</TableCell>         
-          <TableCell className="DataTickerApi--col" style={{fontSize:16}}>{data.name}</TableCell> 
-          <TableCell className="DataTickerApi--col" style={{fontSize:16}}>{data.symbol}</TableCell>
+        <TableRow key={data.id} className="DataTickerApi--row">
+          <TableCell className="DataTickerApi--col text-bigger">{data.rank}</TableCell>         
+          <TableCell className="DataTickerApi--col text-bigger">{data.name}</TableCell> 
+          <TableCell className="DataTickerApi--col text-bigger">{data.symbol}</TableCell>
           <TableCell className="DataTickerApi--col">{price_usd_commas}</TableCell> 
-          <TableCell className="DataTickerApi--col">{price_btc}</TableCell>
+
           <TableCell className="DataTickerApi--col ">
           {data.percent_change_1h > 0 ? (
             <span style={{color:'green'}}>{data.percent_change_1h}%</span>
@@ -121,7 +121,7 @@ const DataTableRows = (props) => {
 
 
 
-
+          <TableCell className="DataTickerApi--col">{price_btc}</TableCell>
           <TableCell className="DataTickerApi--col">{date}</TableCell>
         </TableRow>
     )
