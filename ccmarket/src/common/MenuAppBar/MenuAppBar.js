@@ -67,11 +67,11 @@ class MenuAppBar extends Component {
             <div className="MenuAppBar--AppBar-button-container">
               <Link to="/market"><Button raised className="MenuAppBar--AppBar-menuButtons-mui"> <Whatshot className="iconspace"/> Market Monitor</Button></Link>   
 
-              <Link to="/list"><Button raised className="MenuAppBar--AppBar-menuButtons-mui"><InfoOutline className="iconspace"/> List of Coins</Button></Link>   
+              <Link to="/coinlist"><Button raised className="MenuAppBar--AppBar-menuButtons-mui"><InfoOutline className="iconspace"/> List of Coins</Button></Link>   
 
               <Link to="/news"><Button raised className="MenuAppBar--AppBar-menuButtons-mui"><ViewHeadline className="iconspace"/> Coin News</Button></Link>  
 
-              <Link to="/Blog"><Button raised className="MenuAppBar--AppBar-menuButtons-mui"><LocalCafe className="iconspace"/> Blog</Button></Link>  
+              <Link to="/blog"><Button raised className="MenuAppBar--AppBar-menuButtons-mui"><LocalCafe className="iconspace"/> Blog</Button></Link>  
 
               </div>
 

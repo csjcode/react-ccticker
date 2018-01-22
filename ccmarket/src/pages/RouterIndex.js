@@ -29,11 +29,11 @@ const RouterIndex = (props) => {
             <Switch>
                <Route exact path="/" component={App}/>
                <Route path="/market" component={App}/>
-               <Route path="/list" component={App}/>
-               <Route path="/faq" component={App}/>
-               <Route path="/market" component={App}/>
-               <Route path="/patents" component={App}/>
+               <Route path="/coinlist" component={App}/>
+               <Route path="/news" component={App}/>
+               <Route path="/blog" component={App}/>
                <Route path="/updates" component={App}/>
+               <Route path="/faq" component={App}/>
             </Switch>
             <FooterSection />
          </div>
