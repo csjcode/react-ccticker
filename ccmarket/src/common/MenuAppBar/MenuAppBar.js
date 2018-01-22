@@ -9,9 +9,13 @@ import IconButton from 'material-ui/IconButton';
 import Button from 'material-ui/Button';
 import MenuIcon from 'material-ui-icons/Menu';
 import AccountCircle from 'material-ui-icons/AccountCircle';
+import Whatshot from 'material-ui-icons/Whatshot';
+import ViewHeadline from 'material-ui-icons/ViewHeadline';
+import InfoOutline from 'material-ui-icons/InfoOutline';
+import LocalCafe from 'material-ui-icons/LocalCafe';
 import Menu, { MenuItem } from 'material-ui/Menu';
 import Link from 'react-router-dom/Link';
-import {Divider} from 'material-ui'
+import {Divider, Icon} from 'material-ui'
 
 
 const styles = {
@@ -61,13 +65,13 @@ class MenuAppBar extends Component {
               Coin.API.cc
             </Typography>
             <div className="MenuAppBar--AppBar-button-container">
-              <Link to="/market"><Button raised className="MenuAppBar--AppBar-menuButtons-mui">Market Monitor</Button></Link>   
+              <Link to="/market"><Button raised className="MenuAppBar--AppBar-menuButtons-mui"> <Whatshot className="iconspace"/> Market Monitor</Button></Link>   
 
-              <Link to="/list"><Button raised className="MenuAppBar--AppBar-menuButtons-mui">List of Coins</Button></Link>   
+              <Link to="/list"><Button raised className="MenuAppBar--AppBar-menuButtons-mui"><InfoOutline className="iconspace"/> List of Coins</Button></Link>   
 
-              <Link to="/news"><Button raised className="MenuAppBar--AppBar-menuButtons-mui">Coin News</Button></Link>  
+              <Link to="/news"><Button raised className="MenuAppBar--AppBar-menuButtons-mui"><ViewHeadline className="iconspace"/> Coin News</Button></Link>  
 
-              <Link to="/Blog"><Button raised className="MenuAppBar--AppBar-menuButtons-mui">Blog</Button></Link>  
+              <Link to="/Blog"><Button raised className="MenuAppBar--AppBar-menuButtons-mui"><LocalCafe className="iconspace"/> Blog</Button></Link>  
 
               </div>
 

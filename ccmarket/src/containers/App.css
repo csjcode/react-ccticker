@@ -8,6 +8,10 @@
   width: 50px;
 }
 
+.iconspace {
+  margin-right:8px;
+}
+
 ,hidden {
   opacity: 0;
 }
@@ -80,7 +84,7 @@
     transform: translate(0); } 
 }
 
-.ripple {
+.ripple { 
   width: 0;
   height: 0;
   border-radius: 50%;
@@ -111,6 +115,10 @@
 
 /* -------------------------------   End Buttons   ------------------------------- */
 
+
+.text-bigger {
+  font-size: 1.1em;
+}
 
 .img-responsive {
   width: 100%;
