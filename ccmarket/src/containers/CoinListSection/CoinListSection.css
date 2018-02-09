@@ -1,0 +1,74 @@
+.CoinListSection--container {
+	padding:50px;
+}
+
+
+.DataTickerApi--main-wrapper-paper {
+   margin-top: 20px;
+   padding: 40px;
+}
+
+
+.DataTickerApi--main-table{
+   cursor: pointer;
+}
+
+.DataTickerApi--col-head {
+   height: 40px;
+   padding:0 !important;
+   text-align: left !important;
+   max-width:100px;
+}
+
+.DataTickerApi--col {
+   height: 40px;
+   padding:10 !important;
+   text-align: left !important;
+   max-width:100px;
+}
+
+.DataTickerApi--col:hover {
+   
+}
+
+
+.DataTickerApi--row:hover {
+   background-color:#fffddd;
+   border-top: 1px solid #333;
+   border-bottom: 1px solid #333;
+   
+}
+
+.DataTickerApi--row:hover .DataTickerApi--col  {
+   background-color:#fffddd;
+   border-top: 2px solid #333;
+   border-bottom: 2px solid #333;
+   font-size: 16px;
+   /* font-weight: bold; */
+}
+
+.redNum {
+   color:red;
+}
+
+.greenNum {
+   color:green;
+}
+
+@media screen and (max-width:700px){
+   .collapsible {
+      display: none;
+   }
+}
+
+@media screen and (max-width:400px){
+   .DataTickerApi--main-wrapper-paper {
+      margin-top: 10px;
+      padding: 10px;
+   }
+}
+
+
+
+
+
