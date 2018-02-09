@@ -4,6 +4,7 @@ import Reboot from 'material-ui/Reboot';
 import { MuiThemeProvider, createMuiTheme } from 'material-ui/styles';
 import HeaderSection from '../containers/HeaderSection/HeaderSection';
 import FooterSection from '../containers/FooterSection/FooterSection';
+import CoinListPage from './CoinListPage/CoinListPage';
 import App from '../containers/App';
 import logo from '../images/logo.svg';
 import grey from 'material-ui/colors/grey';
@@ -29,7 +30,7 @@ const RouterIndex = (props) => {
             <Switch>
                <Route exact path="/" component={App}/>
                <Route path="/market" component={App}/>
-               <Route path="/coinlist" component={App}/>
+               <Route path="/coinlist" render={()=><CoinListPage pageOn="coinlist" />}/>
                <Route path="/news" component={App}/>
                <Route path="/blog" component={App}/>
                <Route path="/updates" component={App}/>

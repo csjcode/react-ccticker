@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import './CoinListPage.css';
-import ContentSection from '../containers/ContentSection/ContentSection';
+import CoinListSection from '../../containers/CoinListSection/CoinListSection';
 
 
 const CoinListPage = (props) => {
    return (
       <div>
-        <ContentSection />
+        <CoinListSection />
       </div>
    )
  }
