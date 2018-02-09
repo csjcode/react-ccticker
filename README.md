@@ -1,6 +1,9 @@
 # react-ccticker
 Experimenting with a Cryptocurrency ticker in React
 
+** Right now, most fo the action is in react-ccticker/ccmarket/src/ which is for the React web app. After it gets a bit further along I'll finish up the React Native for mobile**
+
+
 ## Coin.API.cc
 
 I'll fill this in more when I get a chance.
