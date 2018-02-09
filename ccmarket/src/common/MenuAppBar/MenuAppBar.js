@@ -36,17 +36,26 @@ class MenuAppBar extends Component {
     auth: true,
     anchorEl: null,
   };
-
-  handleChange = (event, checked) => {
-    this.setState({ auth: checked });
-  };
-
-  handleMenu = event => {
+  handleClick = event => {
     this.setState({ anchorEl: event.currentTarget });
   };
 
   handleClose = () => {
     this.setState({ anchorEl: null });
+
+  };
+  handleChange = (event, checked) => {
+    this.setState({ auth: checked });
+  };
+
+  handleMenu = event => {
+    // alert('handleMenu - ' + event.currentTarget.id);
+    this.setState({ anchorEl: event.currentTarget });
+  };
+
+  handleMenuProfile = event => {
+    // alert('handleMenuProfile - ' + event.currentTarget.id);
+    this.setState({ anchorEl: event.currentTarget });
   };
 
   render() {
@@ -58,34 +67,7 @@ class MenuAppBar extends Component {
       <div className={classes.root}>
         <AppBar className='MenuAppBar--AppBar-container' position="static">
           <Toolbar>
-            <IconButton className={classes.menuButton} color="contrast" aria-label="Menu">
-              <MenuIcon />
-            </IconButton>
-            <Typography type="title" color="inherit" className={classes.flex}>
-              Coin.API.cc
-            </Typography>
-            <div className="MenuAppBar--AppBar-button-container">
-              <Link to="/market"><Button raised className="MenuAppBar--AppBar-menuButtons-mui"> <Whatshot className="iconspace"/> Market Monitor</Button></Link>   
-
-              <Link to="/coinlist"><Button raised className="MenuAppBar--AppBar-menuButtons-mui"><InfoOutline className="iconspace"/> List of Coins</Button></Link>   
-
-              <Link to="/news"><Button raised className="MenuAppBar--AppBar-menuButtons-mui"><ViewHeadline className="iconspace"/> Coin News</Button></Link>  
-
-              <Link to="/blog"><Button raised className="MenuAppBar--AppBar-menuButtons-mui"><LocalCafe className="iconspace"/> Blog</Button></Link>  
-
-              </div>
-
-            {auth && (
-              <div>
-                <IconButton
-                  aria-owns={open ? 'menu-appbar' : null}
-                  aria-haspopup="true"
-                  onClick={this.handleMenu}
-                  color="contrast"
-                >
-                  <AccountCircle />
-                </IconButton>
-                <Menu
+          <Menu
                   id="menu-appbar"
                   anchorEl={anchorEl}
                   anchorOrigin={{
@@ -97,13 +79,72 @@ class MenuAppBar extends Component {
                     horizontal: 'right',
                   }}
                   open={open}
+                  onClose={() => this.setState({ anchorEl: null })}
+                >
+                  <MenuItem onClick={this.handleClose}><Link to="/market">Market Monitor</Link></MenuItem>
+                  <MenuItem onClick={this.handleClose}><Link to="/coinlist">Coin List</Link></MenuItem>
+                  <MenuItem onClick={this.handleClose}><Link to="/news">Coin News</Link></MenuItem>
+                  <MenuItem onClick={this.handleClose}><Link to="/blog">Blog</Link></MenuItem>
+                  <MenuItem onClick={this.handleClose}><Link to="profile">Profile</Link></MenuItem>
+                  <MenuItem onClick={this.handleClose}><Link to="/account">My account</Link></MenuItem>
+                </Menu>
+              <MenuIcon />
+            <IconButton 
+                className={classes.menuButton} 
+                color="contrast" 
+                aria-label="Menu"
+                aria-owns={anchorEl ? 'menu-appbar' : null}
+                aria-haspopup="true"
+                onClick={this.handleMenu}
+                style={{left:-15,width:30}}
+              >
+
+
+            </IconButton>
+            <Typography type="title" color="inherit" className="MenuAppBar--AppBar-container-hamburger">
+              Coin.API.cc
+            </Typography>
+            <div className="MenuAppBar--AppBar-button-container">
+              <Link to="/market"><Button raised className="MenuAppBar--AppBar-menuButtons-mui"> <Whatshot className="iconspace"/> Market Monitor</Button></Link>   
+
+              <Link to="/coinlist"><Button raised className="MenuAppBar--AppBar-menuButtons-mui"><InfoOutline className="iconspace"/> Coin List</Button></Link>   
+
+              <Link to="/news"><Button raised className="MenuAppBar--AppBar-menuButtons-mui"><ViewHeadline className="iconspace"/> Coin News</Button></Link>  
+
+              <Link to="/blog"><Button raised className="MenuAppBar--AppBar-menuButtons-mui"><LocalCafe className="iconspace"/> Blog</Button></Link>  
+
+              </div>
+
+            {/* {auth && (
+              <div>
+                <IconButton
+                  aria-owns={open ? 'menu-appbar-profile' : null}
+                  aria-haspopup="true"
+                  onClick={this.handleMenuProfile}
+                  color="contrast"
+                >
+                  <AccountCircle />
+                </IconButton>
+               
+                <Menu
+                  id="menu-appbar-profile"
+                  anchorEl={anchorEl}
+                  anchorOrigin={{
+                    vertical: 'top',
+                    horizontal: 'right',
+                  }}
+                  transformOrigin={{
+                    vertical: 'top',
+                    horizontal: 'right',
+                  }}
+                  // open={open}
                   onClose={this.handleClose}
                 >
                   <MenuItem onClick={this.handleClose}>Profile</MenuItem>
                   <MenuItem onClick={this.handleClose}>My account</MenuItem>
                 </Menu>
               </div>
-            )}
+            )} */}
           </Toolbar>
         </AppBar>
       </div>

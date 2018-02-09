@@ -30,3 +30,17 @@
    margin: 0 auto 0 30px;;
    width: 100%;
 }
+
+a {
+   text-decoration: none;
+}
+
+
+@media screen and (max-width:700px){
+   .MenuAppBar--AppBar-button-container{
+      display: none;
+   }
+   .MuiTypography-root-65MenuAppBar--AppBar-container-hamburger{
+      display: none;
+   }
+}
