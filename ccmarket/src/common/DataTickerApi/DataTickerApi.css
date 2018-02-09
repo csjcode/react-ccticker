@@ -1,3 +1,10 @@
+
+.DataTickerApi--main-wrapper-paper {
+   margin-top: 20px;
+   padding: 40px;
+}
+
+
 .DataTickerApi--main-table{
    cursor: pointer;
 }
@@ -23,8 +30,8 @@
 
 .DataTickerApi--row:hover {
    background-color:#fffddd;
-   border-top: 2px solid #333;
-   border-bottom: 2px solid #333;
+   border-top: 1px solid #333;
+   border-bottom: 1px solid #333;
    
 }
 
@@ -36,9 +43,6 @@
    /* font-weight: bold; */
 }
 
-
-
-
 .redNum {
    color:red;
 }
@@ -46,3 +50,21 @@
 .greenNum {
    color:green;
 }
+
+@media screen and (max-width:700px){
+   .collapsible {
+      display: none;
+   }
+}
+
+@media screen and (max-width:400px){
+   .DataTickerApi--main-wrapper-paper {
+      margin-top: 10px;
+      padding: 10px;
+   }
+}
+
+
+
+
+

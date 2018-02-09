@@ -26,7 +26,7 @@ const ErrorView = () => <div>I'm sorry! Please try again.</div>;
 
 const DataView = ({ id, title, url, thumbnailUrl }) => (
   <div>
-    <Paper style={{marginTop: 20, padding:40}}>
+    <Paper className="DataTickerApi--main-wrapper-paper">
       <Table className="DataTickerApi--main-table">
         <DataTableHead />
         <TableBody>
@@ -42,18 +42,18 @@ const DataTableHead = () => {
   return(
     <TableHead>
       <TableRow>
-        <TableCell className="DataTickerApi--col-head" style={{width:50}}>Rank</TableCell> 
+        <TableCell className="DataTickerApi--col-head collapsible" style={{width:50}}>Rank</TableCell> 
         <TableCell className="DataTickerApi--col-head" style={{width:100}}>Name</TableCell>
         <TableCell className="DataTickerApi--col-head" style={{width:60}}>Symbol</TableCell> 
         <TableCell className="DataTickerApi--col-head" style={{width:100}}>USD</TableCell> 
         <TableCell className="DataTickerApi--col-head" style={{width:60}}>1 Hr &Delta;</TableCell> 
         <TableCell className="DataTickerApi--col-head" style={{width:60}}>24 Hr &Delta;</TableCell> 
-        <TableCell className="DataTickerApi--col-head" style={{width:60}}>7 Day &Delta;</TableCell>
-        <TableCell className="DataTickerApi--col-head" style={{width:100}}>Volume (1k)</TableCell> 
-        <TableCell className="DataTickerApi--col-head" style={{width:100}}>Market Cap</TableCell> 
-        <TableCell className="DataTickerApi--col-head" style={{width:100}}>BTC</TableCell> 
+        <TableCell className="DataTickerApi--col-head collapsible" style={{width:60}}>7 Day &Delta;</TableCell>
+        <TableCell className="DataTickerApi--col-head collapsible" style={{width:100}}>Volume (1k)</TableCell> 
+        <TableCell className="DataTickerApi--col-head collapsible" style={{width:100}}>Market Cap</TableCell> 
+        <TableCell className="DataTickerApi--col-head collapsible" style={{width:100}}>BTC</TableCell> 
 
-        <TableCell className="DataTickerApi--col-head" style={{width:80}}>Updated</TableCell> 
+        <TableCell className="DataTickerApi--col-head collapsible" style={{width:80}}>Updated</TableCell> 
       </TableRow>
     </TableHead>
   );
@@ -82,7 +82,7 @@ const DataTableRows = (props) => {
     
     return (
         <TableRow key={data.id} className="DataTickerApi--row">
-          <TableCell className="DataTickerApi--col text-bigger">{data.rank}</TableCell>         
+          <TableCell className="DataTickerApi--col text-bigger collapsible">{data.rank}</TableCell>         
           <TableCell className="DataTickerApi--col text-bigger">{data.name}</TableCell> 
           <TableCell className="DataTickerApi--col text-bigger">{data.symbol}</TableCell>
           <TableCell className="DataTickerApi--col">{price_usd_commas}</TableCell> 
@@ -101,15 +101,15 @@ const DataTableRows = (props) => {
             <span style={{color:'red'}}>{data.percent_change_24h}%</span>
           )}
           </TableCell>
-          <TableCell className="DataTickerApi--col ">
+          <TableCell className="DataTickerApi--col collapsible">
           {data.percent_change_7d > 0 ? (
             <span style={{color:'green'}}>{data.percent_change_7d}%</span>
           ) : (
             <span style={{color:'red'}}>{data.percent_change_7d}%</span>
           )}
           </TableCell>
-          <TableCell className="DataTickerApi--col">{volume_usd_commas}</TableCell> 
-          <TableCell className="DataTickerApi--col">{market_cap_usd_commas}</TableCell> 
+          <TableCell className="DataTickerApi--col collapsible">{volume_usd_commas}</TableCell> 
+          <TableCell className="DataTickerApi--col collapsible">{market_cap_usd_commas}</TableCell> 
 
           {/* <TableCell className="DataTickerApi--col ">
           {data.market_cap_usd > 1000000000 ? (
@@ -121,8 +121,8 @@ const DataTableRows = (props) => {
 
 
 
-          <TableCell className="DataTickerApi--col">{price_btc}</TableCell>
-          <TableCell className="DataTickerApi--col">{date}</TableCell>
+          <TableCell className="DataTickerApi--col collapsible">{price_btc}</TableCell>
+          <TableCell className="DataTickerApi--col collapsible">{date}</TableCell>
         </TableRow>
     )
   })
