@@ -39,3 +39,33 @@
    }
 }
 
+@media screen and (max-width:700px){
+   .ContentSection--container {
+      margin: 0 auto;
+      max-width: 700px;
+      padding:20px 20px;
+   }
+
+   .ContentSection--header {
+      font-size: 24px;
+   }   
+
+   .ContentSection--intro {
+      font-size: 14px;
+   }
+
+   .large-content {
+      display: none;
+   }
+
+}
+ 
+@media screen and (max-width:400px){
+   .ContentSection--container {
+      margin: 0 auto;
+      max-width: 1600px;
+      padding:10px 3px;
+   }
+
+   
+}
