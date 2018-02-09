@@ -1,7 +1,9 @@
 import  React, { Component } from 'react';
 import dataTickerApi from '../../data/sample.json';
 import './DataTickerApi.css';
-// import { withStyles } from 'material-ui/styles';
+import DataTableHead from '../../containers/DataTableHead/DataTableHead';
+import LoadingView from '../LoadingView/LoadingView';
+import ErrorView from '../ErrorView/ErrorView';
 import Table, { TableBody, TableCell, TableHead, TableRow } from 'material-ui/Table';
 import Paper from 'material-ui/Paper';
 import numberWithCommas from '../../utils/numberWithCommas';
@@ -20,17 +22,13 @@ const styles = theme => ({
   }
 });
 
-const LoadingView = () => <div>Loading...</div>;
-
-const ErrorView = () => <div>I'm sorry! Please try again.</div>;
-
-const DataView = ({ id, title, url, thumbnailUrl }) => (
+const DataView = (props) => (
   <div>
     <Paper className="DataTickerApi--main-wrapper-paper">
       <Table className="DataTickerApi--main-table">
         <DataTableHead />
         <TableBody>
-          <DataTableRows />
+          <DataTableRows {...props} />
         </TableBody>
       </Table>
     </Paper>
@@ -38,30 +36,9 @@ const DataView = ({ id, title, url, thumbnailUrl }) => (
 );
 
 
-const DataTableHead = () => {
-  return(
-    <TableHead>
-      <TableRow>
-        <TableCell className="DataTickerApi--col-head collapsible" style={{width:50}}>Rank</TableCell> 
-        <TableCell className="DataTickerApi--col-head" style={{width:100}}>Name</TableCell>
-        <TableCell className="DataTickerApi--col-head" style={{width:60}}>Symbol</TableCell> 
-        <TableCell className="DataTickerApi--col-head" style={{width:100}}>USD</TableCell> 
-        <TableCell className="DataTickerApi--col-head" style={{width:60}}>1 Hr &Delta;</TableCell> 
-        <TableCell className="DataTickerApi--col-head" style={{width:60}}>24 Hr &Delta;</TableCell> 
-        <TableCell className="DataTickerApi--col-head collapsible" style={{width:60}}>7 Day &Delta;</TableCell>
-        <TableCell className="DataTickerApi--col-head collapsible" style={{width:100}}>Volume (1k)</TableCell> 
-        <TableCell className="DataTickerApi--col-head collapsible" style={{width:100}}>Market Cap</TableCell> 
-        <TableCell className="DataTickerApi--col-head collapsible" style={{width:100}}>BTC</TableCell> 
-
-        <TableCell className="DataTickerApi--col-head collapsible" style={{width:80}}>Updated</TableCell> 
-      </TableRow>
-    </TableHead>
-  );
-}
-
 const DataTableRows = (props) => {
 
-  return dataTickerApi.map((data)=>{
+  return props.data.map((data)=>{
     data['24h_volume_usd'] = Math.trunc(data['24h_volume_usd']);
     var date = new Date(data.last_updated*1000);
     date = date.toTimeString();
@@ -110,25 +87,11 @@ const DataTableRows = (props) => {
           </TableCell>
           <TableCell className="DataTickerApi--col collapsible">{volume_usd_commas}</TableCell> 
           <TableCell className="DataTickerApi--col collapsible">{market_cap_usd_commas}</TableCell> 
-
-          {/* <TableCell className="DataTickerApi--col ">
-          {data.market_cap_usd > 1000000000 ? (
-            <span style={{fontWeight:700}}>{market_cap_usd_commas}</span>
-          ) : (
-            <span>{market_cap_usd_commas}</span>
-          )}
-          </TableCell>  */}
-
-
-
           <TableCell className="DataTickerApi--col collapsible">{price_btc}</TableCell>
           <TableCell className="DataTickerApi--col collapsible">{date}</TableCell>
         </TableRow>
     )
   })
-  // this.setState(prev => ({ loading: false, data })),
-  // console.log("state",this.state.data)
-  // return data;
 }
 
 
@@ -137,7 +100,7 @@ const DataBranch = ({ loading, data }) => {
   if (loading) {
     return <LoadingView />;
   } else if (data) {
-    return <DataView {...data} />;
+    return <DataView data={data} />;    
   } else {
     return <ErrorView />;
   }
@@ -148,23 +111,15 @@ class DataTickerApi extends Component {
 
   state = { loading: true };
 
-  renderLoading() {
-    return <div>Loading...</div>;
-  }
-  
-  renderError() {
-    return <div>Could not load ticker data! Please try again.</div>;
-  }
-
-  // renderDataTable() {
-  //   return(
-
-  //   )
-  // }
-
-   componentDidMount() {
-  
-    this.setState(prev => ({ loading: false, data: dataTickerApi }))
+    componentDidMount() {
+    // full url
+      fetch("https://api.coinmarketcap.com/v1/ticker/?limit=50")
+      .then(res => res.json())
+      .then(
+        data => this.setState(prev => ({ loading: false, data })),
+      error => this.setState(prev => ({ loading: false, error }))
+      );
+     }
   
         // fetch("https://jsonplaceholder.typicode.com/photos/1")
       //   .then(res => res.json())
@@ -172,7 +127,6 @@ class DataTickerApi extends Component {
       //     photos => this.setState(prev => ({ loading: false, photos })),
       //     error => this.setState(prev => ({ loading: false, error }))
       //   );        
-   }
 
    render() {
     return <DataBranch {...this.state} />;
