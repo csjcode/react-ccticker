@@ -9,6 +9,10 @@ import {Divider, Paper} from 'material-ui'
 import Table, { TableBody, TableCell, TableHead, TableRow } from 'material-ui/Table';
 import numberWithCommas from '../../utils/numberWithCommas';
 import {Theaters} from 'material-ui-icons'
+import coinListDescriptions from '../../data/coinlist-description.js';
+
+var myArr = coinListDescriptions.split('\n').map((x)=>x.split('|'));
+console.log(myArr);
 
 const DataTableHead = () => {
 	return(
@@ -28,7 +32,8 @@ class CoinListSection extends Component {
 
 	state = { 
 		loading: true, 
-		coinlist: [] 
+		coinlist: [],
+		coindescription: ''
 	};
  
 	componentDidMount() {
@@ -36,14 +41,24 @@ class CoinListSection extends Component {
 	  fetch("https://api.coinmarketcap.com/v1/ticker/?limit=100")
 		.then(res => res.json())
 		.then(
-		coinlist => this.setState(prev => ({ loading: false, coinlist })),
+		coinlist => this.setState(prev => ({ loading: false, coinlist})),
 		error => this.setState(prev => ({ loading: false, error }))
 		);
+
+		// console.log(this.state.coindescription);
+		// var myStr = this.state.coindescription;
+
+
+
 	 }
 
 	 renderError = () => <ErrorView />
 
 	 renderLoading = () => <LoadingView />
+
+	 renderCoinListDescription = () => {
+
+	 }
 
 	 renderCoinList = () => {
 		return(
@@ -66,6 +81,8 @@ class CoinListSection extends Component {
 						</tr>
 						{this.renderTableRows()}
 					</table>
+
+					{this.renderCoinListDescription()} 
 					{/* </TableBody> */}
 					{/* </Table> */}
 				</Paper>
@@ -76,7 +93,7 @@ class CoinListSection extends Component {
 	 renderTableRows(){
 		// return(
 
-			return this.state.coinlist.map((data)=>{
+			return this.state.coinlist.map((data,index)=>{
 				data['24h_volume_usd'] = Math.trunc(data['24h_volume_usd']);
 				var date = new Date(data.last_updated*1000);
 				date = date.toTimeString();
@@ -92,67 +109,27 @@ class CoinListSection extends Component {
 				var volume_usd_commas = numberWithCommas(volume_usd);
 		  
 				var price_btc = parseFloat(data.price_btc).toFixed(5);
-			 
-				
-				
+
+				var description = '';
+				for(var i=0; i < myArr.length; i++){
+					if (myArr[i][1].trim() === data.symbol) {
+						description = myArr[i][2].trim();
+						console.log(description);
+					}
+				}
+	
+
 				return (
 					 <tr>
 						 <td style={{padding:20, width:50}}>{data.rank}</td>
 						 <td style={{padding:20, width:150}}>{data.name}</td>
 						 <td style={{padding:20, width:50}}>{data.symbol}</td>
 						 <td style={{padding:20, width:50}}>{price_usd_commas}</td>
-						 <td style={{padding:20}}>This is a one line description about the particular coin</td>
-					 {/* <TableRow key={data.id} className="DataTickerApi--row">
-						<TableCell className="DataTickerApi--col text-bigger collapsible">{data.rank}</TableCell>         
-						<TableCell className="DataTickerApi--col text-bigger">{data.name}</TableCell> 
-						<TableCell className="DataTickerApi--col text-bigger">{data.symbol}</TableCell>
-						<TableCell className="DataTickerApi--col">{price_usd_commas}</TableCell> 
-						<TableCell className="DataTickerApi--col">description</TableCell> 
-					 </TableRow> */}
+						 <td style={{padding:20}}>{description}</td>
 					 </tr>
 				)
 			 })
 
-			// var top = this.state.coinlist.Data.filter((item)=> item.id < 100 );
-			// return (
-			// 			<div>
-			// 			  <ul>
-			// 					{top.map((item)=> <li> {item.id} - {item.name} </li>)}
-			// 			  </ul>
-			// 				{/* <h2>Photo ID: </h2> */}
-			// 				{/* {top.map((item)=> console.log(item.title))} */}
-			// 				{/* {top.map((item)=> console.log(item.id + ' - ' + item.title))} */}
-			// 			</div>	
-			// )
-
-
-		// 	<div className="CoinListSection--container">
-
-		// 	<div className="CoinListSection--header">
-		// 	Coin List Section
-		// 	</div>
-
-		// 	<div className="CoinListSection--subheader fadein">Full List of Coins Available</div>
-
-		// 	<div className="">{this.state.coinlist.Data}</div>
-
-		// 	<div className="CoinListSection--intro">
-			
-		// 	<p className="large-content">
-
-		// 	</p>
-		// 	<p>
-		// 		As of December 2017 total market capitalization of cryptocurrencies is bigger than 600 billion USD and record high daily volume is larger than 500 billion USD.
-
-		// 	</p>
-		// 	</div>
-
-		// 	<div className="CoinListSection--price-table">
-		// 	{/* <DataTickerApi /> */}
-		// 	</div>
-		
-		// </div>
-		// )
 	 }
 	 
 
