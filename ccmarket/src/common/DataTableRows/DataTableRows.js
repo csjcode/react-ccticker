@@ -2,9 +2,26 @@ import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import Table, { TableBody, TableCell, TableHead, TableRow } from 'material-ui/Table';
 import numberWithCommas from '../../utils/numberWithCommas';
+import SimpleModalWrapped from '../DataModal/DataModal';
+
 // import PropTypes from 'prop-types'
 
 class DataTableRows extends Component {
+
+	state = {
+		open: false
+	}
+
+	handleModalOpen = () => {
+		// alert('open');
+		this.setState(prevState => ({ open: true }));
+	};
+  
+	handleModalClose = () => {
+		// alert('close');
+		this.setState(prevState => ({ open: false }));
+	};
+
 	render(props) {
 		return this.props.data.map((data)=>{
 			data['24h_volume_usd'] = Math.trunc(data['24h_volume_usd']);
@@ -28,7 +45,19 @@ class DataTableRows extends Component {
 			return (
 				 <TableRow key={data.id} className="DataTickerApi--row">
 					<TableCell className="DataTickerApi--col text-bigger collapsible">{data.rank}</TableCell>         
-					<TableCell className="DataTickerApi--col text-bigger">{data.name}</TableCell> 
+					<TableCell className="DataTickerApi--col text-bigger">
+
+						<SimpleModalWrapped 
+							rank={data.rank} 
+							name={data.name} 
+							symbol={data.symbol} 
+							price_usd_commas={price_usd_commas} 
+							percent_change_1h={data.percent_change_1h} 
+							percent_change_24h={data.percent_change_24h} 
+						/>
+
+		
+					</TableCell> 
 					<TableCell className="DataTickerApi--col text-bigger">{data.symbol}</TableCell>
 					<TableCell className="DataTickerApi--col">{price_usd_commas}</TableCell> 
 	  
