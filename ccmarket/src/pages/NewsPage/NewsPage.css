@@ -1,0 +1,8 @@
+.NewsPage--container {
+	margin: 0 auto;
+	max-width: 1200px;
+}
+
+.NewsPage--pagename {
+	text-align: center;
+}
