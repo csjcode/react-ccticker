@@ -114,7 +114,7 @@ class CoinListSection extends Component {
 				for(var i=0; i < myArr.length; i++){
 					if (myArr[i][1].trim() === data.symbol) {
 						description = myArr[i][2].trim();
-						console.log(description);
+						// console.log(description);
 					}
 				}
 	

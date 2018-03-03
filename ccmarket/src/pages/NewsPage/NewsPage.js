@@ -2,20 +2,11 @@ import React, { Component, Fragment } from 'react';
 import './NewsPage.css';
 import LoadingView from '../../common/LoadingView/LoadingView';
 import ErrorView from '../../common/ErrorView/ErrorView';
+import NewsDataMap from '../../common/NewsDataMap/NewsDataMap';
+
 import newsapikey from '../../private/newsapikey';
 // import ContentSection from '../../containers/ContentSection/ContentSection';
 import PropTypes from 'prop-types';
-
-const NewsDataMap = (props) => {
-
-  return props.data.articles.map((article)=>{
-    // console.log(article)
-    return( <div>
-      <h3><a href={article.url}>{article.title}</a></h3>
-      <p>{article.description}</p>
-    </div>
-    );
-  });
 
 
   // return console.log(props.data.articles[0])
@@ -25,7 +16,6 @@ const NewsDataMap = (props) => {
   //     <p>{articles.description}</p>
   //   </div>
   // });
-}
 
 const NewsDataView = (props) => (
   <Fragment>
@@ -38,7 +28,13 @@ const NewsDataView = (props) => (
       </div>
       <div>
         {/* {console.log('OK - ' + JSON.stringify(props.data))} */}
-      <NewsDataMap data={props.data}/>
+
+        <table class="NewsPage--block">
+          <NewsDataMap data={props.data}/>
+        </table>
+
+
+      
       </div>
     </div>
   </div>

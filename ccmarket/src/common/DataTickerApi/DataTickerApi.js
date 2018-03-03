@@ -117,7 +117,7 @@ class DataTickerApi extends Component {
       .then(res => res.json())
       .then(
         data => this.setState(prev => ({ loading: false, data })),
-      error => this.setState(prev => ({ loading: false, error }))
+        error => this.setState(prev => ({ loading: false, error }))
       );
      }
   
@@ -128,7 +128,7 @@ class DataTickerApi extends Component {
       //     error => this.setState(prev => ({ loading: false, error }))
       //   );        
 
-   render() {
+  render() {
     return <DataBranch {...this.state} />;
   }
 }

@@ -1,0 +1,17 @@
+.NewsDataMap--block {
+	overflow: hidden;
+	/* background: #333; */
+	padding: 1rem;
+	/* max-width: 20rem; */
+	margin: 0 0 1rem 0;
+}
+.NewsDataMap--block img {
+	width: 250px;
+	/* height: 75px; */
+	float: left;
+	margin: 0 1rem 0 0;
+}
+.NewsDataMap--block h3 {
+	font-weight: 500;
+	margin: 0 0 0.5rem 0;
+}

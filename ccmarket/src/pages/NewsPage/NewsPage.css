@@ -6,3 +6,11 @@
 .NewsPage--pagename {
 	text-align: center;
 }
+
+
+.NewsPage--block {
+	/* background: #333; */
+	padding: 1rem;
+	/* max-width: 20rem; */
+	margin: 0 0 1rem 0;
+}
