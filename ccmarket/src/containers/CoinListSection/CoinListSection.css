@@ -32,7 +32,7 @@
 }
 
 
-.DataTickerApi--row:hover {
+/* .DataTickerApi--row:hover {
    background-color:#fffddd;
    border-top: 1px solid #333;
    border-bottom: 1px solid #333;
@@ -41,11 +41,11 @@
 
 .DataTickerApi--row:hover .DataTickerApi--col  {
    background-color:#fffddd;
-   border-top: 2px solid #333;
-   border-bottom: 2px solid #333;
+   border-top: 1px solid #333;
+   border-bottom: 1px solid #333;
    font-size: 16px;
-   /* font-weight: bold; */
-}
+   font-weight: bold;
+} */
 
 .redNum {
    color:red;
