@@ -2,23 +2,28 @@ import  React, { Component } from 'react';
 import dataTickerApi from '../../data/sample.json';
 import './DataTickerApi.css';
 import DataBranch from '../DataBranch/DataBranch';
-// import Table, { TableBody, TableCell, TableHead, TableRow } from 'material-ui/Table';
 
-const styles = theme => ({
-  root: {
-    width: '100%',
-    marginTop: theme.spacing.unit * 3,
-    overflowX: 'auto',
-  },
-  table: {
-    minWidth: 500,
-    maxWidth: 1200,
-    paddingDefault: 0
-  }
-});
+/* ---------------------------------------------------------------------------------------------------
+        
+  UPDATE (Mar. 3, 2018): Most of this component has been refactored as of Mar. 3 into various 5+ subcomponents.
+  See components: DataBranch, DataTableRows, DataView etc.
 
+  This component is now only for getting the API data.
 
+--------------------------------------------------------------------------------------------------- */
 
+// const styles = theme => ({
+//   root: {
+//     width: '100%',
+//     marginTop: theme.spacing.unit * 3,
+//     overflowX: 'auto',
+//   },
+//   table: {
+//     minWidth: 500,
+//     maxWidth: 1200,
+//     paddingDefault: 0
+//   }
+// });
 
 class DataTickerApi extends Component {
 
