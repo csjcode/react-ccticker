@@ -105,13 +105,13 @@ class MenuAppBar extends Component {
               Coin.API.cc
             </Typography>
             <div className="MenuAppBar--AppBar-button-container">
-              <Link to="/market"><Button raised className="MenuAppBar--AppBar-menuButtons-mui"> <Whatshot className="iconspace"/> Market Monitor</Button></Link>   
+              <Link to="/market"><Button raised className="MenuAppBar--AppBar-menuButtons-mui"> <Whatshot className="iconspace-Whatshot"/> Market Monitor</Button></Link>   
 
-              <Link to="/coinlist"><Button raised className="MenuAppBar--AppBar-menuButtons-mui"><InfoOutline className="iconspace"/> Coin List</Button></Link>   
+              <Link to="/coinlist"><Button raised className="MenuAppBar--AppBar-menuButtons-mui"><InfoOutline className="iconspace-InfoOutline"/> Coin List</Button></Link>   
 
-              <Link to="/news"><Button raised className="MenuAppBar--AppBar-menuButtons-mui"><ViewHeadline className="iconspace"/> Coin News</Button></Link>  
+              <Link to="/news"><Button raised className="MenuAppBar--AppBar-menuButtons-mui"><ViewHeadline className="iconspace-ViewHeadline"/> Coin News</Button></Link>  
 
-              <Link to="/blog"><Button raised className="MenuAppBar--AppBar-menuButtons-mui"><LocalCafe className="iconspace"/> Blog</Button></Link>  
+              <Link to="/blog"><Button raised className="MenuAppBar--AppBar-menuButtons-mui"><LocalCafe className="iconspace-LocalCafe"/> Blog</Button></Link>  
 
               </div>
 

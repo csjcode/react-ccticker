@@ -35,6 +35,26 @@ a {
    text-decoration: none;
 }
 
+.iconspace-Whatshot {
+   color: red;
+   margin-right: 3px;
+}
+
+.iconspace-InfoOutline {
+   color: rgb(109, 109, 109);
+   margin-right: 3px;
+}
+
+.iconspace-ViewHeadline {
+   color: rgb(0, 171, 214);
+   margin-right: 3px;
+}
+
+.iconspace-LocalCafe {
+   color: rgb(160, 160, 160);
+   margin-right: 3px;
+}
+
 
 @media screen and (max-width:700px){
    .MenuAppBar--AppBar-button-container{
