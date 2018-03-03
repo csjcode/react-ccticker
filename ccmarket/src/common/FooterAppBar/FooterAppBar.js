@@ -35,8 +35,8 @@ import LocationOnIcon from 'material-ui-icons/LocationOn';
    }
  }
  
- FooterAppBar.propTypes = {
-   classes: PropTypes.object.isRequired,
- };
+//  FooterAppBar.propTypes = {
+//    classes: PropTypes.object.isRequired,
+//  };
  
  export default FooterAppBar;

@@ -2,6 +2,16 @@
 
 # CCMarket React Web App
 
+
+### React App
+
+I'm working on both a React and React Native app.
+
+This repo is the React (web) version. which is using Material-UI.
+
+
+
+
 * `npm install --save material-ui@next`
 * `npm install --save material-ui-icons`
 
