@@ -40,53 +40,22 @@ class DataTableRows extends Component {
 	  
 			var price_btc = parseFloat(data.price_btc).toFixed(5);
 		 
-			
+
 			
 			return (
-				 <TableRow key={data.id} className="DataTickerApi--row">
-					<TableCell className="DataTickerApi--col text-bigger collapsible">{data.rank}</TableCell>         
-					<TableCell className="DataTickerApi--col text-bigger">
-
-						<SimpleModalWrapped 
-							rank={data.rank} 
-							name={data.name} 
-							symbol={data.symbol} 
-							price_usd_commas={price_usd_commas} 
-							percent_change_1h={data.percent_change_1h} 
-							percent_change_24h={data.percent_change_24h} 
-						/>
-
-		
-					</TableCell> 
-					<TableCell className="DataTickerApi--col text-bigger">{data.symbol}</TableCell>
-					<TableCell className="DataTickerApi--col">{price_usd_commas}</TableCell> 
-	  
-					<TableCell className="DataTickerApi--col ">
-					{data.percent_change_1h > 0 ? (
-					  <span style={{color:'green'}}>{data.percent_change_1h}%</span>
-					) : (
-					  <span style={{color:'red'}}>{data.percent_change_1h}%</span>
-					)}
-					</TableCell>
-					<TableCell className="DataTickerApi--col ">
-					{data.percent_change_24h > 0 ? (
-					  <span style={{color:'green'}}>{data.percent_change_24h}%</span>
-					) : (
-					  <span style={{color:'red'}}>{data.percent_change_24h}%</span>
-					)}
-					</TableCell>
-					<TableCell className="DataTickerApi--col collapsible">
-					{data.percent_change_7d > 0 ? (
-					  <span style={{color:'green'}}>{data.percent_change_7d}%</span>
-					) : (
-					  <span style={{color:'red'}}>{data.percent_change_7d}%</span>
-					)}
-					</TableCell>
-					<TableCell className="DataTickerApi--col collapsible">{volume_usd_commas}</TableCell> 
-					<TableCell className="DataTickerApi--col collapsible">{market_cap_usd_commas}</TableCell> 
-					<TableCell className="DataTickerApi--col collapsible">{price_btc}</TableCell>
-					<TableCell className="DataTickerApi--col collapsible">{date}</TableCell>
-				 </TableRow>
+				<SimpleModalWrapped 
+					rank={data.rank} 
+					name={data.name} 
+					symbol={data.symbol} 
+					price_usd_commas={price_usd_commas} 
+					percent_change_1h = {data.percent_change_1h} 
+					percent_change_24h = {data.percent_change_24h}
+					percent_change_7d = {data.percent_change_7d} 
+					volume_usd_commas = {volume_usd_commas} 
+					market_cap_usd_commas = {market_cap_usd_commas} 
+					price_btc = {price_btc} 
+					date = {date} 
+				/>				 
 			)
 		 })
 	}

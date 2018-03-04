@@ -47,7 +47,11 @@ class DataTickerApi extends Component {
       //   );        
 
   render() {
-    return <DataBranch {...this.state} />;
+  return (
+    <div style={{minHeight:800}}>
+        <DataBranch {...this.state} />
+    </div>
+   );
   }
 }
 

@@ -5,28 +5,15 @@ import './CoinListSection.css';
 import LoadingView from '../../common/LoadingView/LoadingView';
 import ErrorView from '../../common/ErrorView/ErrorView';
 import {Divider, Paper} from 'material-ui'
-// import DataTableHead from '../../containers/DataTableHead/DataTableHead';
-import Table, { TableBody, TableCell, TableHead, TableRow } from 'material-ui/Table';
+import DataTableHead from '../../common/DataTableHead/DataTableHead';
+import Table, { TableCell, TableHead, TableRow } from 'material-ui/Table';
 import numberWithCommas from '../../utils/numberWithCommas';
 import {Theaters} from 'material-ui-icons'
 import coinListDescriptions from '../../data/coinlist-description.js';
 
 var myArr = coinListDescriptions.split('\n').map((x)=>x.split('|'));
-console.log(myArr);
+// console.log(myArr);
 
-const DataTableHead = () => {
-	return(
-	  <TableHead>
-		 <TableRow>
-			<TableCell style={{width:50}}>Rank</TableCell> 
-			<TableCell style={{width:100}}>Name</TableCell>
-			<TableCell style={{width:60}}>Symbol</TableCell> 
-			<TableCell style={{width:100}}>USD</TableCell> 
-			<TableCell style={{width:400}}>Description</TableCell> 
-		 </TableRow>
-	  </TableHead>
-	);
- }
 
 class CoinListSection extends Component {
 
