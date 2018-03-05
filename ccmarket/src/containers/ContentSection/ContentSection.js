@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 // import logo from '../images/logo.svg';
 import DataTickerApi from '../../common/DataTickerApi/DataTickerApi';
 import './ContentSection.css';

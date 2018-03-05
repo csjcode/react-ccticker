@@ -1,6 +1,6 @@
 import React, {Fragment} from 'react';
 import PropTypes from 'prop-types';
-import Table, { TableCell, TableHead, TableRow } from 'material-ui/Table';
+import { TableCell, TableHead, TableRow } from 'material-ui/Table';
 
 const DataTableHead = () => {
 	return(

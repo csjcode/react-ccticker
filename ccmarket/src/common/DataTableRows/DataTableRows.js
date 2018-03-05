@@ -1,26 +1,12 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
-import Table, { TableBody, TableCell, TableHead, TableRow } from 'material-ui/Table';
+// import Table, { TableBody, TableCell, TableHead, TableRow } from 'material-ui/Table';
 import numberWithCommas from '../../utils/numberWithCommas';
 import SimpleModalWrapped from '../DataModal/DataModal';
 
 // import PropTypes from 'prop-types'
 
 class DataTableRows extends Component {
-
-	state = {
-		open: false
-	}
-
-	handleModalOpen = () => {
-		// alert('open');
-		this.setState(prevState => ({ open: true }));
-	};
-  
-	handleModalClose = () => {
-		// alert('close');
-		this.setState(prevState => ({ open: false }));
-	};
 
 	render(props) {
 		return this.props.data.map((data)=>{
@@ -40,8 +26,6 @@ class DataTableRows extends Component {
 	  
 			var price_btc = parseFloat(data.price_btc).toFixed(5);
 		 
-
-			
 			return (
 				<SimpleModalWrapped 
 					rank={data.rank} 

@@ -10,6 +10,7 @@ import App from '../containers/App';
 import logo from '../images/logo.svg';
 import grey from 'material-ui/colors/grey';
 import green from 'material-ui/colors/green';
+import DataView from '../common/DataView/DataView'
 
 const theme = createMuiTheme({
    palette: {
@@ -28,15 +29,17 @@ const RouterIndex = (props) => {
             <Reboot />
             {/* <AlertSection /> */}
             <HeaderSection />
-            <Switch>
-               <Route exact path="/" render={()=><App pageOn="app" />}/>
-               <Route path="/market" render={()=><App pageOn="app" />}/>
-               <Route path="/coinlist" render={()=><CoinListPage pageOn="coinlist" />}/>
-               <Route path="/news" render={()=><NewsPage pageOn="news"/>}/>
-               <Route path="/blog" render={()=><App pageOn="app" />}/>
-               <Route path="/updates" render={()=><App pageOn="app" />}/>
-               <Route path="/faq" render={()=><App pageOn="app" />}/>
-            </Switch>
+            <div style={{minHeight:800}}>
+              <Switch>
+                <Route exact path="/" render={()=><App pageOn="app" />}/>
+                <Route path="/market" render={()=><App pageOn="app" />}/>
+                <Route path="/coinlist" render={()=><CoinListPage pageOn="coinlist" />}/>
+                <Route path="/news" render={()=><NewsPage pageOn="news"/>}/>
+                <Route path="/blog" render={()=><App pageOn="app" />}/>
+                <Route path="/updates" render={()=><App pageOn="app" />}/>
+                <Route path="/faq" render={()=><App pageOn="app" />}/>
+              </Switch>
+            </div>
             <FooterSection />
          </div>
       </MuiThemeProvider>

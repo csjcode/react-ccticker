@@ -4,16 +4,12 @@ import React, { Component } from 'react';
 import './CoinListSection.css';
 import LoadingView from '../../common/LoadingView/LoadingView';
 import ErrorView from '../../common/ErrorView/ErrorView';
-import {Divider, Paper} from 'material-ui'
-import DataTableHead from '../../common/DataTableHead/DataTableHead';
-import Table, { TableCell, TableHead, TableRow } from 'material-ui/Table';
+import {Paper} from 'material-ui'
 import numberWithCommas from '../../utils/numberWithCommas';
-import {Theaters} from 'material-ui-icons'
 import coinListDescriptions from '../../data/coinlist-description.js';
 
 var myArr = coinListDescriptions.split('\n').map((x)=>x.split('|'));
 // console.log(myArr);
-
 
 class CoinListSection extends Component {
 
@@ -24,19 +20,13 @@ class CoinListSection extends Component {
 	};
  
 	componentDidMount() {
-	// full url
 	  fetch("https://api.coinmarketcap.com/v1/ticker/?limit=100")
 		.then(res => res.json())
 		.then(
 		coinlist => this.setState(prev => ({ loading: false, coinlist})),
 		error => this.setState(prev => ({ loading: false, error }))
 		);
-
 		// console.log(this.state.coindescription);
-		// var myStr = this.state.coindescription;
-
-
-
 	 }
 
 	 renderError = () => <ErrorView />
@@ -55,9 +45,6 @@ class CoinListSection extends Component {
 						<h1>Top 100 Coin List</h1>
 						<h4>A descriptive listing of the 100 of the most active cryptocurrencies</h4>
 					</div>
-					{/* <Table className="DataTickerApi--main-table"> */}
-					{/* <DataTableHead /> */}
-					{/* <TableBody> */}
 					<table style={{padding:20, maxWidth:900}}>
 						<tr>
 							<th style={{width:50}}></th>
@@ -68,10 +55,7 @@ class CoinListSection extends Component {
 						</tr>
 						{this.renderTableRows()}
 					</table>
-
 					{this.renderCoinListDescription()} 
-					{/* </TableBody> */}
-					{/* </Table> */}
 				</Paper>
 			</div>
 		)
@@ -82,20 +66,20 @@ class CoinListSection extends Component {
 
 			return this.state.coinlist.map((data,index)=>{
 				data['24h_volume_usd'] = Math.trunc(data['24h_volume_usd']);
-				var date = new Date(data.last_updated*1000);
-				date = date.toTimeString();
-				date = date.replace(/\(.*\)/,'');
+				// var date = new Date(data.last_updated*1000);
+				// date = date.toTimeString();
+				// date = date.replace(/\(.*\)/,'');
 		  
 				var price_usd = '$' + parseFloat(data.price_usd).toFixed(2);
 		  
-				var volume_usd = data['24h_volume_usd']/1000;
+				// var volume_usd = data['24h_volume_usd']/1000;
 		  
-				var market_cap_usd_commas = numberWithCommas(data.market_cap_usd);
-				var market_cap_usd_commas = '$' + market_cap_usd_commas;
+				// var market_cap_usd_commas = numberWithCommas(data.market_cap_usd);
+				// var market_cap_usd_commas = '$' + market_cap_usd_commas;
 				var price_usd_commas = numberWithCommas(price_usd);
-				var volume_usd_commas = numberWithCommas(volume_usd);
+				// var volume_usd_commas = numberWithCommas(volume_usd);
 		  
-				var price_btc = parseFloat(data.price_btc).toFixed(5);
+				// var price_btc = parseFloat(data.price_btc).toFixed(5);
 
 				var description = '';
 				for(var i=0; i < myArr.length; i++){
@@ -104,7 +88,6 @@ class CoinListSection extends Component {
 						// console.log(description);
 					}
 				}
-	
 
 				return (
 					 <tr>
@@ -116,13 +99,32 @@ class CoinListSection extends Component {
 					 </tr>
 				)
 			 })
-
 	 }
 	 
-
 	render() {
 		if (this.state.loading) {
-			return this.renderLoading();
+			return (
+				<div style={{marginTop:30}}>
+					<Paper style={{maxWidth:1000, margin:'0 auto', padding:20}}>
+					<div style={{marginLeft:30}}>
+						<h1>Top 100 Coin List</h1>
+						<h4>A descriptive listing of the 100 of the most active cryptocurrencies</h4>
+					</div>
+					<LoadingView />
+					<table style={{padding:20, maxWidth:900}}>
+						<tr>
+							<th style={{width:50}}></th>
+							<th style={{width:150}}></th>
+							<th style={{width:50}}></th>
+							<th></th>
+							<th></th>
+						</tr>
+						
+					</table>
+					</Paper>
+				</div>
+
+				);
 		} else if (this.state.coinlist) {
 			return this.renderCoinList();
 		} else {

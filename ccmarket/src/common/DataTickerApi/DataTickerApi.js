@@ -37,22 +37,15 @@ class DataTickerApi extends Component {
         data => this.setState(prev => ({ loading: false, data })),
         error => this.setState(prev => ({ loading: false, error }))
       );
-     }
-  
-        // fetch("https://jsonplaceholder.typicode.com/photos/1")
-      //   .then(res => res.json())
-      //   .then(
-      //     photos => this.setState(prev => ({ loading: false, photos })),
-      //     error => this.setState(prev => ({ loading: false, error }))
-      //   );        
+     } 
 
   render() {
-  return (
-    <div style={{minHeight:800}}>
-        <DataBranch {...this.state} />
-    </div>
-   );
-  }
+    return (
+      <div style={{minHeight:800}}>
+          <DataBranch {...this.state} />
+      </div>
+    );
+    }
 }
 
 

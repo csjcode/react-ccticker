@@ -2,12 +2,10 @@
 	padding:50px;
 }
 
-
 .DataTickerApi--main-wrapper-paper {
    margin-top: 20px;
    padding: 40px;
 }
-
 
 .DataTickerApi--main-table{
    cursor: pointer;
@@ -30,7 +28,6 @@
 .DataTickerApi--col:hover {
    
 }
-
 
 /* .DataTickerApi--row:hover {
    background-color:#fffddd;

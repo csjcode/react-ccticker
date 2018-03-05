@@ -5,8 +5,8 @@ const LoadingView = () => {
 	return(
 		// <div className="LoadingView--container">Loading...</div>
 		<div className="LoadingView--container">
-			<p>Loading...</p>
 			<div class="loading">
+				<p>Loading...</p>
 				<div class="loading-bar"></div>
 				<div class="loading-bar"></div>
 				<div class="loading-bar"></div>
