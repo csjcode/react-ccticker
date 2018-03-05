@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 // import logo from '../images/logo.svg';
 // import DataTickerApi from '../../common/DataTickerApi/DataTickerApi';
 import './CoinListSection.css';
@@ -20,7 +21,7 @@ class CoinListSection extends Component {
 	};
  
 	componentDidMount() {
-	  fetch("https://api.coinmarketcap.com/v1/ticker/?limit=100")
+		fetch("https://api.coinmarketcap.com/v1/ticker/?limit=100")
 		.then(res => res.json())
 		.then(
 		coinlist => this.setState(prev => ({ loading: false, coinlist})),
@@ -109,8 +110,9 @@ class CoinListSection extends Component {
 					<div style={{marginLeft:30}}>
 						<h1>Top 100 Coin List</h1>
 						<h4>A descriptive listing of the 100 of the most active cryptocurrencies</h4>
+						<LoadingView />
 					</div>
-					<LoadingView />
+					
 					<table style={{padding:20, maxWidth:900}}>
 						<tr>
 							<th style={{width:50}}></th>
@@ -134,4 +136,4 @@ class CoinListSection extends Component {
 
  }
  
- export default CoinListSection;
+ export default connect()(CoinListSection);
