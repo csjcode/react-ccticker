@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom'
 // import logo from '../images/logo.svg';
 // import DataTickerApi from '../../common/DataTickerApi/DataTickerApi';
 import './CoinListSection.css';
@@ -135,5 +136,17 @@ class CoinListSection extends Component {
 	}
 
  }
- 
- export default connect()(CoinListSection);
+
+
+//  const mapStateToProps = state => {
+// 	return {
+// 		loading: this.state.loading, 
+// 		coinlist: this.state.coinlist,
+// 	}
+//  }
+
+
+//  export default withRouter(connect(mapStateToProps)(CoinListSection))
+
+export default connect()(CoinListSection);
+
