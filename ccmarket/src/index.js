@@ -9,7 +9,10 @@ import { BrowserRouter } from 'react-router-dom';
 import RouterIndex from './pages/RouterIndex';
 
 
-let store = createStore(coinlist);
+let store = createStore(
+  coinlist,
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+);
 
 
 ReactDOM.render((

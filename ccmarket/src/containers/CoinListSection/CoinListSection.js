@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { withRouter } from 'react-router-dom'
+import { withRouter } from 'react-router-dom';
+import { addCoinlist } from '../../actions/'
 // import logo from '../images/logo.svg';
 // import DataTickerApi from '../../common/DataTickerApi/DataTickerApi';
 import './CoinListSection.css';
@@ -16,11 +17,9 @@ var myArr = coinListDescriptions.split('\n').map((x)=>x.split('|'));
 class CoinListSection extends Component {
 
 	state = { 
-		loading: true, 
 		coinlist: [],
-		coindescription: ''
 	};
- 
+
 	componentDidMount() {
 		fetch("https://api.coinmarketcap.com/v1/ticker/?limit=100")
 		.then(res => res.json())
@@ -34,10 +33,6 @@ class CoinListSection extends Component {
 	 renderError = () => <ErrorView />
 
 	 renderLoading = () => <LoadingView />
-
-	 renderCoinListDescription = () => {
-
-	 }
 
 	 renderCoinList = () => {
 		return(
@@ -57,7 +52,7 @@ class CoinListSection extends Component {
 						</tr>
 						{this.renderTableRows()}
 					</table>
-					{this.renderCoinListDescription()} 
+					{/* {this.renderCoinListDescription()}  */}
 				</Paper>
 			</div>
 		)
@@ -68,20 +63,18 @@ class CoinListSection extends Component {
 
 			return this.state.coinlist.map((data,index)=>{
 				data['24h_volume_usd'] = Math.trunc(data['24h_volume_usd']);
+
 				// var date = new Date(data.last_updated*1000);
 				// date = date.toTimeString();
 				// date = date.replace(/\(.*\)/,'');
-		  
-				var price_usd = '$' + parseFloat(data.price_usd).toFixed(2);
-		  
 				// var volume_usd = data['24h_volume_usd']/1000;
-		  
 				// var market_cap_usd_commas = numberWithCommas(data.market_cap_usd);
 				// var market_cap_usd_commas = '$' + market_cap_usd_commas;
-				var price_usd_commas = numberWithCommas(price_usd);
 				// var volume_usd_commas = numberWithCommas(volume_usd);
-		  
 				// var price_btc = parseFloat(data.price_btc).toFixed(5);
+		  
+				var price_usd = '$' + parseFloat(data.price_usd).toFixed(2);
+				var price_usd_commas = numberWithCommas(price_usd);
 
 				var description = '';
 				for(var i=0; i < myArr.length; i++){
@@ -104,6 +97,7 @@ class CoinListSection extends Component {
 	 }
 	 
 	render() {
+		
 		if (this.state.loading) {
 			return (
 				<div style={{marginTop:30}}>
@@ -138,15 +132,15 @@ class CoinListSection extends Component {
  }
 
 
-//  const mapStateToProps = state => {
-// 	return {
-// 		loading: this.state.loading, 
-// 		coinlist: this.state.coinlist,
-// 	}
-//  }
+ const mapStateToProps = state => {
+	return {
+		loading: state.loading, 
+		coinlist: state.coinlist,
+	}
+ }
 
 
-//  export default withRouter(connect(mapStateToProps)(CoinListSection))
+ export default withRouter(connect(mapStateToProps)(CoinListSection));
 
-export default connect()(CoinListSection);
+// export default connect()(CoinListSection);
 
