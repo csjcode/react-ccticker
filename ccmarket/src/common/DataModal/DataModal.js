@@ -6,13 +6,14 @@ import Typography from 'material-ui/Typography';
 import Modal from 'material-ui/Modal';
 import { TableCell, TableRow } from 'material-ui/Table';
 import DataView from '../DataView/DataView'
+import DataBranchNews from '../../containers/DataBranchNews/DataBranchNews';
 
 function rand() {
   return Math.round(Math.random() * 20) - 10;
 }
 
 function getModalStyle() {
-  const top = 40 + rand();
+  const top = 55 + rand();
   const left = 50 + rand();
 
   return {
@@ -123,7 +124,7 @@ class SimpleModal extends React.Component {
                         Volume (1k)
                         </div>
                         <div class="DataModal--body-table-cell">
-                        Location
+                        BTC
                         </div>
                         <div class="DataModal--body-table-cell">
                         Market Cap
@@ -150,11 +151,14 @@ class SimpleModal extends React.Component {
                     </div>
 
                   </div>
-                      This is the description of  {name} <br />
+                      This is the description of {name} <br />
                   Currently ranked {rank} on our market charts.
                   <Typography variant="subheading" id="simple-modal-description">
                       More info will go here when available. <br />
                   </Typography>
+
+                  <DataBranchNews query={name} limit={6} /> 
+
                 </div>
               </div>
 
