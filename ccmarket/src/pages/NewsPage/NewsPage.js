@@ -23,7 +23,7 @@ class NewsPage extends Component {
             <h3>Bitcoin News Updates</h3>
           </div>
           <div>
-            <DataBranchNews query="Bitcoin" /> 
+            <DataBranchNews query="Bitcoin" limit="25" /> 
           </div>
         </div>
       </div>

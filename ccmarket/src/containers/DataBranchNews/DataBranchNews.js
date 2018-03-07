@@ -24,14 +24,13 @@ class DataBranchNews extends Component {
 		 data => this.setState(prev => ({ loading: false, data})),
 		 error => this.setState(prev => ({ loading: false, error }))
 	  );
- 
 	}
  
 	render(){
 	  if (this.state.loading) {
 		 return <LoadingView />;
 	  } else if (this.state.data) {
-	  return <NewsDataView data={this.state.data} />    
+	 	 return <NewsDataView data={this.state.data} limit={this.props.limit}/>    
 	  } else {
 		 return <ErrorView />;
 	  }
