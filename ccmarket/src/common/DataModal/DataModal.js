@@ -9,6 +9,8 @@ import { TableCell, TableRow } from 'material-ui/Table';
 import Close from 'material-ui-icons/Close';
 import DataView from '../DataView/DataView'
 import DataBranchNews from '../../containers/DataBranchNews/DataBranchNews';
+import {Divider} from 'material-ui'
+import {DriveEta} from 'material-ui-icons'
 
 function rand() {
   return Math.round(Math.random() * 20) - 10;
@@ -38,10 +40,11 @@ const styles = theme => ({
 class SimpleModal extends React.Component {
   state = {
     open: false,
+    currentSym:' '
   };
 
-  handleOpenModal = () => {
-    this.setState(prevState => ({ open: true }));
+  handleOpenModal = (symbol) => {
+    this.setState(prevState => ({ open: true, currentSym:this.props.symbol+' ' }));
   };
 
   handleCloseModal = () => {
@@ -51,6 +54,10 @@ class SimpleModal extends React.Component {
   render(props) {
     const { classes, rank, name, price_usd_commas, volume_usd_commas, percent_change_1h, 
       percent_change_24h, percent_change_7d, market_cap_usd_commas, price_btc, date, symbol, id  } = this.props;
+      
+      var graphPlaceholder1 = 'http://via.placeholder.com/250x150/00BC09/fff?text=' + this.state.currentSym + 'Chart';
+      var graphPlaceholder2 = 'http://via.placeholder.com/250x150/38E240/fff?text=' + this.state.currentSym + 'Chart';
+      var graphPlaceholder3 = 'http://via.placeholder.com/250x150/15E71F/fff?text=' + this.state.currentSym + 'Chart';
 
     return (
         <Fragment>
@@ -107,7 +114,7 @@ class SimpleModal extends React.Component {
                     <span className="header-label">(1hr &Delta;)</span>
                     <span className="header-data">{percent_change_24h}%</span>
                     <span className="header-label">(24hr &Delta;)</span> 
-                    <span className="header-label"><Close className="iconspace-Close" onClick={()=>this.handleCloseModal()}/></span> 
+                    <span className="header-label"><Close className="iconspace-Close" onClick={()=>this.handleCloseModal(symbol)}/></span> 
                   </div>
                 </div>
                 <div className="DataModal--body">
@@ -116,19 +123,19 @@ class SimpleModal extends React.Component {
                     <div class="DataModal--body-table">
         
                       <div class="DataModal--body-table-row-header ">
-                        <div class="DataModal--body-table-cell">
+                        <div class="DataModal--body-table-cell-label">
                         USD
                         </div>
-                        <div class="DataModal--body-table-cell">
+                        <div class="DataModal--body-table-cell-label">
                         7 Day Δ		
                         </div>
-                        <div class="DataModal--body-table-cell">
+                        <div class="DataModal--body-table-cell-label">
                         Volume (1k)
                         </div>
-                        <div class="DataModal--body-table-cell">
+                        <div class="DataModal--body-table-cell-label">
                         BTC
                         </div>
-                        <div class="DataModal--body-table-cell">
+                        <div class="DataModal--body-table-cell-label">
                         Market Cap
                         </div>
                       </div>
@@ -153,11 +160,26 @@ class SimpleModal extends React.Component {
                     </div>
 
                   </div>
-                      This is the description of {name} <br />
-                  Currently ranked {rank} on our market charts.
-                  <Typography variant="subheading" id="simple-modal-description">
-                      More info will go here when available. <br />
-                  </Typography>
+
+                  <div className="row">
+                    <div className="column">
+                      <img src={graphPlaceholder1}/>
+                    </div>
+                    <div className="column">
+                      <img src={graphPlaceholder2}/>
+                    </div>
+                    <div className="column">
+                      <img src={graphPlaceholder3}/>
+                    </div>
+                  </div>
+
+                  <div className="DataModal--body-text">
+                      <h3>{name} ({symbol}) News &amp; Info</h3>
+                      <h4>Currently ranked #{rank} on our market charts.</h4>
+                      <Typography variant="subheading" id="simple-modal-description">
+                          Watch for updates - {date}<br />
+                      </Typography>
+                  </div>
 
                   <DataBranchNews query={name} limit={6} /> 
 
