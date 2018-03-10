@@ -3,8 +3,10 @@ import PropTypes from 'prop-types';
 import "./DataModal.css";
 import { withStyles } from 'material-ui/styles';
 import Typography from 'material-ui/Typography';
+import Button from 'material-ui/Button';
 import Modal from 'material-ui/Modal';
 import { TableCell, TableRow } from 'material-ui/Table';
+import Close from 'material-ui-icons/Close';
 import DataView from '../DataView/DataView'
 import DataBranchNews from '../../containers/DataBranchNews/DataBranchNews';
 
@@ -13,7 +15,7 @@ function rand() {
 }
 
 function getModalStyle() {
-  const top = 55 + rand();
+  const top = 45;
   const left = 50 + rand();
 
   return {
@@ -101,11 +103,11 @@ class SimpleModal extends React.Component {
                     <h4 className="DataModal--header-headline">{name} </h4>
                   </div>
                   <div className="DataModal--header-right">
-                  <span className="header-data">{percent_change_1h}%</span>
+                    <span className="header-data">{percent_change_1h}%</span>
                     <span className="header-label">(1hr &Delta;)</span>
                     <span className="header-data">{percent_change_24h}%</span>
                     <span className="header-label">(24hr &Delta;)</span> 
-                  
+                    <span className="header-label"><Close className="iconspace-Close" onClick={()=>this.handleCloseModal()}/></span> 
                   </div>
                 </div>
                 <div className="DataModal--body">

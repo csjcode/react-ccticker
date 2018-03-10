@@ -14,7 +14,7 @@ class DataBranchNews extends Component {
  
 	  var url = 'https://newsapi.org/v2/everything?' +
 	  'q=' + this.props.query +  '&' +
-	  'from=2018-03-01&' +
+	  'from=2018-03-04&' +
 	  'sortBy=popularity&' +
 	  'apiKey=' + newsapikey;
  

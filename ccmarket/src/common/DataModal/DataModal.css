@@ -38,6 +38,8 @@
 
 .DataModal--header-right {
 	float: right;
+	position: relative;
+	top: -5px;
 }
 
 .DataModal--body {
@@ -71,6 +73,13 @@
 	color: gray;	
 	margin-left: 7px;
 	margin-right: 10px;
+}
+
+.iconspace-Close {
+	cursor: pointer;
+	position: relative;
+	left: 12px;
+	top: 3px;
 }
 
 .DataModal--body-table {
