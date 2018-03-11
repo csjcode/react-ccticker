@@ -5,6 +5,9 @@ curl https://newsapi.org/v2/everything -G -d q=cryptocurrency  -d from=2018-01-2
 
 ### General API Data
 
+* Coindesk
+https://www.coindesk.com/api/
+
 https://www.cryptocompare.com/api/
 
 * Price - Multi
