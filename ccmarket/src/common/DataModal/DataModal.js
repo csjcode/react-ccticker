@@ -9,6 +9,7 @@ import { TableCell, TableRow } from 'material-ui/Table';
 import Close from 'material-ui-icons/Close';
 import DataView from '../DataView/DataView'
 import DataBranchNews from '../../containers/DataBranchNews/DataBranchNews';
+import DataSymbol from '../../containers/DataSymbol/DataSymbol';
 import {Divider} from 'material-ui'
 import {DriveEta} from 'material-ui-icons'
 
