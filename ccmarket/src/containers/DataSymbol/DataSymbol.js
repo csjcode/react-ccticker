@@ -81,7 +81,7 @@ class DataSymbol extends Component {
   render(props) {
 	
 	const width = this.props.width || 250;
-	const height = this.props.width || 150;
+	const height = this.props.height || 120;
 
 	const { data } = this.state;
 	const { showTooltip, hideTooltip, tooltipData, tooltipTop, tooltipLeft } = this.props;
