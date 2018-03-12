@@ -22,20 +22,52 @@ class DataSymbol extends Component {
 	state = {
 		data: null,
 	};
+	/* 
+	var date = new Date(1520812800*1000); 
+	var y = date.getFullYear();
+	var m = (date.getMonth()+1);
+	var d = date.getDate();
+	var dateline = `${y}-${m}-${d}`;
+	
+	*/
 
 	async componentDidMount() {
-		const res = await fetch("https://api.coindesk.com/v1/bpi/historical/close.json");
+		const res = await fetch("https://min-api.cryptocompare.com/data/histoday?fsym=ETH&tsym=USD&limit=30&e=CCCAGG");
 		const data = await res.json();
 
 		this.setState({
-			data: Object.keys(data.bpi).map(date => {
+			data: data.Data.map((v,i) => {
+
+				var date = new Date(data.Data[i]["time"]*1000); 
+				var y = date.getFullYear();
+				var m = (date.getMonth()+1);
+				var d = date.getDate();
+				var dateline = `${y}-${m}-${d}`;
+
+				// console.log(data.Data[i]["close"]);
+
 				return {
-				date,
-				price: data.bpi[date],
+				date: dateline,
+				price: data.Data[i]["close"],
 				};
 			}),
 		});
 	}
+
+
+	// async componentDidMount() {
+	// 	const res = await fetch("https://api.coindesk.com/v1/bpi/historical/close.json");
+	// 	const data = await res.json();
+
+	// 	this.setState({
+	// 		data: Object.keys(data.bpi).map(date => {
+	// 			return {
+	// 			date,
+	// 			price: data.bpi[date],
+	// 			};
+	// 		}),
+	// 	});
+	// }
 
 	handleTooltip = ({ event, data, xSelector, xScale, yScale }) => {
 		const { showTooltip } = this.props;
