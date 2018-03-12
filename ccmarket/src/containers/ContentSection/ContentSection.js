@@ -2,6 +2,9 @@ import React from 'react';
 // import logo from '../images/logo.svg';
 import DataTickerApi from '../../common/DataTickerApi/DataTickerApi';
 import './ContentSection.css';
+import PropTypes from 'prop-types';
+
+
 
 const ContentSection = (props) => {
    return (
@@ -31,5 +34,9 @@ const ContentSection = (props) => {
      </div>
    )
  }
+
+ContentSection.propTypes = {
+  pageOn: PropTypes.string.isRequired,
+};
  
  export default ContentSection;

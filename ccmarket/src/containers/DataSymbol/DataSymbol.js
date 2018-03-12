@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import './DataSymbol.css';
 import { Line, Bar, LinePath } from "@vx/shape";
 import { withTooltip, Tooltip } from "@vx/tooltip";
 import { localPoint } from "@vx/event";
@@ -8,8 +9,7 @@ import { timeFormat } from "d3-time-format";
 
 // const width = window.innerWidth * .3;
 // const height = window.innerHeight * .3;
-const width = 150;
-const height = 100;
+;
 
 const xSelector = d => new Date(d.date);
 const ySelector = d => d.price;
@@ -55,7 +55,11 @@ class DataSymbol extends Component {
 		});
 	};
 
-  render() {
+  render(props) {
+	
+	const width = this.props.width || 250;
+	const height = this.props.width || 150;
+
 	const { data } = this.state;
 	const { showTooltip, hideTooltip, tooltipData, tooltipTop, tooltipLeft } = this.props;
 
@@ -93,13 +97,14 @@ class DataSymbol extends Component {
           fill="transparent"
         />
 			<Bar
+				className="tooltipData"
 				x={0}
 				y={0}
 				width={width}
 				height={height}
 				fill="transparent"
 				data={data}
-				onMouseMove={data => event =>
+				onMouseMove={data => event => 
 					this.handleTooltip({
 					event,
 					data,
@@ -119,8 +124,9 @@ class DataSymbol extends Component {
 					})}
 				/>
 				{tooltipData && (
-					<g>
+					<g className="tooltipData">
 						<Line
+							className="tooltipData"
 							from={{ x: tooltipLeft, y: 0 }}
 							to={{ x: tooltipLeft, y: yMax }}
 							stroke="#d3d3d3"
@@ -129,6 +135,7 @@ class DataSymbol extends Component {
 							strokeDasharray="4,6"
 						/>
 						<circle
+							className="tooltipData"
 							cx={tooltipLeft}
 							cy={tooltipTop}
 							r={4}
@@ -141,7 +148,7 @@ class DataSymbol extends Component {
 				)}
 			 </svg>
 				{tooltipData && (
-					<div>
+					<div className="tooltipData">
 					  <Tooltip
 						 top={tooltipTop - 12}
 						 left={tooltipLeft + 12}

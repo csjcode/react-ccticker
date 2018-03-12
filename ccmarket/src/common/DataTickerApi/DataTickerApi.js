@@ -30,7 +30,7 @@ class DataTickerApi extends Component {
   state = { loading: true };
 
     componentDidMount() {
-    // full url
+      
       fetch("https://api.coinmarketcap.com/v1/ticker/?limit=50")
       .then(res => res.json())
       .then(

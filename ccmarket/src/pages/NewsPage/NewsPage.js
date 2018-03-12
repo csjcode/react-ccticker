@@ -5,6 +5,7 @@ import ErrorView from '../../common/ErrorView/ErrorView';
 import NewsDataMap from '../../common/NewsDataMap/NewsDataMap';
 import NewsDataView from '../../common/NewsDataView/NewsDataView';
 import DataBranchNews from '../../containers/DataBranchNews/DataBranchNews';
+import DataSymbol from '../../containers/DataSymbol/DataSymbol';
 
 // import ContentSection from '../../containers/ContentSection/ContentSection';
 import PropTypes from 'prop-types';

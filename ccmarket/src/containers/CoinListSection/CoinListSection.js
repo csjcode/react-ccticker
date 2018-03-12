@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import { addCoinlist } from '../../actions/'
-// import logo from '../images/logo.svg';
-// import DataTickerApi from '../../common/DataTickerApi/DataTickerApi';
 import './CoinListSection.css';
 import LoadingView from '../../common/LoadingView/LoadingView';
 import ErrorView from '../../common/ErrorView/ErrorView';

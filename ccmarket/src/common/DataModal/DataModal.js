@@ -11,7 +11,7 @@ import DataView from '../DataView/DataView'
 import DataBranchNews from '../../containers/DataBranchNews/DataBranchNews';
 import DataSymbol from '../../containers/DataSymbol/DataSymbol';
 import {Divider} from 'material-ui'
-import {DriveEta} from 'material-ui-icons'
+import {DriveEta, DeviceHub} from 'material-ui-icons'
 
 function rand() {
   return Math.round(Math.random() * 20) - 10;
@@ -53,48 +53,49 @@ class SimpleModal extends React.Component {
   };
 
   render(props) {
+    
     const { classes, rank, name, price_usd_commas, volume_usd_commas, percent_change_1h, 
       percent_change_24h, percent_change_7d, market_cap_usd_commas, price_btc, date, symbol, id  } = this.props;
       
       var graphPlaceholder1 = 'http://via.placeholder.com/250x150/00BC09/fff?text=' + this.state.currentSym + 'Chart';
       var graphPlaceholder2 = 'http://via.placeholder.com/250x150/38E240/fff?text=' + this.state.currentSym + 'Chart';
       var graphPlaceholder3 = 'http://via.placeholder.com/250x150/15E71F/fff?text=' + this.state.currentSym + 'Chart';
-
+      
     return (
         <Fragment>
           <TableRow key={id} className="DataTickerApi--row" onClick={this.handleOpenModal}>
-          <TableCell className="DataTickerApi--col text-bigger collapsible">{rank}</TableCell>         
-          <TableCell className="DataTickerApi--col text-bigger">
-            {name}
-          </TableCell> 
-          <TableCell className="DataTickerApi--col text-bigger">{symbol}</TableCell>
-          <TableCell className="DataTickerApi--col">{price_usd_commas}</TableCell> 
+            <TableCell className="DataTickerApi--col text-bigger collapsible">{rank}</TableCell>         
+            <TableCell className="DataTickerApi--col text-bigger">
+              {name}
+            </TableCell> 
+            <TableCell className="DataTickerApi--col text-bigger">{symbol}</TableCell>
+            <TableCell className="DataTickerApi--col">{price_usd_commas}</TableCell> 
 
-          <TableCell className="DataTickerApi--col ">
-          {percent_change_1h > 0 ? (
-            <span style={{color:'green'}}>{percent_change_1h}%</span>
-          ) : (
-            <span style={{color:'red'}}>{percent_change_1h}%</span>
-          )}
-          </TableCell>
-          <TableCell className="DataTickerApi--col ">
-          {percent_change_24h > 0 ? (
-            <span style={{color:'green'}}>{percent_change_24h}%</span>
-          ) : (
-            <span style={{color:'red'}}>{percent_change_24h}%</span>
-          )}
-          </TableCell>
-          <TableCell className="DataTickerApi--col collapsible">
-          {percent_change_7d > 0 ? (
-            <span style={{color:'green'}}>{percent_change_7d}%</span>
-          ) : (
-            <span style={{color:'red'}}>{percent_change_7d}%</span>
-          )}
-          </TableCell>
-          <TableCell className="DataTickerApi--col collapsible">{volume_usd_commas}</TableCell> 
-          <TableCell className="DataTickerApi--col collapsible">{market_cap_usd_commas}</TableCell> 
-          <TableCell className="DataTickerApi--col collapsible">{price_btc}</TableCell>
-          <TableCell className="DataTickerApi--col collapsible">{date}</TableCell>
+            <TableCell className="DataTickerApi--col ">
+            {percent_change_1h > 0 ? (
+              <span style={{color:'green'}}>{percent_change_1h}%</span>
+            ) : (
+              <span style={{color:'red'}}>{percent_change_1h}%</span>
+            )}
+            </TableCell>
+            <TableCell className="DataTickerApi--col ">
+            {percent_change_24h > 0 ? (
+              <span style={{color:'green'}}>{percent_change_24h}%</span>
+            ) : (
+              <span style={{color:'red'}}>{percent_change_24h}%</span>
+            )}
+            </TableCell>
+            <TableCell className="DataTickerApi--col collapsible">
+            {percent_change_7d > 0 ? (
+              <span style={{color:'green'}}>{percent_change_7d}%</span>
+            ) : (
+              <span style={{color:'red'}}>{percent_change_7d}%</span>
+            )}
+            </TableCell>
+            <TableCell className="DataTickerApi--col collapsible">{volume_usd_commas}</TableCell> 
+            <TableCell className="DataTickerApi--col collapsible">{market_cap_usd_commas}</TableCell> 
+            <TableCell className="DataTickerApi--col collapsible">{price_btc}</TableCell>
+            <TableCell className="DataTickerApi--col collapsible">{date}</TableCell>
           </TableRow>
           <Modal
             aria-labelledby="simple-modal-title"
@@ -161,8 +162,19 @@ class SimpleModal extends React.Component {
                     </div>
 
                   </div>
-
                   <div className="row">
+                    <div className="column">
+                      <DataSymbol />
+                    </div>
+                    <div className="column">
+                      <DataSymbol />
+                    </div>
+                    <div className="column">
+                      <DataSymbol />
+                    </div>
+                  </div>
+
+                  {/* <div className="row">
                     <div className="column">
                       <img src={graphPlaceholder1}/>
                     </div>
@@ -172,7 +184,7 @@ class SimpleModal extends React.Component {
                     <div className="column">
                       <img src={graphPlaceholder3}/>
                     </div>
-                  </div>
+                  </div> */}
 
                   <div className="DataModal--body-text">
                       <h3>{name} ({symbol}) News &amp; Info</h3>
@@ -183,6 +195,8 @@ class SimpleModal extends React.Component {
                   </div>
 
                   <DataBranchNews query={name} limit={6} /> 
+
+                  
 
                 </div>
               </div>

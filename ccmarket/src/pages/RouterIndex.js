@@ -7,6 +7,7 @@ import FooterSection from '../containers/FooterSection/FooterSection';
 import CoinListPage from './CoinListPage/CoinListPage';
 import NewsPage from './NewsPage/NewsPage';
 import TestPage from './TestPage/TestPage';
+import ChartPage from './ChartPage/ChartPage';
 import App from '../containers/App';
 import logo from '../images/logo.svg';
 import grey from 'material-ui/colors/grey';
@@ -40,6 +41,8 @@ const RouterIndex = (props) => {
                 <Route path="/updates" render={()=><App pageOn="app" />}/>
                 <Route path="/faq" render={()=><App pageOn="app" />}/>
                 <Route path="/test" render={()=><TestPage pageOn="test" />}/>
+                <Route path="/charts" render={()=><ChartPage pageOn="chart" />}/>
+                
               </Switch>
             </div>
             <FooterSection />
