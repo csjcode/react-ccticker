@@ -7,10 +7,6 @@ import { scaleTime, scaleLinear } from "@vx/scale";
 import { extent, max, bisector } from "d3-array";
 import { timeFormat } from "d3-time-format";
 
-// const width = window.innerWidth * .3;
-// const height = window.innerHeight * .3;
-;
-
 const xSelector = d => new Date(d.date);
 const ySelector = d => d.price;
 
@@ -21,22 +17,25 @@ const bisectDate = bisector(xSelector).left;
 class DataSymbol extends Component {
 	state = {
 		data: null,
+		lineColor: null,
 	};
-	/* 
-	var date = new Date(1520812800*1000); 
-	var y = date.getFullYear();
-	var m = (date.getMonth()+1);
-	var d = date.getDate();
-	var dateline = `${y}-${m}-${d}`;
-	
-	*/
 
 	async componentDidMount() {
-		const res = await fetch("https://min-api.cryptocompare.com/data/histoday?fsym=ETH&tsym=USD&limit=30&e=CCCAGG");
+		
+		const sym = this.props.sym || 'BTC';
+
+		const res = await fetch(`https://min-api.cryptocompare.com/data/histoday?fsym=${sym}&tsym=USD&limit=30&e=CCCAGG`);
 		const data = await res.json();
 
+		var symFirstLastPrice = []
+
 		this.setState({
-			data: data.Data.map((v,i) => {
+
+			data: data.Data.map((v,i) => { 
+				
+				if (i===0 || i===data.Data.length-1){
+					symFirstLastPrice.push(data.Data[i]["close"]);
+				}
 
 				var date = new Date(data.Data[i]["time"]*1000); 
 				var y = date.getFullYear();
@@ -52,22 +51,14 @@ class DataSymbol extends Component {
 				};
 			}),
 		});
+
+		if (symFirstLastPrice[0] < symFirstLastPrice[1]){
+			this.setState(prevState => ({lineColor : "#0f0"}));
+		} else {
+			this.setState(prevState => ({lineColor : "#f00"}));
+		}
+
 	}
-
-
-	// async componentDidMount() {
-	// 	const res = await fetch("https://api.coindesk.com/v1/bpi/historical/close.json");
-	// 	const data = await res.json();
-
-	// 	this.setState({
-	// 		data: Object.keys(data.bpi).map(date => {
-	// 			return {
-	// 			date,
-	// 			price: data.bpi[date],
-	// 			};
-	// 		}),
-	// 	});
-	// }
 
 	handleTooltip = ({ event, data, xSelector, xScale, yScale }) => {
 		const { showTooltip } = this.props;
@@ -124,7 +115,8 @@ class DataSymbol extends Component {
           x={xSelector}
           y={ySelector}
           strokeWidth={2}
-          stroke="#0f0"
+			//  stroke="#0f0"
+			stroke = {this.state.lineColor}
           strokeLinecap="square"
           fill="transparent"
         />

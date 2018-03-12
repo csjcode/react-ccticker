@@ -1,4 +1,12 @@
-/* Create four equal columns that floats next to each other */
+
+.ChartPage--container {
+	margin: 20px 10px;
+}
+
+.ChartPage--heading {
+	text-align: center;
+}
+
 .ChartPage--column {
 	float: left;
 	min-width: 100px;
