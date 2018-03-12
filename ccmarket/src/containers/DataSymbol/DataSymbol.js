@@ -22,9 +22,24 @@ class DataSymbol extends Component {
 
 	async componentDidMount() {
 		
+		
 		const sym = this.props.sym || 'BTC';
+		const chartDateRange = this.props.chartDateRange || '30d';
 
-		const res = await fetch(`https://min-api.cryptocompare.com/data/histoday?fsym=${sym}&tsym=USD&limit=30&e=CCCAGG`);
+		var fetchUrl;
+		switch(chartDateRange) {
+			case '3d': fetchUrl = `https://min-api.cryptocompare.com/data/histoday?fsym=${sym}&tsym=USD&limit=3&e=CCCAGG`;
+			break; 
+			case '7d': fetchUrl = `https://min-api.cryptocompare.com/data/histoday?fsym=${sym}&tsym=USD&limit=7&e=CCCAGG`;
+			break; 
+			case '30d': fetchUrl = `https://min-api.cryptocompare.com/data/histoday?fsym=${sym}&tsym=USD&limit=30&e=CCCAGG`;
+			break; 
+			case '90d': fetchUrl = `https://min-api.cryptocompare.com/data/histoday?fsym=${sym}&tsym=USD&limit=90&e=CCCAGG`;
+			break; 
+		   default: fetchUrl = `https://min-api.cryptocompare.com/data/histoday?fsym=${sym}&tsym=USD&limit=30&e=CCCAGG`;
+		}
+
+		const res = await fetch(fetchUrl);
 		const data = await res.json();
 
 		var symFirstLastPrice = []

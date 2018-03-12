@@ -57,9 +57,9 @@ class SimpleModal extends React.Component {
     const { classes, rank, name, price_usd_commas, volume_usd_commas, percent_change_1h, 
       percent_change_24h, percent_change_7d, market_cap_usd_commas, price_btc, date, symbol, id  } = this.props;
       
-      var graphPlaceholder1 = 'http://via.placeholder.com/250x150/00BC09/fff?text=' + this.state.currentSym + 'Chart';
-      var graphPlaceholder2 = 'http://via.placeholder.com/250x150/38E240/fff?text=' + this.state.currentSym + 'Chart';
-      var graphPlaceholder3 = 'http://via.placeholder.com/250x150/15E71F/fff?text=' + this.state.currentSym + 'Chart';
+      // var graphPlaceholder1 = 'http://via.placeholder.com/250x150/00BC09/fff?text=' + this.state.currentSym + 'Chart';
+      // var graphPlaceholder2 = 'http://via.placeholder.com/250x150/38E240/fff?text=' + this.state.currentSym + 'Chart';
+      // var graphPlaceholder3 = 'http://via.placeholder.com/250x150/15E71F/fff?text=' + this.state.currentSym + 'Chart';
       
     return (
         <Fragment>
@@ -164,13 +164,13 @@ class SimpleModal extends React.Component {
                   </div>
                   <div className="row">
                     <div className="column">
-                      <DataSymbol />
+                      <DataSymbol sym={symbol} chartDateRange="7d" />
                     </div>
                     <div className="column">
-                      <DataSymbol />
+                      <DataSymbol sym={symbol} chartDateRange="30d" />
                     </div>
                     <div className="column">
-                      <DataSymbol />
+                      <DataSymbol sym={symbol} chartDateRange="90d" />
                     </div>
                   </div>
 
