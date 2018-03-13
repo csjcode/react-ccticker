@@ -3,6 +3,10 @@
    width: 50%; margin: 0 auto;
 }
 
+.MenuAppBar--AppBar-container-hamburger {
+   font-family: 'Raleway', sans-serif !important;
+}
+
 /* .MenuAppBar--AppBar-menuButtons {
    margin: 0 10px 0 0;
    border: 1px solid #666;

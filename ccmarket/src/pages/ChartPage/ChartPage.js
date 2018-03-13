@@ -4,7 +4,7 @@ import ChartPageContent from '../../containers/ChartPageContent/ChartPageContent
 import IconButton from 'material-ui/IconButton';
 import Button from 'material-ui/Button';
 import {DeviceHub} from 'material-ui-icons'
-
+import Link from 'react-router-dom/Link';
 
 
 class ChartPage extends Component {
@@ -19,18 +19,31 @@ class ChartPage extends Component {
       );
      } 
 
+	renderLinks = () => {
+		return(
+				<div className="ChartPage--subheading">
+				<span className="ChartPage-link"><a href="/charts/range/24h">24h</a></span>
+				<span className="ChartPage-link"><a href="/charts/range/7d">7 day</a></span> 
+				<span className="ChartPage-link"><a href="/charts/range/30d">30 day</a></span>
+				<span className="ChartPage-link"><a href="/charts/range/60d">60 day</a></span>
+				<span className="ChartPage-link"><a href="/charts/range/90d">90 day</a></span>
+			</div>	
+		)
+	}
+
 	render() {
+
 		return (
 			<Fragment>
 				<div className="ChartPage--container">
 					<div className="ChartPage--heading">
 						<h1>Coin Charts</h1>
 					</div>
-					<div className="ChartPage--subheading">
-						<Button>24h</Button> <Button>7 day</Button> <Button>30 day</Button>
-					</div>
-
-					<ChartPageContent />
+					
+						{this.renderLinks()}
+					
+					{/* <h1>{this.match.params.range}</h1> */}
+					<ChartPageContent {...this.props} />
 
 
 				</div>

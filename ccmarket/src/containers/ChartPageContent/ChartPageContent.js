@@ -30,7 +30,7 @@ class ChartPageContent extends Component {
 				// return ({data[i]})
 				return (
 					<div className="ChartPageContent--column">
-					<DataSymbol width={250} height={120} sym={data.symbol} />
+					<DataSymbol width={250} height={120} sym={data.symbol} {...this.props} />
 					<div className="ChartPageContent--column-subheading">{data.symbol}<br />{data.name}</div>
 					</div>
 				);
