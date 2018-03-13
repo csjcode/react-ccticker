@@ -4,8 +4,6 @@ import DataTickerApi from '../../common/DataTickerApi/DataTickerApi';
 import './ContentSection.css';
 import PropTypes from 'prop-types';
 
-
-
 const ContentSection = (props) => {
    return (
      <div className="ContentSection--container">
@@ -20,10 +18,6 @@ const ContentSection = (props) => {
         
         <p className="large-content">
           Cryptocurrencies are used primarily outside existing banking and governmental institutions and are exchanged over the Internet. While these alternative, decentralized modes of exchange are in the early stages of development, they have the unique potential to challenge existing systems of currency and payments. 
-        </p>
-        <p>
-          As of December 2017 total market capitalization of cryptocurrencies is bigger than 600 billion USD and record high daily volume is larger than 500 billion USD.
-
         </p>
       </div>
 

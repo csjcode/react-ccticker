@@ -22,27 +22,34 @@ class DataSymbol extends Component {
 
 	async componentDidMount() {
 		
-		
 		const sym = this.props.sym || 'BTC';
-		const chartDateRange = this.props.chartDateRange || '30d';
+		var chartDateRange = this.props.chartDateRange || '30d';
+		chartDateRange = this.props.chartDateRange || this.props.range;
 
 		var fetchUrl;
 		switch(chartDateRange) {
-			case '3d': fetchUrl = `https://min-api.cryptocompare.com/data/histoday?fsym=${sym}&tsym=USD&limit=3&e=CCCAGG`;
+			case '24h': 
+				fetchUrl = `https://min-api.cryptocompare.com/data/histohour?fsym=${sym}&tsym=USD&limit=24&e=CCCAGG`;
 			break; 
-			case '7d': fetchUrl = `https://min-api.cryptocompare.com/data/histoday?fsym=${sym}&tsym=USD&limit=7&e=CCCAGG`;
+			case '3d': 
+				fetchUrl = `https://min-api.cryptocompare.com/data/histoday?fsym=${sym}&tsym=USD&limit=3&e=CCCAGG`;
 			break; 
-			case '30d': fetchUrl = `https://min-api.cryptocompare.com/data/histoday?fsym=${sym}&tsym=USD&limit=30&e=CCCAGG`;
+			case '7d': 
+				fetchUrl = `https://min-api.cryptocompare.com/data/histoday?fsym=${sym}&tsym=USD&limit=7&e=CCCAGG`;
 			break; 
-			case '90d': fetchUrl = `https://min-api.cryptocompare.com/data/histoday?fsym=${sym}&tsym=USD&limit=90&e=CCCAGG`;
-			break; 
+			case '30d': 
+				fetchUrl = `https://min-api.cryptocompare.com/data/histoday?fsym=${sym}&tsym=USD&limit=30&e=CCCAGG`;
+			break;
+			case '90d': 
+				fetchUrl = `https://min-api.cryptocompare.com/data/histoday?fsym=${sym}&tsym=USD&limit=90&e=CCCAGG`;
+			break;
 		   default: fetchUrl = `https://min-api.cryptocompare.com/data/histoday?fsym=${sym}&tsym=USD&limit=30&e=CCCAGG`;
 		}
 
 		const res = await fetch(fetchUrl);
 		const data = await res.json();
 
-		var symFirstLastPrice = []
+		var symFirstLastPrice = [];
 
 		this.setState({
 
@@ -56,10 +63,13 @@ class DataSymbol extends Component {
 				var y = date.getFullYear();
 				var m = (date.getMonth()+1);
 				var d = date.getDate();
-				var dateline = `${y}-${m}-${d}`;
-
-				// console.log(data.Data[i]["close"]);
-
+				var h = date.getHours();
+				if (chartDateRange==='24h'){
+					var dateline = `${y}-${m}-${d}:${h}`;
+				} else {
+					var dateline = `${y}-${m}-${d}`;
+				}
+				
 				return {
 				date: dateline,
 				price: data.Data[i]["close"],
