@@ -14,15 +14,16 @@
 
 .MenuAppBar--AppBar-menuButtons-mui {
    margin: 0 15px 0 0;
-   border: 1px solid #666;
+   border: 1px solid indianred !important;
    padding:8px;
    text-decoration: none;
    color: black;
    transition-duration: 0.3s;
 }
 
-.MenuAppBar--AppBar-menuButtons:hover {
-   background-color: silver;
+.MenuAppBar--AppBar-menuButtons-mui:hover {
+   background-color: rgb(226, 226, 226) !important;
+   border: 1px solid rgb(0, 0, 0) !important;
 }
 
 .MenuAppBar--AppBar-button-container {
@@ -35,24 +36,29 @@ a {
    text-decoration: none;
 }
 
+.iconspace-ShowChart {
+   color: rgb(32, 32, 32);
+   margin-right: 5px;
+}
+
 .iconspace-Whatshot {
    color: red;
-   margin-right: 3px;
+   margin-right: 5px;
 }
 
 .iconspace-InfoOutline {
-   color: rgb(109, 109, 109);
-   margin-right: 3px;
+   color: rgb(32, 32, 32);
+   margin-right: 5px;
 }
 
 .iconspace-ViewHeadline {
-   color: rgb(0, 171, 214);
-   margin-right: 3px;
+   color: rgb(32, 32, 32);
+   margin-right: 5px;
 }
 
 .iconspace-LocalCafe {
-   color: rgb(160, 160, 160);
-   margin-right: 3px;
+   color: rgb(32, 32, 32);
+   margin-right: 5px;
 }
 
 

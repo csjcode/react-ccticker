@@ -12,6 +12,7 @@ import AccountCircle from 'material-ui-icons/AccountCircle';
 import Whatshot from 'material-ui-icons/Whatshot';
 import ViewHeadline from 'material-ui-icons/ViewHeadline';
 import InfoOutline from 'material-ui-icons/InfoOutline';
+import ShowChart from 'material-ui-icons/ShowChart';
 import LocalCafe from 'material-ui-icons/LocalCafe';
 import Menu, { MenuItem } from 'material-ui/Menu';
 import Link from 'react-router-dom/Link';
@@ -65,7 +66,7 @@ class MenuAppBar extends Component {
 
     return (
       <div className={classes.root}>
-        <AppBar className='MenuAppBar--AppBar-container' position="static">
+        <AppBar className='MenuAppBar--AppBar-container' position="fixed" color="#696969">
           <Toolbar>
           <Menu
                   id="menu-appbar"
@@ -105,13 +106,15 @@ class MenuAppBar extends Component {
               Coin.API.cc
             </Typography>
             <div className="MenuAppBar--AppBar-button-container">
-              <Link to="/market"><Button raised className="MenuAppBar--AppBar-menuButtons-mui"> <Whatshot className="iconspace-Whatshot"/> Market Monitor</Button></Link>   
+              <Link to="/market"><Button className="MenuAppBar--AppBar-menuButtons-mui"> <Whatshot className="iconspace-Whatshot"/> Monitor</Button></Link>
 
-              <Link to="/coinlist"><Button raised className="MenuAppBar--AppBar-menuButtons-mui"><InfoOutline className="iconspace-InfoOutline"/> Coin List</Button></Link>   
+              <Link to="/charts"><Button className="MenuAppBar--AppBar-menuButtons-mui"><ShowChart className="iconspace-ShowChart"/> Charts</Button></Link>  
 
-              <Link to="/news"><Button raised className="MenuAppBar--AppBar-menuButtons-mui"><ViewHeadline className="iconspace-ViewHeadline"/> Coin News</Button></Link>  
+              <Link to="/coinlist"><Button className="MenuAppBar--AppBar-menuButtons-mui"><InfoOutline className="iconspace-InfoOutline"/> Info</Button></Link>   
 
-              <Link to="/blog"><Button raised className="MenuAppBar--AppBar-menuButtons-mui"><LocalCafe className="iconspace-LocalCafe"/> Blog</Button></Link>  
+              <Link to="/news"><Button className="MenuAppBar--AppBar-menuButtons-mui"><ViewHeadline className="iconspace-ViewHeadline"/> News</Button></Link>  
+
+              <Link to="/blog"><Button className="MenuAppBar--AppBar-menuButtons-mui"><LocalCafe className="iconspace-LocalCafe"/> Blog</Button></Link>  
 
               </div>
 

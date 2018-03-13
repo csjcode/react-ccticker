@@ -31,7 +31,7 @@ const RouterIndex = (props) => {
             <Reboot />
             {/* <AlertSection /> */}
             <HeaderSection />
-            <div style={{minHeight:800}}>
+            <div style={{marginTop:80,minHeight:800}}>
               <Switch>
                 <Route exact path="/" render={()=><App pageOn="app" />}/>
                 <Route path="/market" render={()=><App pageOn="app" />}/>
