@@ -79,6 +79,12 @@
 	margin-right: 10px;
 }
 
+.DataModal--chart-label {
+	font-size: 11px;
+	padding-bottom: 5px;
+	text-align: center;
+}
+
 .iconspace-Close {
 	cursor: pointer;
 	position: relative;

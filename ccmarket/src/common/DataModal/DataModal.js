@@ -11,7 +11,7 @@ import DataView from '../DataView/DataView'
 import DataBranchNews from '../../containers/DataBranchNews/DataBranchNews';
 import DataSymbol from '../../containers/DataSymbol/DataSymbol';
 import {Divider} from 'material-ui'
-import {DriveEta, DeviceHub} from 'material-ui-icons'
+import {DriveEta, DeviceHub, Devices} from 'material-ui-icons'
 
 function rand() {
   return Math.round(Math.random() * 20) - 10;
@@ -147,10 +147,10 @@ class SimpleModal extends React.Component {
                           {price_usd_commas} 
                         </div>
                         <div class="DataModal--body-table-cell" data-title="">
-                        {percent_change_7d} 
+                        {percent_change_7d}%
                         </div>
                         <div class="DataModal--body-table-cell" data-title="">
-                        {volume_usd_commas} 
+                        ${volume_usd_commas} 
                         </div>
                         <div class="DataModal--body-table-cell" data-title="">
                         {price_btc} 
@@ -164,12 +164,15 @@ class SimpleModal extends React.Component {
                   </div>
                   <div className="row">
                     <div className="column">
+                      <div className="DataModal--chart-label">7 Day</div>
                       <DataSymbol sym={symbol} chartDateRange="7d" />
                     </div>
                     <div className="column">
+                      <div className="DataModal--chart-label">30 Day</div>
                       <DataSymbol sym={symbol} chartDateRange="30d" />
                     </div>
                     <div className="column">
+                      <div className="DataModal--chart-label">90 Day</div>
                       <DataSymbol sym={symbol} chartDateRange="90d" />
                     </div>
                   </div>
