@@ -17,7 +17,7 @@ const ContentSection = (props) => {
       <div className="ContentSection--intro">
         
         <p className="large-content">
-          Cryptocurrencies are used primarily outside existing banking and governmental institutions and are exchanged over the Internet. While these alternative, decentralized modes of exchange are in the early stages of development, they have the unique potential to challenge existing systems of currency and payments. 
+          <b>BETA:</b>This is an experimental service. Cryptocurrencies are used primarily outside existing banking and governmental institutions and are exchanged over the Internet. While these alternative, decentralized modes of exchange are in the early stages of development, they have the unique potential to challenge existing systems of currency and payments. 
         </p>
       </div>
 

@@ -8,6 +8,7 @@ import CoinListPage from './CoinListPage/CoinListPage';
 import NewsPage from './NewsPage/NewsPage';
 import TestPage from './TestPage/TestPage';
 import ChartPage from './ChartPage/ChartPage';
+import TermsPage from './TermsPage/TermsPage';
 import App from '../containers/App';
 import logo from '../images/logo.svg';
 import grey from 'material-ui/colors/grey';
@@ -43,6 +44,9 @@ const RouterIndex = (props) => {
                 <Route path="/test" render={()=><TestPage pageOn="test" />}/>
                 <Route path="/charts/range/:range(24h|7d|30d|90d)" render={({match})=><ChartPage pageOn="chart" range={match.params.range}/>}/>
                 <Route path="/charts" render={()=><ChartPage pageOn="chart" />}/>
+                <Route path="/terms" render={()=><TermsPage pageOn="terms" />}/>
+                
+                
                 
               </Switch>
             </div>
