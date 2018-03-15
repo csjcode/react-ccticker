@@ -8,6 +8,9 @@ For current working directories see:
 https://github.com/csjcode/react-ccticker/tree/master/ccmarket/src
 
 
+Demo (note: daily dev in progress, some parts not available while I work on them!!!):
+http://coin.api.cc/
+
 ## Coin.API.cc
 
 I'll fill this in more when I get a chance.
