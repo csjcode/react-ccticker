@@ -34,8 +34,8 @@ class DataTickerApi extends Component {
       fetch("https://api.coinmarketcap.com/v1/ticker/?limit=50")
       .then(res => res.json())
       .then(
-        data => this.setState(prev => ({ loading: false, data })),
-        error => this.setState(prev => ({ loading: false, error }))
+        data => this.setState(prevState => ({ loading: false, data })),
+        error => this.setState(prevState => ({ loading: false, error }))
       );
      } 
 
