@@ -37,6 +37,10 @@ https://min-api.cryptocompare.com/data/pricemulti?fsyms=ETH,DASH&tsyms=BTC,USD,E
 https://www.cryptocompare.com/api/#-api-data-price-
 
 
+* Cryptocompare Historical
+
+https://min-api.cryptocompare.com/data/histoday?fsym=BTC&tsym=USD&limit=30&aggregate=3&e=CCCAGG
+
 Sample API call
 
 ```

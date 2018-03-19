@@ -21,7 +21,7 @@ class ChartPage extends Component {
 
 	renderLinks = () => {
 		return(
-				<div className="ChartPage--subheading">
+			<div className="ChartPage--subheading">
 				<span className="ChartPage-link"><a href="/charts/range/24h">24h</a></span>
 				<span className="ChartPage-link"><a href="/charts/range/7d">7 day</a></span> 
 				<span className="ChartPage-link"><a href="/charts/range/30d">30 day</a></span>
