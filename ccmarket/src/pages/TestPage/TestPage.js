@@ -3,6 +3,7 @@ import './TestPage.css';
 import DataSymbol from '../../containers/DataSymbol/DataSymbol'
 import {Button, Divider} from 'material-ui';
 import {connect} from 'react-redux';
+import {bindActionCreators} from 'redux';
 import { updateUser } from '../../actions/user-actions';
 import { updateCoinlist } from '../../actions/coinlist-actions'; 
 
@@ -58,14 +59,17 @@ const mapStateToProps = (state,props) => {
 	return {
 		products: state.products,
 		user: state.user,
-		coinlist: state.coinlist
+		coinlist: state.coinlist,
+		coinlistFavorites: `${state.user} ${props.myCoins} `
 	}
 };
 
-const mapActionsToProps = {
-	onUpdateUser: updateUser,
-	onUpdateUserInput: updateUser,
-	onUpdateCoinlist: updateCoinlist
+const mapActionsToProps = (dispatch, props) => {
+	return bindActionCreators({
+		onUpdateUser: updateUser,
+		onUpdateUserInput: updateUser,
+		onUpdateCoinlist: updateCoinlist
+	}, dispatch)
 };
 
 export default connect(mapStateToProps,mapActionsToProps)(TestPage);
