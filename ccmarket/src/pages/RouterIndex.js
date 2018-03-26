@@ -41,7 +41,7 @@ const RouterIndex = (props) => {
                 <Route path="/blog" render={()=><App pageOn="app" />}/>
                 <Route path="/updates" render={()=><App pageOn="app" />}/>
                 <Route path="/faq" render={()=><App pageOn="app" />}/>
-                <Route path="/test" render={()=><TestPage pageOn="test" />}/>
+                <Route path="/test" render={()=><TestPage pageOn="test" myCoins='testdata' />}/>
                 <Route path="/charts/range/:range(24h|7d|30d|90d)" render={({match})=><ChartPage pageOn="chart" range={match.params.range}/>}/>
                 <Route path="/charts" render={()=><ChartPage pageOn="chart" />}/>
                 <Route path="/terms" render={()=><TermsPage pageOn="terms" />}/>

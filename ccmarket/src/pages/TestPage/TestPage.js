@@ -53,11 +53,14 @@ class TestPage extends Component {
 	}
 }
 
-const mapStateToProps = state => ({
-	products: state.products,
-	user: state.user,
-	coinlist: state.coinlist
-});
+const mapStateToProps = (state,props) => {
+	console.log(props);
+	return {
+		products: state.products,
+		user: state.user,
+		coinlist: state.coinlist
+	}
+};
 
 const mapActionsToProps = {
 	onUpdateUser: updateUser,
