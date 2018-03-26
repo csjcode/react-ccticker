@@ -36,7 +36,7 @@ class TestPage extends Component {
 				<div style={{padding:20}}>
 					<Button onClick={this.onUpdateUser}>Update User</Button>
 				</div>
-				<div tyle={{padding:20}}>
+				<div style={{padding:20}}>
 					<input onChange={this.onUpdateUserInput} />
 				</div>
 				<div style={{padding:20}}>
