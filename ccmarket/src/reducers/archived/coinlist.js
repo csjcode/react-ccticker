@@ -3,7 +3,8 @@ const coinlist = (state = [], action) => {
 	  case 'ADD_COINLIST':
 		 return {
 				coinlist: coinlist,
-				loading: false
+				loading: false,
+				item: 1
 			}
 	  default:
 		 return state

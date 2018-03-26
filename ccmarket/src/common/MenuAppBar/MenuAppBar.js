@@ -85,9 +85,9 @@ class MenuAppBar extends Component {
                   <MenuItem onClick={this.handleClose}><Link to="/market">Market Monitor</Link></MenuItem>
                   <MenuItem onClick={this.handleClose}><Link to="/coinlist">Coin List</Link></MenuItem>
                   <MenuItem onClick={this.handleClose}><Link to="/news">Coin News</Link></MenuItem>
-                  <MenuItem onClick={this.handleClose}><Link to="/blog">Blog</Link></MenuItem>
+                  {/* <MenuItem onClick={this.handleClose}><Link to="/blog">Blog</Link></MenuItem>
                   <MenuItem onClick={this.handleClose}><Link to="profile">Profile</Link></MenuItem>
-                  <MenuItem onClick={this.handleClose}><Link to="/account">My account</Link></MenuItem>
+                  <MenuItem onClick={this.handleClose}><Link to="/account">My account</Link></MenuItem> */}
                 </Menu>
               <MenuIcon />
             <IconButton 
@@ -114,7 +114,7 @@ class MenuAppBar extends Component {
 
               <Link to="/news"><Button className="MenuAppBar--AppBar-menuButtons-mui"><ViewHeadline className="iconspace-ViewHeadline"/> News</Button></Link>  
 
-              <Link to="/blog"><Button className="MenuAppBar--AppBar-menuButtons-mui"><LocalCafe className="iconspace-LocalCafe"/> Blog</Button></Link>  
+              {/* <Link to="/blog"><Button className="MenuAppBar--AppBar-menuButtons-mui"><LocalCafe className="iconspace-LocalCafe"/> Blog</Button></Link>   */}
 
               </div>
 

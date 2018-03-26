@@ -12,7 +12,7 @@ const d = date.getDate();
 // const d1 = date.getDate()-1;
 // const d2 = date.getDate()-2;
 // const d7 = date.getDate()-7;
-// const dateline = `${y}-${m}-${d}`;
+const dateline = `${y}-${m}-${d}`;
 // const dateline2 = `${y}-${m}-${d2}`;
 // const dateline7 = `${y}-${m}-${d7}`;
 
@@ -25,15 +25,15 @@ class DataBranchNews extends Component {
 
 	  var url = 'https://newsapi.org/v2/everything?' +
 	  'q=' + this.props.query +  '&' +
-	  'from=${dateline}&' +
+	  'from=2018-03-15&' +
 	  'sortBy=popularity&' +
 	  'apiKey=' + newsapikey;
  
 	  fetch(url)
 	  .then(res => res.json())
 	  .then(
-		 data => this.setState(prev => ({ loading: false, data})),
-		 error => this.setState(prev => ({ loading: false, error }))
+		 data => this.setState(prevState => ({ loading: false, data})),
+		 error => this.setState(prevState => ({ loading: false, error }))
 	  );
 	}
  

@@ -11,9 +11,7 @@ import DataSymbol from '../../containers/DataSymbol/DataSymbol';
 import PropTypes from 'prop-types';
 
 class NewsPage extends Component {
-  static propTypes = {
 
-  }
   render() {
     return (
       <div className="NewsPage--container">
