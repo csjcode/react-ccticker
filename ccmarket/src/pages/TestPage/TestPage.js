@@ -1,10 +1,10 @@
 import React, { Component, Fragment } from 'react';
 import './TestPage.css';
 import DataSymbol from '../../containers/DataSymbol/DataSymbol'
-import {Button, Divider} from 'material-ui';
+import {Button} from 'material-ui';
+// import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
-import {bindActionCreators} from 'redux';
-import { updateUser } from '../../actions/user-actions';
+import { updateUser, apiRequest } from '../../actions/user-actions';
 import { updateCoinlist } from '../../actions/coinlist-actions'; 
 
 class TestPage extends Component {
@@ -14,6 +14,10 @@ class TestPage extends Component {
 		this.onUpdateCoinlist = this.onUpdateCoinlist.bind(this);
 		this.onUpdateUserInput = this.onUpdateUserInput.bind(this);
 	}	
+
+	componentDidMount(){
+		this.props.onApiRequest();
+	}
 	
 	onUpdateUser(){
 		this.props.onUpdateUser('csjower');
@@ -28,7 +32,7 @@ class TestPage extends Component {
 	}
 
 	render() {
-		console.log(this.props);
+		// console.log(this.props);
 		return (
 			<Fragment>
 				<div style={{padding:20}}>
@@ -55,21 +59,35 @@ class TestPage extends Component {
 }
 
 const mapStateToProps = (state,props) => {
-	console.log(props);
+	// console.log(props);
 	return {
 		products: state.products,
 		user: state.user,
 		coinlist: state.coinlist,
-		coinlistFavorites: `${state.user} ${props.myCoins} `
+		coinlistFavorites: `${state.user} ${props.myCoins}`
 	}
 };
 
-const mapActionsToProps = (dispatch, props) => {
-	return bindActionCreators({
-		onUpdateUser: updateUser,
-		onUpdateUserInput: updateUser,
-		onUpdateCoinlist: updateCoinlist
-	}, dispatch)
+const mapActionsToProps = {
+	onUpdateUser: updateUser,
+	onUpdateUserInput: updateUser,
+	onUpdateCoinlist: updateCoinlist,
+	onApiRequest: apiRequest
 };
+// const mapActionsToProps = (dispatch, props) => {
+// 	// console.log(props);
+// 	return bindActionCreators({
+// 		onUpdateUser: updateUser,
+// 		onUpdateUserInput: updateUser,
+// 		onUpdateCoinlist: updateCoinlist
+// 	}, dispatch)
+// };
+
+// const mergeProps = (propsFromState,propsFromDispatch,ownProps) => {
+// 	console.log(propsFromState,propsFromDispatch,ownProps)
+// 	return propsFromState;
+// }
+
+// export default connect(mapStateToProps,mapActionsToProps,mergeProps)(TestPage);
 
 export default connect(mapStateToProps,mapActionsToProps)(TestPage);

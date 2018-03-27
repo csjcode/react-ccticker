@@ -45,9 +45,6 @@ const RouterIndex = (props) => {
                 <Route path="/charts/range/:range(24h|7d|30d|90d)" render={({match})=><ChartPage pageOn="chart" range={match.params.range}/>}/>
                 <Route path="/charts" render={()=><ChartPage pageOn="chart" />}/>
                 <Route path="/terms" render={()=><TermsPage pageOn="terms" />}/>
-                
-                
-                
               </Switch>
             </div>
             <FooterSection />
