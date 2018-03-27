@@ -16,7 +16,12 @@ export function apiRequest(){
 		fetch('https://api.github.com/users/csjcode')
 		.then(data => data.json())
 		.then(data => {
-		  console.log('fetching data');
+			if (data.ok) {
+				return console.log(data.json());
+			 } else {
+				return console.log('Something went wrong');
+			 }
+		//   console.log('fetching data');
 		});
 	};
 }

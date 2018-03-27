@@ -74,6 +74,7 @@ const mapActionsToProps = {
 	onUpdateCoinlist: updateCoinlist,
 	onApiRequest: apiRequest
 };
+// onApiRequest: apiRequest
 // const mapActionsToProps = (dispatch, props) => {
 // 	// console.log(props);
 // 	return bindActionCreators({
