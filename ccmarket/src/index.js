@@ -27,8 +27,7 @@ const store = createStore(allReducers,
 	{
     products: [{name:'Bitcoin',}],
     user: 'Chris',
-    coinlist: [],
-    loading: false
+    coinlist: []
   },
   allStoreEnhancers
 );
