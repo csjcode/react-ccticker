@@ -1,14 +1,14 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import './NewsPage.css';
-import LoadingView from '../../common/LoadingView/LoadingView';
-import ErrorView from '../../common/ErrorView/ErrorView';
-import NewsDataMap from '../../common/NewsDataMap/NewsDataMap';
-import NewsDataView from '../../common/NewsDataView/NewsDataView';
+// import LoadingView from '../../common/LoadingView/LoadingView';
+// import ErrorView from '../../common/ErrorView/ErrorView';
+// import NewsDataMap from '../../common/NewsDataMap/NewsDataMap';
+// import NewsDataView from '../../common/NewsDataView/NewsDataView';
 import DataBranchNews from '../../containers/DataBranchNews/DataBranchNews';
-import DataSymbol from '../../containers/DataSymbol/DataSymbol';
+// import DataSymbol from '../../containers/DataSymbol/DataSymbol';
 
 // import ContentSection from '../../containers/ContentSection/ContentSection';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 
 class NewsPage extends Component {
 

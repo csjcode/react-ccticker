@@ -4,8 +4,8 @@ import DataSymbol from '../../containers/DataSymbol/DataSymbol'
 import {Button} from 'material-ui';
 // import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
-import { updateUser, apiRequest } from '../../actions/user-actions';
-import { updateCoinlist } from '../../actions/coinlist-actions'; 
+import { updateUser } from '../../actions/user-actions';
+import { apiRequest,clearCoinlist } from '../../actions/coinlist-actions';
 
 class TestPage extends Component {
 	constructor(props){
@@ -13,10 +13,12 @@ class TestPage extends Component {
 		this.onUpdateUser = this.onUpdateUser.bind(this);
 		this.onUpdateCoinlist = this.onUpdateCoinlist.bind(this);
 		this.onUpdateUserInput = this.onUpdateUserInput.bind(this);
+		this.onClearCoinlist = this.onClearCoinlist.bind(this);
 	}	
 
 	componentDidMount(){
-		this.props.onApiRequest();
+			// this.props.onApiRequest();
+		
 	}
 	
 	onUpdateUser(){
@@ -24,7 +26,11 @@ class TestPage extends Component {
 	}
 
 	onUpdateCoinlist(){
-		this.props.onUpdateCoinlist('dataHere');
+		this.props.onApiRequest();
+	}
+
+	onClearCoinlist(){
+		this.props.onClearCoinlist();
 	}
 
 	onUpdateUserInput(event){
@@ -32,26 +38,43 @@ class TestPage extends Component {
 	}
 
 	render() {
-		// console.log(this.props);
+
+		if(this.props.coinlist.length>0){
+			var id,title,body;
+			var renderThis = this.props.coinlist.map((item,id) => {
+				if(id<20){
+					id = this.props.coinlist[id]["id"];
+					title = this.props.coinlist[id]["title"];
+					body = this.props.coinlist[id]["body"];
+					// console.log(`${id} ${title} ${body}`);
+					return <div style={{margin:20}}>{id} - {title} - {body}</div>
+				}
+			});
+			
+		}
+
+		
 		return (
 			<Fragment>
 				<div style={{padding:20}}>
 					<DataSymbol />
 				</div>
 				<div style={{padding:20}}>
-					<Button onClick={this.onUpdateUser}>Update User</Button>
+					<Button raised onClick={this.onUpdateUser}>Update User</Button>
 				</div>
 				<div style={{padding:20}}>
 					<input onChange={this.onUpdateUserInput} />
 				</div>
 				<div style={{padding:20}}>
-					<Button onClick={this.onUpdateCoinlist}>Update Coinlist</Button>
+					<Button raised onClick={this.onUpdateCoinlist}>Update Coinlist</Button> <Button raised onClick={this.onClearCoinlist}>Clear Coinlist</Button>
+				</div>
+
+				<div style={{padding:20}}>
+				{this.props.user}
+				
 				</div>
 				<div style={{padding:20}}>
-					{this.props.user}
-				</div>
-				<div style={{padding:20}}>
-					{this.props.coinlist}
+				{(renderThis) && renderThis}
 				</div>
 			</Fragment>
 		)
@@ -64,31 +87,17 @@ const mapStateToProps = (state,props) => {
 		products: state.products,
 		user: state.user,
 		coinlist: state.coinlist,
-		coinlistFavorites: `${state.user} ${props.myCoins}`
+		coinlistFavorites: `${state.user} ${props.myCoins}`,
+		apiRequest: props.apiRequest,
+		clearCoinlist: props.clearCoinlist
 	}
 };
 
 const mapActionsToProps = {
 	onUpdateUser: updateUser,
 	onUpdateUserInput: updateUser,
-	onUpdateCoinlist: updateCoinlist,
-	onApiRequest: apiRequest
+	onApiRequest: apiRequest,
+	onClearCoinlist: clearCoinlist
 };
-// onApiRequest: apiRequest
-// const mapActionsToProps = (dispatch, props) => {
-// 	// console.log(props);
-// 	return bindActionCreators({
-// 		onUpdateUser: updateUser,
-// 		onUpdateUserInput: updateUser,
-// 		onUpdateCoinlist: updateCoinlist
-// 	}, dispatch)
-// };
-
-// const mergeProps = (propsFromState,propsFromDispatch,ownProps) => {
-// 	console.log(propsFromState,propsFromDispatch,ownProps)
-// 	return propsFromState;
-// }
-
-// export default connect(mapStateToProps,mapActionsToProps,mergeProps)(TestPage);
 
 export default connect(mapStateToProps,mapActionsToProps)(TestPage);

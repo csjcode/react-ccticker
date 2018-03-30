@@ -1,10 +1,10 @@
 import React, { Component, Fragment } from 'react';
 import './ChartPage.css';
 import ChartPageContent from '../../containers/ChartPageContent/ChartPageContent'
-import IconButton from 'material-ui/IconButton';
-import Button from 'material-ui/Button';
-import {DeviceHub} from 'material-ui-icons'
-import Link from 'react-router-dom/Link';
+// import IconButton from 'material-ui/IconButton';
+// import Button from 'material-ui/Button';
+// import {DeviceHub} from 'material-ui-icons'
+// import Link from 'react-router-dom/Link';
 
 
 class ChartPage extends Component {

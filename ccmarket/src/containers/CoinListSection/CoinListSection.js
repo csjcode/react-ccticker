@@ -137,7 +137,7 @@ class CoinListSection extends Component {
  }
 
 
- export default withRouter(connect(mapStateToProps)(CoinListSection));
+ export default connect(mapStateToProps)(CoinListSection);
 
 // export default connect()(CoinListSection);
 

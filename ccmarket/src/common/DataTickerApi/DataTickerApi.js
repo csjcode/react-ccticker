@@ -1,5 +1,5 @@
 import  React, { Component } from 'react';
-import dataTickerApi from '../../data/sample.json';
+// import dataTickerApi from '../../data/sample.json';
 import './DataTickerApi.css';
 import DataBranch from '../DataBranch/DataBranch';
 

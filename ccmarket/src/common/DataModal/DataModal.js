@@ -3,15 +3,14 @@ import PropTypes from 'prop-types';
 import "./DataModal.css";
 import { withStyles } from 'material-ui/styles';
 import Typography from 'material-ui/Typography';
-import Button from 'material-ui/Button';
+// import Button from 'material-ui/Button';
 import Modal from 'material-ui/Modal';
 import { TableCell, TableRow } from 'material-ui/Table';
 import Close from 'material-ui-icons/Close';
-import DataView from '../DataView/DataView'
+// import DataView from '../DataView/DataView'
 import DataBranchNews from '../../containers/DataBranchNews/DataBranchNews';
 import DataSymbol from '../../containers/DataSymbol/DataSymbol';
-import {Divider} from 'material-ui'
-import {DriveEta, DeviceHub, Devices} from 'material-ui-icons'
+// import {DriveEta, DeviceHub, Devices} from 'material-ui-icons'
 
 function rand() {
   return Math.round(Math.random() * 20) - 10;

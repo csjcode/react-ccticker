@@ -1,5 +1,5 @@
-import  React, { Component } from 'react';
-import Table, { TableBody, TableCell, TableHead, TableRow } from 'material-ui/Table';
+import  React from 'react';
+import { TableCell, TableHead, TableRow } from 'material-ui/Table';
 import './DataTableHead.css';
 
 const DataTableHead = () => {

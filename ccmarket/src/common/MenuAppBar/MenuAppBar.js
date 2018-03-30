@@ -8,15 +8,15 @@ import Typography from 'material-ui/Typography';
 import IconButton from 'material-ui/IconButton';
 import Button from 'material-ui/Button';
 import MenuIcon from 'material-ui-icons/Menu';
-import AccountCircle from 'material-ui-icons/AccountCircle';
+// import AccountCircle from 'material-ui-icons/AccountCircle';
 import Whatshot from 'material-ui-icons/Whatshot';
 import ViewHeadline from 'material-ui-icons/ViewHeadline';
 import InfoOutline from 'material-ui-icons/InfoOutline';
 import ShowChart from 'material-ui-icons/ShowChart';
-import LocalCafe from 'material-ui-icons/LocalCafe';
+// import LocalCafe from 'material-ui-icons/LocalCafe';
 import Menu, { MenuItem } from 'material-ui/Menu';
 import Link from 'react-router-dom/Link';
-import {Divider, Icon} from 'material-ui'
+// import {Divider, Icon} from 'material-ui'
 
 
 const styles = {
@@ -61,7 +61,7 @@ class MenuAppBar extends Component {
 
   render() {
     const { classes } = this.props;
-    const { auth, anchorEl } = this.state;
+    const { anchorEl } = this.state;
     const open = Boolean(anchorEl);
 
     return (
@@ -103,7 +103,7 @@ class MenuAppBar extends Component {
 
             </IconButton>
             <Typography type="title" color="inherit" className="MenuAppBar--AppBar-container-hamburger">
-              Coin.API.cc
+            <Link to="/market" style={{color:'#000'}}>Coin.API.cc</Link>
             </Typography>
             <div className="MenuAppBar--AppBar-button-container">
               <Link to="/market"><Button className="MenuAppBar--AppBar-menuButtons-mui"> <Whatshot className="iconspace-Whatshot"/> Monitor</Button></Link>
