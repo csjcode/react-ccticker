@@ -17,8 +17,7 @@ class TestPage extends Component {
 	}	
 
 	componentDidMount(){
-			// this.props.onApiRequest();
-		
+		this.props.onApiRequest();
 	}
 	
 	onUpdateUser(){
@@ -93,11 +92,11 @@ const mapStateToProps = (state,props) => {
 	}
 };
 
-const mapActionsToProps = {
+const mapDispatchToProps = {
 	onUpdateUser: updateUser,
 	onUpdateUserInput: updateUser,
 	onApiRequest: apiRequest,
 	onClearCoinlist: clearCoinlist
 };
 
-export default connect(mapStateToProps,mapActionsToProps)(TestPage);
+export default connect(mapStateToProps,mapDispatchToProps)(TestPage);
