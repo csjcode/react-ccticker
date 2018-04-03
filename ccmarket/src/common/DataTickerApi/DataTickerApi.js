@@ -12,18 +12,6 @@ import DataBranch from '../DataBranch/DataBranch';
 
 --------------------------------------------------------------------------------------------------- */
 
-// const styles = theme => ({
-//   root: {
-//     width: '100%',
-//     marginTop: theme.spacing.unit * 3,
-//     overflowX: 'auto',
-//   },
-//   table: {
-//     minWidth: 500,
-//     maxWidth: 1200,
-//     paddingDefault: 0
-//   }
-// });
 
 class DataTickerApi extends Component {
 
@@ -31,7 +19,7 @@ class DataTickerApi extends Component {
 
     componentDidMount() {
       
-      fetch("https://api.coinmarketcap.com/v1/ticker/?limit=50")
+      fetch("https://api.coinmarketcap.com/v1/ticker/?limit=100")
       .then(res => res.json())
       .then(
         data => this.setState(prevState => ({ loading: false, data })),
