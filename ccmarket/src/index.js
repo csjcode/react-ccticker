@@ -16,7 +16,7 @@ const allReducers = combineReducers({
   products: productsReducer,
   user: userReducer,
   coinlist: coinListReducer,
-	news: newsReducer
+  news: newsReducer
 });
 
 const allStoreEnhancers = compose(
@@ -29,7 +29,8 @@ const store = createStore(
 	{
     products: [{name:'Bitcoin'}],
     user: 'Chris',
-    coinlist: []
+    coinlist: [],
+    news:'loading'
   },
   allStoreEnhancers
 );

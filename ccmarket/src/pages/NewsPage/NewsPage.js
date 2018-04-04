@@ -20,9 +20,17 @@ class NewsPage extends Component {
           <div className="NewsPage--pagename">
             <h1>Coin News</h1>
             <h3>Bitcoin News Updates</h3>
+            <div className="NewsPage--container-inner-links">
+              <a href="/news/Bitcoin"><span>Bitcoin</span></a> 
+              <a href="/news/Blockchain"><span>Blockchain</span></a> 
+              <a href="/news/Cryptocurrency"><span>Cryptocurrency</span></a> 
+              <a href="/news/Ethereum"><span>Ethereum</span></a> 
+              <a href="/news/Initial+Coin+Offering"><span>Initial Coin Offering</span></a> 
+              <a href="/news/Vitalik+Buterin"><span>Vitalik Buterin</span></a>
+            </div>
           </div>
           <div>
-            <DataBranchNews query="Bitcoin" limit="25" /> 
+            <DataBranchNews query={this.props.query} limit="50" /> 
           </div>
         </div>
       </div>

@@ -5,7 +5,7 @@ import LoadingView from '../../common/LoadingView/LoadingView';
 import ErrorView from '../../common/ErrorView/ErrorView';
 import NewsDataView from '../../common/NewsDataView/NewsDataView';
 import newsapikey from '../../private/newsapikey';
-import { apiNewsRequest } from '../../actions/news-actions';
+import { apiNewsRequest, showLoading } from '../../actions/news-actions';
 // import { newsApiRequest } from '../../actions/news-actions';
 
 
@@ -34,12 +34,13 @@ class DataBranchNews extends Component {
 
 		this.props.onNewsApiRequest(this.props.query,dateline,newsapikey);
 
+
 		// this.props.onNewsApiRequest();
 
 	}
  
 	render(){
-	  if (this.props.loading) {
+	  if (this.props.data==='loading') {
 		 return <LoadingView />;
 	  } else if (this.props.data) {
 	 	 return <NewsDataView data={this.props.data} limit={this.props.limit}/>    
@@ -51,7 +52,6 @@ class DataBranchNews extends Component {
 }
 
 const mapStateToProps = (state,props) => {
-	// console.log(props);
 	return {
 		products: state.products,
 		data: state.news,

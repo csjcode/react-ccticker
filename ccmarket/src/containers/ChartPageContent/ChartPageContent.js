@@ -13,7 +13,7 @@ class ChartPageContent extends Component {
 
 	componentDidMount() {
       
-      fetch("https://api.coinmarketcap.com/v1/ticker/?limit=16")
+      fetch("https://api.coinmarketcap.com/v1/ticker/?limit=17")
       .then(res => res.json())
       .then(
         data => this.setState(prev => ({ loading: false, data })),
@@ -28,12 +28,17 @@ class ChartPageContent extends Component {
 
 		return this.state.data.map((data,i)=>{
 				// return ({data[i]})
-				return (
-					<div className="ChartPageContent--column">
-					<DataSymbol width={250} height={120} sym={data.symbol} {...this.props} />
-					<div className="ChartPageContent--column-subheading">{data.symbol}<br />{data.name}</div>
-					</div>
-				);
+
+				console.log(data);
+
+				if(data.symbol != 'MIOTA'){
+					return (
+						<div className="ChartPageContent--column">
+						<DataSymbol width={250} height={120} sym={data.symbol} {...this.props} />
+						<div className="ChartPageContent--column-subheading">{data.symbol}<br />{data.name}</div>
+						</div>
+					);
+				}
 		})
 	}
 	  	

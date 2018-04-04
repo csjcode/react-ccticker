@@ -2,6 +2,7 @@
 
 export const SHOW_ERROR = 'news:showError';
 export const SHOW_DATA = 'news:showData';
+export const SHOW_LOADING = 'news:showLoading';
 export const UPDATE_NEWS = 'news:updateNews';
 export const CLEAR_NEWS = 'news:clearNews';
 
@@ -32,6 +33,15 @@ export function showError(){
 	}
 }
 
+export function showLoading(){
+	// console.log('Show Loading');
+	return {
+		type: SHOW_LOADING,
+		payload: {
+			news: true
+		}
+	}
+}
 
 export function showData(data){
 	// console.log('Actions: ' + data);
@@ -51,21 +61,14 @@ export const apiNewsRequest = (query,dateline,newsapikey) => dispatch => {
 	'sortBy=popularity&' +
 	'apiKey=' + newsapikey;
 
-	console.log(dateline); 
+	// dispatch(showLoading())
+
+	// console.log(dateline); 
 
 	fetch(url)
 	.then(res => res.json())
 	.then(
-	data => dispatch(showData(data)),
-	error => console.log(error)
+		data => dispatch(showData(data)),
+		error => console.log(error)
 	);
 }
-
-// export const apiRequest = () => dispatch => {
-// 	fetch('https://jsonplaceholder.typicode.com/posts')
-// 	.then(data => data.json())
-// 	.then(data => {
-// 		// console.log(data);
-// 		return dispatch(showData(JSON.parse(JSON.stringify(data))));
-// 	});
-// }

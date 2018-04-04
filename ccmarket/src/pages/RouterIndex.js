@@ -37,6 +37,7 @@ const RouterIndex = (props) => {
                 <Route exact path="/" render={()=><App pageOn="app" />}/>
                 <Route path="/market" render={()=><App pageOn="app" />}/>
                 <Route path="/coinlist" render={()=><CoinListPage pageOn="coinlist" />}/>
+                <Route path="/news/:topic" render={({match})=><NewsPage pageOn="news" query={match.params.topic}/>}/>
                 <Route path="/news" render={()=><NewsPage pageOn="news" query="Bitcoin"/>}/>
                 <Route path="/blog" render={()=><App pageOn="app" />}/>
                 <Route path="/updates" render={()=><App pageOn="app" />}/>
