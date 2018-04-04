@@ -1,10 +1,6 @@
 import React, {Component} from 'react';
-// import PropTypes from 'prop-types';
-// import Table, { TableBody, TableCell, TableHead, TableRow } from 'material-ui/Table';
 import numberWithCommas from '../../utils/numberWithCommas';
 import SimpleModalWrapped from '../DataModal/DataModal';
-
-// import PropTypes from 'prop-types'
 
 class DataTableRows extends Component {
 
@@ -44,10 +40,6 @@ class DataTableRows extends Component {
 		 })
 	}
 }
-
-
-
-
 
  export default DataTableRows;
  

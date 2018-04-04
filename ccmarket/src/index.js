@@ -1,16 +1,16 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import thunk from 'redux-thunk';
-import { applyMiddleware, compose, combineReducers, createStore } from 'redux';
-import { Provider } from 'react-redux';
-import registerServiceWorker from './registerServiceWorker';
-import { BrowserRouter } from 'react-router-dom';
-import RouterIndex from './pages/RouterIndex';
-import coinListReducer from './reducers/coinlist-reducer';
-import newsReducer from './reducers/news-reducer';
-import productsReducer from './reducers/products-reducer';
-import userReducer from './reducers/user-reducer';
+import React from "react";
+import ReactDOM from "react-dom";
+import "./index.css";
+import thunk from "redux-thunk";
+import { applyMiddleware, compose, combineReducers, createStore } from "redux";
+import { Provider } from "react-redux";
+import registerServiceWorker from "./registerServiceWorker";
+import { BrowserRouter } from "react-router-dom";
+import RouterIndex from "./pages/RouterIndex";
+import coinListReducer from "./reducers/coinlist-reducer";
+import newsReducer from "./reducers/news-reducer";
+import productsReducer from "./reducers/products-reducer";
+import userReducer from "./reducers/user-reducer";
 
 const allReducers = combineReducers({
   products: productsReducer,
@@ -25,21 +25,22 @@ const allStoreEnhancers = compose(
 );
 
 const store = createStore(
-  allReducers, 
-	{
-    products: [{name:'Bitcoin'}],
-    user: 'Chris',
+  allReducers,
+  {
+    products: [{ name: "Bitcoin" }],
+    user: "Chris",
     coinlist: [],
-    news:'loading'
+    news: "loading"
   },
   allStoreEnhancers
 );
 
-ReactDOM.render((
+ReactDOM.render(
   <Provider store={store}>
     <BrowserRouter>
       <RouterIndex />
     </BrowserRouter>
-  </Provider>
-), document.getElementById('root'));
+  </Provider>,
+  document.getElementById("root")
+);
 registerServiceWorker();
