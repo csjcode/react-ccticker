@@ -38,16 +38,34 @@ export function showData(data){
 	return {
 		type: SHOW_DATA,
 		payload: {
-			news: data
+			news: data,
+			loading: false
 		}
 	}
 }
 
-export const apiRequest = () => dispatch => {
-	fetch('https://jsonplaceholder.typicode.com/posts')
-	.then(data => data.json())
-	.then(data => {
-		// console.log(data);
-		return dispatch(showData(JSON.parse(JSON.stringify(data))));
-	});
+export const apiNewsRequest = (query,dateline,newsapikey) => dispatch => {
+	var url = 'https://newsapi.org/v2/everything?' +
+	'q=' + query +  '&' +
+	'from=' + dateline + '&' +
+	'sortBy=popularity&' +
+	'apiKey=' + newsapikey;
+
+	console.log(dateline); 
+
+	fetch(url)
+	.then(res => res.json())
+	.then(
+	data => dispatch(showData(data)),
+	error => console.log(error)
+	);
 }
+
+// export const apiRequest = () => dispatch => {
+// 	fetch('https://jsonplaceholder.typicode.com/posts')
+// 	.then(data => data.json())
+// 	.then(data => {
+// 		// console.log(data);
+// 		return dispatch(showData(JSON.parse(JSON.stringify(data))));
+// 	});
+// }

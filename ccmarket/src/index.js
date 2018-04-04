@@ -29,8 +29,7 @@ const store = createStore(
 	{
     products: [{name:'Bitcoin'}],
     user: 'Chris',
-    coinlist: [],
-    newsData: []
+    coinlist: []
   },
   allStoreEnhancers
 );
