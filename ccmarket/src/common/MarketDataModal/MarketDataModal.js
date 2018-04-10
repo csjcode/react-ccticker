@@ -81,9 +81,7 @@ class SimpleModal extends React.Component {
           className="MarketDataTickerApi--row"
           onClick={this.handleOpenModal}
         > 
-          <TableCell  className="MarketDataTickerApi--col text-bigger">
-            <span onClick={this.handleFavorite} data-name={name} data-symbol={symbol}><Favorite className="MarketDataModal--Favorite-icon" /></span>
-            </TableCell>
+
           <TableCell className="MarketDataTickerApi--col text-bigger collapsible">
             {rank}
           </TableCell>
@@ -93,7 +91,9 @@ class SimpleModal extends React.Component {
           <TableCell className="MarketDataTickerApi--col text-bigger">
             {symbol}
           </TableCell>
-          
+          <TableCell  className="MarketDataTickerApi--col text-bigger">
+            <span onClick={this.handleFavorite} data-name={name} data-symbol={symbol}><Favorite className="MarketDataModal--Favorite-icon" /></span>
+          </TableCell>          
           <TableCell className="MarketDataTickerApi--col">
             {price_usd_commas}
           </TableCell>

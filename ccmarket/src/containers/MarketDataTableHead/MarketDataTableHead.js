@@ -6,23 +6,23 @@ const MarketDataTableHead = () => {
   return (
     <TableHead>
       <TableRow>
-        <TableCell className="DataTickerApi--col-head" style={{ width: 20 }}>
-          Favorite
-        </TableCell>
+
         <TableCell
           className="DataTickerApi--col-head collapsible"
-          style={{ width: 50 }}
+          style={{ width: 30 }}
         >
           Rank
         </TableCell>
-        <TableCell className="DataTickerApi--col-head" style={{ width: 100 }}>
+        <TableCell className="DataTickerApi--col-head" style={{ width: 80 }}>
           Name
         </TableCell>
-        <TableCell className="DataTickerApi--col-head" style={{ width: 60 }}>
-          Symbol
+        <TableCell className="DataTickerApi--col-head" style={{ width: 40 }}>
+          Sym
         </TableCell>
- 
-        <TableCell className="DataTickerApi--col-head" style={{ width: 100 }}>
+        <TableCell className="DataTickerApi--col-head" style={{ textAlign: 'center', width: 50 }}>
+          Fav
+        </TableCell> 
+        <TableCell className="DataTickerApi--col-head" style={{ width: 80 }}>
           USD
         </TableCell>
         <TableCell className="DataTickerApi--col-head" style={{ width: 60 }}>
@@ -39,26 +39,26 @@ const MarketDataTableHead = () => {
         </TableCell>
         <TableCell
           className="DataTickerApi--col-head collapsible"
-          style={{ width: 100 }}
+          style={{ width: 70 }}
         >
           Volume (1k)
         </TableCell>
         <TableCell
           className="DataTickerApi--col-head collapsible"
-          style={{ width: 100 }}
+          style={{ width: 70 }}
         >
           Market Cap
         </TableCell>
         <TableCell
           className="DataTickerApi--col-head collapsible"
-          style={{ width: 100 }}
+          style={{ width: 70 }}
         >
           BTC
         </TableCell>
 
         <TableCell
           className="DataTickerApi--col-head collapsible"
-          style={{ width: 80 }}
+          style={{ width: 70 }}
         >
           Updated
         </TableCell>
