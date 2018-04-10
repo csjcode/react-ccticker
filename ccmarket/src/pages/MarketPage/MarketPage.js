@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 import "./MarketPage.css";
-import ContentSection from "../containers/ContentSection/ContentSection";
+import MarketDataSection from "../containers/MarketDataSection/MarketDataSection";
 
 const MarketPage = props => {
   return (
     <div>
-      <ContentSection />
+      <MarketDataSection />
     </div>
   );
 };

@@ -1,5 +1,5 @@
 
-.DataModal--modal {
+.MarketDataModal--modal {
 	background-color: white;
 	position: absolute;
 	min-width: 600px;
@@ -11,13 +11,13 @@
 }
 
 
-.DataModal--container {
+.MarketDataModal--container {
 	height:100%;
 	margin:0;
 	padding: 0 auto;
 }
 
-.DataModal--header {
+.MarketDataModal--header {
 	background-color: black;
 	color: white;
 	height: 40px;
@@ -28,21 +28,21 @@
 }
 
 
-.DataModal--header-left, DataModal--header-right {
+.MarketDataModal--header-left, MarketDataModal--header-right {
 	display: inline-block;
 }
 
-.DataModal--header-left {
+.MarketDataModal--header-left {
 	float: left;
 }
 
-.DataModal--header-right {
+.MarketDataModal--header-right {
 	float: right;
 	position: relative;
 	top: -5px;
 }
 
-.DataModal--body {
+.MarketDataModal--body {
 	overflow:auto;
 	padding: 10px;
 	height:600px;
@@ -50,14 +50,18 @@
 	top:-30px;
 }
 
-.DataModal--body-text {
+.MarketDataModal--body-text {
 	text-align: center;
 }
 
-.DataModal--header-headline {
+.MarketDataModal--header-headline {
 	display: inline;
 	margin-right:15px;
 	padding: 10px 5px;
+}
+
+.MarketDataModal--Favorite-icon {
+	color: silver;
 }
 
 .header-symbol-box {
@@ -79,7 +83,7 @@
 	margin-right: 10px;
 }
 
-.DataModal--chart-label {
+.MarketDataModal--chart-label {
 	font-size: 11px;
 	padding-bottom: 5px;
 	text-align: center;
@@ -107,30 +111,30 @@
 }
 
 
-.DataModal--body-table {
+.MarketDataModal--body-table {
 	margin: 0 0 40px 0;
 	width: 100%;
 	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
 	display: table;
 }
 
-.DataModal--body-table-wrapper {
+.MarketDataModal--body-table-wrapper {
 	margin: 0 auto;
 	/* padding: 40px; */
 	max-width: 800px;
  }
  
-.DataModal--body-table-row {
+.MarketDataModal--body-table-row {
 	display: table-row;
 }
 
-.DataModal--body-table-row-header {
+.MarketDataModal--body-table-row-header {
 	display: table-row;
 	border-bottom: 1px solid rgb(43, 43, 43)
 }
 
 
-.DataModal--body-table-cell {
+.MarketDataModal--body-table-cell {
 	display: table-cell;
 	font-size: 20px;
 	font-weight: bold;
@@ -139,7 +143,7 @@
 	width: 100px;
 }
 
-.DataModal--body-table-cell-label {
+.MarketDataModal--body-table-cell-label {
 	display: table-cell;
 	min-width:50px;
 	color: gray;
@@ -150,7 +154,7 @@
 
 
  @media screen and (max-width: 580px) {
-	.DataModal--body-table-cell {
+	.MarketDataModal--body-table-cell {
 	  padding: 2px 16px;
 	  display: block;
 	}

@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from "react";
 import "./ChartPageContent.css";
-import DataSymbol from "../DataSymbol/DataSymbol";
+import MarketDataSymbol from "../MarketDataSymbol/MarketDataSymbol";
 import LoadingView from "../../common/LoadingView/LoadingView";
 import ErrorView from "../../common/ErrorView/ErrorView";
 
@@ -31,7 +31,7 @@ class ChartPageContent extends Component {
       if (data.symbol != "MIOTA") {
         return (
           <div className="ChartPageContent--column">
-            <DataSymbol
+            <MarketDataSymbol
               width={250}
               height={120}
               sym={data.symbol}

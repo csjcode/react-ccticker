@@ -50,8 +50,13 @@ a {
    margin-right: 5px;
 }
 
+.iconspace-Favorite {
+   color: red;
+   margin-right: 5px;
+}
+
 .iconspace-InfoOutline {
-   color: rgb(32, 32, 32);
+   color: rgb(0, 115, 214);
    margin-right: 5px;
 }
 

@@ -1,11 +1,14 @@
 import React from "react";
 import { TableCell, TableHead, TableRow } from "material-ui/Table";
-import "./DataTableHead.css";
+import "./MarketDataTableHead.css";
 
-const DataTableHead = () => {
+const MarketDataTableHead = () => {
   return (
     <TableHead>
       <TableRow>
+        <TableCell className="DataTickerApi--col-head" style={{ width: 20 }}>
+          Favorite
+        </TableCell>
         <TableCell
           className="DataTickerApi--col-head collapsible"
           style={{ width: 50 }}
@@ -18,6 +21,7 @@ const DataTableHead = () => {
         <TableCell className="DataTickerApi--col-head" style={{ width: 60 }}>
           Symbol
         </TableCell>
+ 
         <TableCell className="DataTickerApi--col-head" style={{ width: 100 }}>
           USD
         </TableCell>
@@ -63,4 +67,4 @@ const DataTableHead = () => {
   );
 };
 
-export default DataTableHead;
+export default MarketDataTableHead;

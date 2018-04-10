@@ -7,6 +7,7 @@ import Toolbar from "material-ui/Toolbar";
 import Typography from "material-ui/Typography";
 import IconButton from "material-ui/IconButton";
 import Button from "material-ui/Button";
+import Favorite from "material-ui-icons/Favorite";
 import MenuIcon from "material-ui-icons/Menu";
 import Whatshot from "material-ui-icons/Whatshot";
 import ViewHeadline from "material-ui-icons/ViewHeadline";
@@ -88,6 +89,9 @@ class MenuAppBar extends Component {
               <MenuItem onClick={this.handleClose}>
                 <Link to="/news">Coin News</Link>
               </MenuItem>
+              <MenuItem onClick={this.handleClose}>
+                <Link to="/favorities">Favorities</Link>
+              </MenuItem>
             </Menu>
             <MenuIcon />
             <IconButton
@@ -109,6 +113,13 @@ class MenuAppBar extends Component {
               </Link>
             </Typography>
             <div className="MenuAppBar--AppBar-button-container">
+
+              <Link to="/coinlist">
+                <Button className="MenuAppBar--AppBar-menuButtons-mui">
+                  <InfoOutline className="iconspace-InfoOutline" /> Info
+                </Button>
+              </Link>
+
               <Link to="/market">
                 <Button className="MenuAppBar--AppBar-menuButtons-mui">
                   {" "}
@@ -122,17 +133,18 @@ class MenuAppBar extends Component {
                 </Button>
               </Link>
 
-              <Link to="/coinlist">
-                <Button className="MenuAppBar--AppBar-menuButtons-mui">
-                  <InfoOutline className="iconspace-InfoOutline" /> Info
-                </Button>
-              </Link>
-
               <Link to="/news">
                 <Button className="MenuAppBar--AppBar-menuButtons-mui">
                   <ViewHeadline className="iconspace-ViewHeadline" /> News
                 </Button>
               </Link>
+
+              <Link to="/favorites">
+                <Button className="MenuAppBar--AppBar-menuButtons-mui">
+                  <Favorite className="iconspace-Favorite" /> Favorites
+                </Button>
+              </Link>
+  
             </div>
           </Toolbar>
         </AppBar>

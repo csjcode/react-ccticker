@@ -1,41 +1,41 @@
 
-.DataTickerApi--main-wrapper-paper {
+.MarketDataTickerApi--main-wrapper-paper {
    margin-top: 20px;
    padding: 40px;
 }
 
 
-.DataTickerApi--main-table{
+.MarketDataTickerApi--main-table{
    cursor: pointer;
 }
 
-.DataTickerApi--col-head {
+.MarketDataTickerApi--col-head {
    height: 40px;
    padding:0 !important;
    text-align: left !important;
    max-width:100px;
 }
 
-.DataTickerApi--col {
+.MarketDataTickerApi--col {
    height: 40px;
    padding:0 !important;
    text-align: left !important;
    max-width:100px;
 }
 
-.DataTickerApi--col:hover {
+.MarketDataTickerApi--col:hover {
    
 }
 
 
-/* .DataTickerApi--row:hover {
+/* .MarketDataTickerApi--row:hover {
    background-color:#fffddd;
    border-top: 1px solid rgb(129, 129, 129);
    border-bottom: 1px solid rgb(129, 129, 129)
    
 }
 
-.DataTickerApi--row:hover .DataTickerApi--col  {
+.MarketDataTickerApi--row:hover .MarketDataTickerApi--col  {
    background-color:#fffddd;
    border-top: 1px solid rgb(129, 129, 129);
    border-bottom: 1px solid rgb(129, 129, 129);
@@ -58,7 +58,7 @@
 }
 
 @media screen and (max-width:400px){
-   .DataTickerApi--main-wrapper-paper {
+   .MarketDataTickerApi--main-wrapper-paper {
       margin-top: 10px;
       padding: 10px;
    }

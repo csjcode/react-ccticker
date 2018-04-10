@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from "react";
 import "./TestPage.css";
-import DataSymbol from "../../containers/DataSymbol/DataSymbol";
+import MarketDataSymbol from "../../containers/MarketDataSymbol/MarketDataSymbol";
 import { Button } from "material-ui";
 // import {bindActionCreators} from 'redux';
 import { connect } from "react-redux";
@@ -57,7 +57,7 @@ class TestPage extends Component {
     return (
       <Fragment>
         <div style={{ padding: 20 }}>
-          <DataSymbol />
+          <MarketDataSymbol />
         </div>
         <div style={{ padding: 20 }}>
           <Button raised onClick={this.onUpdateUser}>

@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import "./DataTickerApi.css";
-import DataBranch from "../DataBranch/DataBranch";
+import "./MarketDataTickerApi.css";
+import MarketDataBranch from "../MarketDataBranch/MarketDataBranch";
 
-class DataTickerApi extends Component {
+class MarketDataTickerApi extends Component {
   state = { loading: true };
 
   componentDidMount() {
@@ -17,10 +17,10 @@ class DataTickerApi extends Component {
   render() {
     return (
       <div style={{ minHeight: 800 }}>
-        <DataBranch {...this.state} />
+        <MarketDataBranch {...this.state} />
       </div>
     );
   }
 }
 
-export default DataTickerApi;
+export default MarketDataTickerApi;

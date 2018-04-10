@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "./DataSymbol.css";
+import "./MarketDataSymbol.css";
 import { Line, Bar, LinePath } from "@vx/shape";
 import { withTooltip, Tooltip } from "@vx/tooltip";
 import { localPoint } from "@vx/event";

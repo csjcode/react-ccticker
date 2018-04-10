@@ -1,16 +1,16 @@
-.ContentSection--container {
+.MarketDataSection--container {
    margin: 0 auto;
    max-width: 1600px;
    padding:30px 50px;
 }
 
-.ContentSection--intro {
+.MarketDataSection--intro {
    font-size: 16px;
    line-height: 1.5;
    margin-bottom:10px;
 }
 
-.ContentSection--header {
+.MarketDataSection--header {
    color: black;
    font-size: 42px;
    /* font-weight: 700; */
@@ -20,12 +20,12 @@
    animation-duration: 2s; */
 }
 
-.ContentSection--subheader {
+.MarketDataSection--subheader {
 
    margin-bottom:10px;
 }
 
-.ContentSection--price-table {
+.MarketDataSection--price-table {
    margin: 0 auto;
    max-width: 1600px;
 }
@@ -45,17 +45,17 @@
 }
 
 @media screen and (max-width:700px){
-   .ContentSection--container {
+   .MarketDataSection--container {
       margin: 0 auto;
       max-width: 700px;
       padding:20px 20px;
    }
 
-   .ContentSection--header {
+   .MarketDataSection--header {
       font-size: 24px;
    }   
 
-   .ContentSection--intro {
+   .MarketDataSection--intro {
       font-size: 14px;
    }
 
@@ -66,7 +66,7 @@
 }
  
 @media screen and (max-width:400px){
-   .ContentSection--container {
+   .MarketDataSection--container {
       margin: 0 auto;
       max-width: 1600px;
       padding:10px 3px;

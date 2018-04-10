@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 import numberWithCommas from '../../utils/numberWithCommas';
-import SimpleModalWrapped from '../DataModal/DataModal';
+import SimpleModalWrapped from '../MarketDataModal/MarketDataModal';
 
-class DataTableRows extends Component {
+class MarketDataTableRows extends Component {
 
 	render(props) {
 		return this.props.data.map((data)=>{
@@ -41,5 +41,5 @@ class DataTableRows extends Component {
 	}
 }
 
- export default DataTableRows;
+ export default MarketDataTableRows;
  

@@ -9,11 +9,12 @@ import NewsPage from "./NewsPage/NewsPage";
 import TestPage from "./TestPage/TestPage";
 import ChartPage from "./ChartPage/ChartPage";
 import TermsPage from "./TermsPage/TermsPage";
+import FavoritesPage from "./FavoritesPage/FavoritesPage";
 import App from "../containers/App";
 import logo from "../images/logo.svg";
 import grey from "material-ui/colors/grey";
 import green from "material-ui/colors/green";
-import DataView from "../common/DataView/DataView";
+import MarketDataView from "../common/MarketDataView/MarketDataView";
 
 const theme = createMuiTheme({
   palette: {
@@ -51,6 +52,7 @@ const RouterIndex = props => {
               render={() => <NewsPage pageOn="news" query="Bitcoin" />}
             />
             <Route path="/blog" render={() => <App pageOn="app" />} />
+            <Route path="/favorites" render={() => <FavoritesPage pageOn="favorites" />} />
             <Route path="/updates" render={() => <App pageOn="app" />} />
             <Route path="/faq" render={() => <App pageOn="app" />} />
             <Route

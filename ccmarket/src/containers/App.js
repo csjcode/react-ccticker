@@ -1,12 +1,12 @@
 import React from 'react';
 import './App.css';
-import ContentSection from './ContentSection/ContentSection';
+import MarketDataSection from './MarketDataSection/MarketDataSection';
 
 
 const App = (props) => {
    return (
       <div>
-        <ContentSection />
+        <MarketDataSection />
       </div>
    )
  }

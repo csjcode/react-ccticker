@@ -1,16 +1,16 @@
 import React from "react";
 import LoadingView from "../LoadingView/LoadingView";
 import ErrorView from "../ErrorView/ErrorView";
-import DataView from "../DataView/DataView";
+import MarketDataView from "../MarketDataView/MarketDataView";
 
-const DataBranch = ({ loading, data }) => {
+const MarketDataBranch = ({ loading, data }) => {
   if (loading) {
     return <LoadingView />;
   } else if (data) {
-    return <DataView data={data} />;
+    return <MarketDataView data={data} />;
   } else {
     return <ErrorView />;
   }
 };
 
-export default DataBranch;
+export default MarketDataBranch;

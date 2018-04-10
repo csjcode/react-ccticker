@@ -1,18 +1,18 @@
 import React from "react";
-import DataTickerApi from "../../common/DataTickerApi/DataTickerApi";
-import "./ContentSection.css";
+import MarketDataTickerApi from "../../common/MarketDataTickerApi/MarketDataTickerApi";
+import "./MarketDataSection.css";
 import PropTypes from "prop-types";
 
-const ContentSection = props => {
+const MarketDataSection = props => {
   return (
-    <div className="ContentSection--container">
-      <div className="ContentSection--header">Coin.API.cc Market Tracker</div>
+    <div className="MarketDataSection--container">
+      <div className="MarketDataSection--header">Coin.API.cc Market Tracker</div>
 
-      <div className="ContentSection--subheader fadein">
+      <div className="MarketDataSection--subheader fadein">
         Watch this page for Coin market updates.
       </div>
 
-      <div className="ContentSection--intro">
+      <div className="MarketDataSection--intro">
         <p className="large-content">
           <b>BETA:</b>This is an experimental service. Cryptocurrencies are used
           primarily outside existing banking and governmental institutions and
@@ -23,15 +23,15 @@ const ContentSection = props => {
         </p>
       </div>
 
-      <div className="ContentSection--price-table">
-        <DataTickerApi />
+      <div className="MarketDataSection--price-table">
+        <MarketDataTickerApi />
       </div>
     </div>
   );
 };
 
-ContentSection.propTypes = {
+MarketDataSection.propTypes = {
   pageOn: PropTypes.string.isRequired
 };
 
-export default ContentSection;
+export default MarketDataSection;
