@@ -1,14 +1,17 @@
 import React, { Fragment } from "react";
+import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import "./MarketDataModal.css";
 import { withStyles } from "material-ui/styles";
 import Typography from "material-ui/Typography";
 import Favorite from "material-ui-icons/Favorite";
+import FavoriteProcess from "../FavoriteProcess/FavoriteProcess";
 import Modal from "material-ui/Modal";
 import { TableCell, TableRow } from "material-ui/Table";
 import Close from "material-ui-icons/Close";
 import DataBranchNews from "../../containers/DataBranchNews/DataBranchNews";
 import MarketDataSymbol from "../../containers/MarketDataSymbol/MarketDataSymbol";
+import { toggleFavorite } from "../../actions/favorites-actions";
 
 function rand() {
   return Math.round(Math.random() * 20) - 10;
@@ -54,7 +57,16 @@ class SimpleModal extends React.Component {
   handleFavorite = (e) => {
     e.preventDefault();
     e.stopPropagation();
-    return alert('FAVORITE! ' + e.currentTarget.getAttribute('data-symbol'));
+    var mySymbol = e.currentTarget.getAttribute('data-symbol');
+    // dispatch(showLoading())
+    this.props.onToggleFavorite(mySymbol);
+
+    // return console.log('FAVORITE! ' + mySymbol);
+    alert('FAVORITE! ' + mySymbol);
+
+    // this.setState(prevState => ({ open: false }));
+    // return <FavoriteProcess symbol={mySymbol} />
+    // return alert('FAVORITE! ' + mySymbol);
   }
 
   render(props) {
@@ -238,7 +250,21 @@ SimpleModal.propTypes = {
   classes: PropTypes.object.isRequired
 };
 
+
+const mapStateToProps = (state, props) => {
+  return {
+    favorites: state.favorites
+  };
+};
+
+const mapDispatchToProps = {
+  onToggleFavorite: toggleFavorite
+};
+
+
+
+
+
 // We need an intermediary variable for handling the recursive nesting.
 const SimpleModalWrapped = withStyles(styles)(SimpleModal);
-
-export default SimpleModalWrapped;
+export default connect(mapStateToProps, mapDispatchToProps)(SimpleModalWrapped);
