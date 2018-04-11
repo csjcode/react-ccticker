@@ -5,7 +5,7 @@ import "./MarketDataModal.css";
 import { withStyles } from "material-ui/styles";
 import Typography from "material-ui/Typography";
 import Favorite from "material-ui-icons/Favorite";
-import FavoriteProcess from "../FavoriteProcess/FavoriteProcess";
+import FavoriteStatus from "../FavoriteStatus/FavoriteStatus";
 import Modal from "material-ui/Modal";
 import { TableCell, TableRow } from "material-ui/Table";
 import Close from "material-ui-icons/Close";
@@ -40,7 +40,8 @@ const styles = theme => ({
 class SimpleModal extends React.Component {
   state = {
     open: false,
-    currentSym: " "
+    currentSym: " ",
+    saved: false
   };
 
   handleOpenModal = symbol => {
@@ -57,12 +58,16 @@ class SimpleModal extends React.Component {
   handleFavorite = (e) => {
     e.preventDefault();
     e.stopPropagation();
+
     var mySymbol = e.currentTarget.getAttribute('data-symbol');
-    // var mySymbolList = this.props.favorites.push(mySymbol);
+
     this.props.onToggleFavorite(mySymbol);
+    
     var mySymbolList = this.props.favorites;
-    return console.log('FAVORITE! ' + mySymbolList);
-    // alert('FAVORITE! ' + mySymbol + ' ' + this.props.favorites);
+
+    this.setState(prevState => ({ saved: !this.state.saved }));
+
+    // return console.log('FAVORITE! ' + mySymbolList);
 
   }
 
@@ -102,12 +107,13 @@ class SimpleModal extends React.Component {
           </TableCell>
           <TableCell  className="MarketDataTickerApi--col text-bigger">
             <span onClick={this.handleFavorite} data-name={name} data-symbol={symbol}>
-              {this.props.favorites.indexOf(symbol) > -1 ? (
+            <FavoriteStatus symbol={symbol} saved={this.state.saved}/>
+              {/* {this.props.favorites.indexOf(symbol) > -1 ? (
                   <Favorite className="MarketDataModal--Favorite-icon-saved" id="fave-{symbol}"/>
                 ) : (
                   <Favorite className="MarketDataModal--Favorite-icon" id="fave-{symbol}"/>
                 )
-              }
+              } */}
             </span>
           </TableCell>          
           <TableCell className="MarketDataTickerApi--col">
