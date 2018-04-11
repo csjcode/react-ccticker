@@ -58,15 +58,12 @@ class SimpleModal extends React.Component {
     e.preventDefault();
     e.stopPropagation();
     var mySymbol = e.currentTarget.getAttribute('data-symbol');
-    // dispatch(showLoading())
+    // var mySymbolList = this.props.favorites.push(mySymbol);
     this.props.onToggleFavorite(mySymbol);
+    var mySymbolList = this.props.favorites;
+    return console.log('FAVORITE! ' + mySymbolList);
+    // alert('FAVORITE! ' + mySymbol + ' ' + this.props.favorites);
 
-    // return console.log('FAVORITE! ' + mySymbol);
-    alert('FAVORITE! ' + mySymbol);
-
-    // this.setState(prevState => ({ open: false }));
-    // return <FavoriteProcess symbol={mySymbol} />
-    // return alert('FAVORITE! ' + mySymbol);
   }
 
   render(props) {
@@ -104,7 +101,14 @@ class SimpleModal extends React.Component {
             {symbol}
           </TableCell>
           <TableCell  className="MarketDataTickerApi--col text-bigger">
-            <span onClick={this.handleFavorite} data-name={name} data-symbol={symbol}><Favorite className="MarketDataModal--Favorite-icon" /></span>
+            <span onClick={this.handleFavorite} data-name={name} data-symbol={symbol}>
+              {this.props.favorites.indexOf(symbol) > -1 ? (
+                  <Favorite className="MarketDataModal--Favorite-icon-saved" id="fave-{symbol}"/>
+                ) : (
+                  <Favorite className="MarketDataModal--Favorite-icon" id="fave-{symbol}"/>
+                )
+              }
+            </span>
           </TableCell>          
           <TableCell className="MarketDataTickerApi--col">
             {price_usd_commas}

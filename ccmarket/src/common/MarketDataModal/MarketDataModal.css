@@ -64,6 +64,10 @@
 	color: silver;
 }
 
+.MarketDataModal--Favorite-icon-saved {
+	color: red;
+}
+
 .header-symbol-box {
 	border: 1px solid silver;
 	font-size: 16px;

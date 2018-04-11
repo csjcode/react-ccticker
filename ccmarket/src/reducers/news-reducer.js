@@ -1,7 +1,6 @@
 import { SHOW_ERROR, SHOW_DATA, SHOW_LOADING } from "../actions/news-actions";
 
 export default function newsReducer(state = "", { type, payload }) {
-  console.log(type);
   switch (type) {
     case SHOW_DATA:
       // console.log(payload.news);

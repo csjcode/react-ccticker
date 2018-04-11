@@ -1,4 +1,4 @@
-// import $ from 'jquery';
+import store from "../store/store.js";
 
 export const TOGGLE_FAVORITE = "favorites:toggleFavorite";
 export const ADD_FAVORITE = "favorites:addFavorite";
@@ -7,13 +7,19 @@ export const SHOW_ERROR = "favorites:showError";
 export const SHOW_DATA = "favorites:showData";
 export const SHOW_LOADING = "favorites:showLoading";
 
-
-
-export function toggleFavorite() {
+export function toggleFavorite(mySymbol) {
+  var favoriteList = store.getState().favorites;
+  // console.log(favoriteList);
+  var checkSymbol = favoriteList.indexOf(mySymbol);
+  if(checkSymbol>-1){
+    var toggleSymbols = favoriteList.splice(favoriteList.indexOf(mySymbol),1);
+  } else {
+    var toggleSymbols = favoriteList.push(mySymbol);
+  }
 	return {
 	  type: TOGGLE_FAVORITE,
 	  payload: {
-		 favorites: [1]
+		 favorites: favoriteList
 	  }
 	};
  }
