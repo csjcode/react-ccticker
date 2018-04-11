@@ -1,0 +1,19 @@
+.FavoritesPage--container {
+	margin: 100px 50px;
+	text-align: left;
+}
+
+.FavoritesPage--container-favorites {
+	color: silver;
+	padding: 5% 30%;
+	margin: 0 auto;
+	text-align: center;
+	width:100%;
+}
+
+@media only screen and (max-width: 600px) {
+	.FavoritesPage--container-favorites {
+		 font-size: 14px;
+		 padding: 3% 10%;
+	}
+}
