@@ -6,7 +6,7 @@ export default function newsReducer(state = "", { type, payload }) {
       // console.log(payload.news);
       return payload.news;
     case SHOW_LOADING:
-      console.log(payload.loading);
+      // console.log(payload.loading);
       return payload.loading;
     case SHOW_ERROR:
       return payload.news;

@@ -44,6 +44,13 @@ class SimpleModal extends React.Component {
     saved: false
   };
 
+  componentWillMount(){
+    var mySymbolList = this.props.favorites;
+    if(mySymbolList.indexOf(this.props.symbol)>-1){
+      this.setState(prevState => ({ saved: !this.state.saved }));
+    }
+  }
+
   handleOpenModal = symbol => {
     this.setState(prevState => ({
       open: true,
@@ -63,8 +70,6 @@ class SimpleModal extends React.Component {
 
     this.props.onToggleFavorite(mySymbol);
     
-    var mySymbolList = this.props.favorites;
-
     this.setState(prevState => ({ saved: !this.state.saved }));
 
     // return console.log('FAVORITE! ' + mySymbolList);

@@ -22,10 +22,10 @@ class DataSymbol extends Component {
 
   async componentDidMount() {
     const sym = this.props.sym || "BTC";
-    var chartDateRange = this.props.chartDateRange || "30d";
+    let chartDateRange = this.props.chartDateRange || "30d";
     chartDateRange = this.props.chartDateRange || this.props.range;
 
-    var fetchUrl;
+    let fetchUrl;
     switch (chartDateRange) {
       case "24h":
         fetchUrl = `https://min-api.cryptocompare.com/data/histohour?fsym=${sym}&tsym=USD&limit=24&e=CCCAGG`;
@@ -49,7 +49,7 @@ class DataSymbol extends Component {
     const res = await fetch(fetchUrl);
     const data = await res.json();
 
-    var symFirstLastPrice = [];
+    let symFirstLastPrice = [];
 
     this.setState({
       data: data.Data.map((v, i) => {
@@ -57,11 +57,11 @@ class DataSymbol extends Component {
           symFirstLastPrice.push(data.Data[i]["close"]);
         }
 
-        var date = new Date(data.Data[i]["time"] * 1000);
-        var y = date.getFullYear();
-        var m = date.getMonth() + 1;
-        var d = date.getDate();
-        var h = date.getHours();
+        let date = new Date(data.Data[i]["time"] * 1000);
+        let y = date.getFullYear();
+        let m = date.getMonth() + 1;
+        let d = date.getDate();
+        let h = date.getHours();
         if (chartDateRange === "24h") {
           var dateline = `${y}-${m}-${d}:${h}`;
         } else {

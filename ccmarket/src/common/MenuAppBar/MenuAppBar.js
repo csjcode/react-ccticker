@@ -63,7 +63,6 @@ class MenuAppBar extends Component {
         <AppBar
           className="MenuAppBar--AppBar-container"
           position="fixed"
-          color="#696969"
         >
           <Toolbar>
             <Menu

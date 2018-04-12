@@ -1,5 +1,6 @@
 import React, { Component, Fragment } from "react";
 import { connect } from "react-redux";
+import { withRouter } from 'react-router-dom'
 import "./DataBranchNews.css";
 import LoadingView from "../../common/LoadingView/LoadingView";
 import ErrorView from "../../common/ErrorView/ErrorView";
@@ -48,4 +49,4 @@ const mapDispatchToProps = {
   onNewsApiRequest: apiNewsRequest
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(DataBranchNews);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(DataBranchNews));

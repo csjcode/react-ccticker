@@ -2,10 +2,13 @@ import store from "../store/store.js";
 
 export const TOGGLE_FAVORITE = "favorites:toggleFavorite";
 export const ADD_FAVORITE = "favorites:addFavorite";
+export const LIST_FAVORITES = "favorites:listFavorites";
 export const REMOVE_FAVORITE = "favorites:removeFavorite";
 export const SHOW_ERROR = "favorites:showError";
 export const SHOW_DATA = "favorites:showData";
 export const SHOW_LOADING = "favorites:showLoading";
+
+
 
 export function toggleFavorite(mySymbol) {
   var favoriteList = store.getState().favorites;
@@ -23,6 +26,16 @@ export function toggleFavorite(mySymbol) {
 	  }
 	};
  }
+
+//  export function listFavorites() {
+//   var favoriteList = store.getState().favorites;
+// 	return {
+// 	  type: LIST_FAVORITES,
+// 	  payload: {
+// 		 favorites: "LIST!"
+// 	  }
+// 	};
+//  }
 
 
 export function removeFavorite() {

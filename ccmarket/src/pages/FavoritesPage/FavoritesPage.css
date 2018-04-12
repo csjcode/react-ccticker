@@ -3,11 +3,19 @@
 	text-align: left;
 }
 
-.FavoritesPage--container-favorites {
+.FavoritesPage--container-favorites-nolist {
 	color: silver;
 	padding: 5% 30%;
 	margin: 0 auto;
 	text-align: center;
+	width:100%;
+}
+
+.FavoritesPage--container-favorites {
+	color: black;
+	padding: 5% 5%;
+	margin: 0 auto;
+	text-align: left;
 	width:100%;
 }
 
