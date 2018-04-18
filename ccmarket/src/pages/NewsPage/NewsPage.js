@@ -2,15 +2,32 @@ import React, { Component } from "react";
 import "./NewsPage.css";
 import DataBranchNews from "../../containers/DataBranchNews/DataBranchNews";
 import Link from "react-router-dom/Link";
+import NavLink from "react-router-dom/NavLink";
 
 class NewsPage extends Component {
-  
-  componentWillMount(){
-    console.log(this.props.pageOn);
-    console.log(this.props.query);
+  state = {
+    query:this.props.query
+  }
+  componentDidMount(){
+    // console.log('CDM - ' + this.props.pageOn);
+    // console.log('CDM - ' + this.props.query);
+    // console.log('CDM - ' + this.state.query);
+    
+    
+  }
+
+  componentWillReceiveProps(nextProps){
+      // console.log('CWR - ' + this.props.pageOn);
+      // console.log('CWR - ' + this.props.query);
+      
+      // console.log('CWR - ' + this.state.query);
+      this.setState((prevState,prevProps)=>({query: nextProps.query}));
+      
+      // this.forceUpdate();
   }
 
   render() {
+    console.log(this.state.query);
     return (
       <div className="NewsPage--container">
         {/* <ContentSection /> */}
@@ -25,15 +42,15 @@ class NewsPage extends Component {
               <Link to="/market/">
                 <span>Bitcoin</span>
               </Link>
-              <a href="/news/Blockchain">
+              <Link to="/news/Blockchain">
                 <span>Blockchain</span>
-              </a>
-              <a href="/news/Cryptocurrency">
+              </Link>
+              <Link to="/news/Cryptocurrency">
                 <span>Cryptocurrency</span>
-              </a>
-              <a href="/news/Ethereum">
+              </Link>
+              <Link to="/news/Ethereum">
                 <span>Ethereum</span>
-              </a>
+              </Link>
               <a href="/news/Initial+Coin+Offering">
                 <span>Initial Coin Offering</span>
               </a>
@@ -43,7 +60,7 @@ class NewsPage extends Component {
             </div>
           </div>
           <div>
-            <DataBranchNews query={this.props.query} limit="50" />
+            <DataBranchNews query={this.state.query} limit="50" />
           </div>
         </div>
       </div>

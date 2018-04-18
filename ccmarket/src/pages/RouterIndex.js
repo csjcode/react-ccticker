@@ -44,7 +44,7 @@ const RouterIndex = props => {
             <Route
               path="/news/:topic"
               render={({ match }) => (
-                <NewsPage pageOn="news" query={match.params.topic} />
+                <NewsPage pageOn="news" query={match.params.topic} location={match.location} />
               )}
             />
             <Route

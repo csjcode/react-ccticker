@@ -5,12 +5,12 @@ const LoadingView = () => {
 	return(
 		// <div className="LoadingView--container">Loading...</div>
 		<div className="LoadingView--container">
-			<div class="loading">
+			<div className="loading">
 				<p>Loading...</p>
-				<div class="loading-bar"></div>
-				<div class="loading-bar"></div>
-				<div class="loading-bar"></div>
-				<div class="loading-bar"></div>
+				<div className="loading-bar"></div>
+				<div className="loading-bar"></div>
+				<div className="loading-bar"></div>
+				<div className="loading-bar"></div>
 			</div>
 		</div>
 	);

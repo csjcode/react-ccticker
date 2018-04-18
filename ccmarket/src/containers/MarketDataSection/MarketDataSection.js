@@ -1,7 +1,7 @@
 import React from "react";
 import MarketDataTickerApi from "../../common/MarketDataTickerApi/MarketDataTickerApi";
 import "./MarketDataSection.css";
-import PropTypes from "prop-types";
+// import PropTypes from "prop-types";
 
 const MarketDataSection = props => {
   return (
@@ -30,8 +30,8 @@ const MarketDataSection = props => {
   );
 };
 
-MarketDataSection.propTypes = {
-  pageOn: PropTypes.string.isRequired
-};
+// MarketDataSection.propTypes = {
+//   pageOn: PropTypes.string.isRequired
+// };
 
 export default MarketDataSection;
