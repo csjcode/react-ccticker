@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from "react";
+import React, { Component } from "react";
 import { connect } from "react-redux";
 import { withRouter } from 'react-router-dom'
 import "./DataBranchNews.css";
@@ -6,7 +6,7 @@ import LoadingView from "../../common/LoadingView/LoadingView";
 import ErrorView from "../../common/ErrorView/ErrorView";
 import NewsDataView from "../../common/NewsDataView/NewsDataView";
 import newsapikey from "../../private/newsapikey";
-import { apiNewsRequest, showLoading } from "../../actions/news-actions";
+import { apiNewsRequest } from "../../actions/news-actions";
 
 class DataBranchNews extends Component {
   state = {
@@ -16,7 +16,7 @@ class DataBranchNews extends Component {
   componentDidMount(props) {
     var date = new Date();
     var yesterday = date - 1000 * 60 * 60 * 24 * 4;
-    var date = new Date(yesterday);
+    date = new Date(yesterday);
     const y = date.getFullYear();
     const m = date.getMonth() + 1;
     const d = date.getDate();

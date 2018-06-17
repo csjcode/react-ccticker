@@ -21,6 +21,9 @@ class DataSymbol extends Component {
   };
 
   async componentDidMount() {
+    
+    var dateline;
+
     const sym = this.props.sym || "BTC";
     let chartDateRange = this.props.chartDateRange || "30d";
     chartDateRange = this.props.chartDateRange || this.props.range;
@@ -50,6 +53,7 @@ class DataSymbol extends Component {
     const data = await res.json();
 
     let symFirstLastPrice = [];
+    
 
     this.setState({
       data: data.Data.map((v, i) => {
@@ -63,9 +67,9 @@ class DataSymbol extends Component {
         let d = date.getDate();
         let h = date.getHours();
         if (chartDateRange === "24h") {
-          var dateline = `${y}-${m}-${d}:${h}`;
+          dateline = `${y}-${m}-${d}:${h}`;
         } else {
-          var dateline = `${y}-${m}-${d}`;
+          dateline = `${y}-${m}-${d}`;
         }
 
         return {

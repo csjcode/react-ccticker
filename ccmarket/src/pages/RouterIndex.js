@@ -11,10 +11,10 @@ import ChartPage from "./ChartPage/ChartPage";
 import TermsPage from "./TermsPage/TermsPage";
 import FavoritesPage from "./FavoritesPage/FavoritesPage";
 import App from "../containers/App";
-import logo from "../images/logo.svg";
+// import logo from "../images/logo.svg";
 import grey from "material-ui/colors/grey";
 import green from "material-ui/colors/green";
-import MarketDataView from "../common/MarketDataView/MarketDataView";
+// import MarketDataView from "../common/MarketDataView/MarketDataView";
 
 const theme = createMuiTheme({
   palette: {
