@@ -68,6 +68,7 @@ class SimpleModal extends React.Component {
     e.stopPropagation();
 
     var mySymbol = e.currentTarget.getAttribute('data-symbol');
+    // var myName = e.currentTarget.getAttribute('data-name');
 
     this.props.onToggleFavorite(mySymbol);
     
@@ -115,7 +116,10 @@ class SimpleModal extends React.Component {
             {symbol}
           </TableCell>
           <TableCell  className="MarketDataTickerApi--col text-bigger">
-            <span onClick={this.handleFavorite} data-name={name} data-symbol={symbol}>
+            <span onClick={this.handleFavorite} 
+              data-name={name} 
+              data-symbol={symbol} 
+            >
             <FavoriteStatus symbol={symbol} saved={this.state.saved}/>
               {/* {this.props.favorites.indexOf(symbol) > -1 ? (
                   <Favorite className="MarketDataModal--Favorite-icon-saved" id="fave-{symbol}"/>

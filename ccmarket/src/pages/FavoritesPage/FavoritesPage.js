@@ -11,8 +11,6 @@ class FavoritesPage extends Component {
 
   handleListFavorites = () => {
 
-    
-
     if(localStorage.getItem("favoriteList") === 'null') { return (
       <div>
         No Favorites.
@@ -20,7 +18,6 @@ class FavoritesPage extends Component {
     ) }
 
     var favoriteListArr = JSON.parse(localStorage.getItem("favoriteList"));
-
 
     // OLD with state/props only: var favoriteList = this.props.favorites;
     

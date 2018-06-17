@@ -34,5 +34,13 @@ localStorage.setItem("names", JSON.stringify(names));
 var storedNames = JSON.parse(localStorage.getItem("names"));
 ```
 
+```javascript
+JSON.parse('{}'); // {}
+JSON.parse('true'); // true
+JSON.parse('"foo"'); // "foo"
+JSON.parse('[1, 5, "false"]'); // [1, 5, "false"]
+JSON.parse('null'); // null
+```
+
 
 
