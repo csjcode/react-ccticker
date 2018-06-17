@@ -3,9 +3,10 @@ import './FooterAppBar.css';
 // import PropTypes from 'prop-types';
 // import { withStyles } from 'material-ui/styles';
 import BottomNavigation, { BottomNavigationAction } from 'material-ui/BottomNavigation';
-import RestoreIcon from 'material-ui-icons/Restore';
+// import RestoreIcon from 'material-ui-icons/Restore';
 import FavoriteIcon from 'material-ui-icons/Favorite';
-import LocationOnIcon from 'material-ui-icons/LocationOn';
+// import LocationOnIcon from 'material-ui-icons/LocationOn';
+import Link from "react-router-dom/Link";
 
  class FooterAppBar extends React.Component {
    state = {
@@ -27,9 +28,9 @@ import LocationOnIcon from 'material-ui-icons/LocationOn';
          showLabels
          className="BottomNavigation--container"
        >
-         <BottomNavigationAction label="Recents" icon={<RestoreIcon />} />
-         <BottomNavigationAction label="Favorites" icon={<FavoriteIcon />} />
-         <BottomNavigationAction label="Nearby" icon={<LocationOnIcon />} />
+         {/* <BottomNavigationAction label="Recents" icon={<RestoreIcon />} /> */}
+         <Link to="/favorites"><BottomNavigationAction label="Favorites" icon={<FavoriteIcon />} /></Link>
+         {/* <BottomNavigationAction label="Nearby" icon={<LocationOnIcon />} /> */}
        </BottomNavigation>
      );
    }
