@@ -25,4 +25,14 @@ Some features:
 ...and more 
 
 
+#### Notes & References
+
+* Local Storage: 
+
+```javascript
+localStorage.setItem("names", JSON.stringify(names));
+var storedNames = JSON.parse(localStorage.getItem("names"));
+```
+
+
 
