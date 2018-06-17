@@ -15,7 +15,7 @@ import LandingPage from './LandingPage/LandingPage';
 import SignUpPage from './SignUpPage/SignUpPage';
 import SignInPage from './SignInPage/SignInPage';
 import PasswordForgetPage from './PasswordForgetPage/PasswordForgetPage';
-import HomePage from '.HomePage/HomePage';
+import HomePage from './HomePage/HomePage';
 import AccountPage from './AccountPage/AccountPage';
 
 import App from "../containers/App";
@@ -64,7 +64,7 @@ const RouterIndex = props => {
             />
             <Route
               exact path={routes.HOME}
-              component={() => <HomePage />}
+              render={() => <App pageOn="app" />}
             />
             <Route
               exact path={routes.ACCOUNT}
