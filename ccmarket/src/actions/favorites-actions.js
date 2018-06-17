@@ -1,4 +1,4 @@
-import store from "../store/store.js";
+// import store from "../store/store.js";
 
 export const TOGGLE_FAVORITE = "favorites:toggleFavorite";
 export const ADD_FAVORITE = "favorites:addFavorite";
@@ -17,9 +17,9 @@ export function toggleFavorite(mySymbol) {
   // console.log(favoriteList);
   var checkSymbol = favoriteListArr.indexOf(mySymbol);
   if(checkSymbol>-1){
-    var toggleSymbols = favoriteListArr.splice(favoriteListArr.indexOf(mySymbol),1);
+    favoriteListArr.splice(favoriteListArr.indexOf(mySymbol),1);
   } else {
-    var toggleSymbols = favoriteListArr.push(mySymbol);
+    favoriteListArr.push(mySymbol);
   }
   localStorage.setItem("favoriteList", JSON.stringify(favoriteListArr));
 	return {

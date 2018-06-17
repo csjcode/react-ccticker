@@ -16,7 +16,7 @@ class MarketDataTableRows extends Component {
 			var volume_usd = data['24h_volume_usd']/1000;
 	  
 			var market_cap_usd_commas = numberWithCommas(data.market_cap_usd);
-			var market_cap_usd_commas = '$' + market_cap_usd_commas;
+			market_cap_usd_commas = '$' + market_cap_usd_commas;
 			var price_usd_commas = numberWithCommas(price_usd);
 			var volume_usd_commas = numberWithCommas(volume_usd);
 	  
@@ -24,6 +24,7 @@ class MarketDataTableRows extends Component {
 		 
 			return (
 				<SimpleModalWrapped 
+					key={data.rank}
 					rank={data.rank} 
 					name={data.name} 
 					symbol={data.symbol} 

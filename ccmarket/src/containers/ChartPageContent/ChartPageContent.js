@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from "react";
+import React, { Component } from "react";
 import "./ChartPageContent.css";
 import MarketDataSymbol from "../MarketDataSymbol/MarketDataSymbol";
 import LoadingView from "../../common/LoadingView/LoadingView";
@@ -26,11 +26,11 @@ class ChartPageContent extends Component {
     return this.state.data.map((data, i) => {
       // return ({data[i]})
 
-      console.log(data);
+      
 
       if (data.symbol != "MIOTA") {
         return (
-          <div className="ChartPageContent--column">
+          <div className="ChartPageContent--column" key={data.symbol}>
             <MarketDataSymbol
               width={250}
               height={120}
@@ -44,7 +44,11 @@ class ChartPageContent extends Component {
             </div>
           </div>
         );
+      } else {
+        return null
       }
+
+      // return console.log(data);
     });
   };
 
