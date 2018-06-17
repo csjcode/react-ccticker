@@ -10,10 +10,19 @@ import TestPage from "./TestPage/TestPage";
 import ChartPage from "./ChartPage/ChartPage";
 import TermsPage from "./TermsPage/TermsPage";
 import FavoritesPage from "./FavoritesPage/FavoritesPage";
+
+import LandingPage from './LandingPage/LandingPage';
+import SignUpPage from './SignUpPage/SignUpPage';
+import SignInPage from './SignInPage/SignInPage';
+import PasswordForgetPage from './PasswordForgetPage/PasswordForgetPage';
+import HomePage from '.HomePage/HomePage';
+import AccountPage from './AccountPage/AccountPage';
+
 import App from "../containers/App";
 // import logo from "../images/logo.svg";
 import grey from "material-ui/colors/grey";
 import green from "material-ui/colors/green";
+import * as routes from '../constants/routes';
 // import MarketDataView from "../common/MarketDataView/MarketDataView";
 
 const theme = createMuiTheme({
@@ -36,6 +45,33 @@ const RouterIndex = props => {
         <div style={{ marginTop: 80, minHeight: 800 }}>
           <Switch>
             <Route exact path="/" render={() => <App pageOn="app" />} />
+
+            <Route
+              exact path={routes.LANDING}
+              component={() => <LandingPage />}
+            />
+            <Route
+              exact path={routes.SIGN_UP}
+              component={() => <SignUpPage />}
+            />
+            <Route
+              exact path={routes.SIGN_IN}
+              component={() => <SignInPage />}
+            />
+            <Route
+              exact path={routes.PASSWORD_FORGET}
+              component={() => <PasswordForgetPage />}
+            />
+            <Route
+              exact path={routes.HOME}
+              component={() => <HomePage />}
+            />
+            <Route
+              exact path={routes.ACCOUNT}
+              component={() => <AccountPage />}
+            />
+
+
             <Route path="/market" render={() => <App pageOn="app" />} />
             <Route
               path="/coinlist"

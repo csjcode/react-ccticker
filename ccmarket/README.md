@@ -42,5 +42,21 @@ JSON.parse('[1, 5, "false"]'); // [1, 5, "false"]
 JSON.parse('null'); // null
 ```
 
+Firebase:
 
+`https://www.robinwieruch.de/complete-firebase-authentication-react-tutorial/`
+
+`npm install firebase react-router-dom`
+
+In src/constants/routes.js file:
+```javascript
+
+export const SIGN_UP = '/signup';
+export const SIGN_IN = '/signin';
+export const LANDING = '/';
+export const HOME = '/home';
+export const ACCOUNT = '/account';
+export const PASSWORD_FORGET = '/pw-forget';
+
+```
 
