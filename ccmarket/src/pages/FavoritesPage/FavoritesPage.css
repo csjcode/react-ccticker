@@ -1,6 +1,14 @@
 .FavoritesPage--container {
+	/* margin: 0 auto; */
 	margin: 70px 50px;
-	text-align: left;
+	text-align: center;
+	width: 100%
+}
+
+.FavoritesPage--container-inner {
+	/* margin: 0 auto; */
+	margin: 0 auto;
+	width: 50%
 }
 
 .FavoritesPage--container-favorites-nolist {

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from "react-redux";
+import Favorite from "material-ui-icons/Favorite";
 import './FavoritesPage.css';
 // import '../../store/store.js';
 // import { listFavorites } from "../../actions/favorites-actions";
@@ -50,7 +51,8 @@ class FavoritesPage extends Component {
   render() {
     return (
       <div className="FavoritesPage--container">
-        <h2>Favorites</h2>
+        <Favorite style={{color: 'red',width:100, height:100}} />
+        <h3 style={{marginTop:5}}>Favorites</h3>
         <div className="FavoritesPage--container-inner">
 
           { this.state.favorites === false ?
@@ -64,8 +66,8 @@ class FavoritesPage extends Component {
             ) : (
 
               <div className="FavoritesPage--container-favorites">
-              <h4>This area is in DEVELOPMENT currently.</h4>
-                <h4>Here are your<br />Favorites</h4>
+              <p>This area is in DEVELOPMENT currently. We'll be adding more market info to Favorites</p>
+                {/* <h4>Here are your<br />Favorites</h4> */}
                 {this.handleListFavorites()}
               </div>  
             )
