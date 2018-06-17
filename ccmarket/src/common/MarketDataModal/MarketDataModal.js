@@ -45,7 +45,8 @@ class SimpleModal extends React.Component {
   };
 
   componentWillMount(){
-    var mySymbolList = this.props.favorites;
+    // var mySymbolList = this.props.favorites;
+    var mySymbolList = JSON.parse(localStorage.getItem("favoriteList"));
     if(mySymbolList.indexOf(this.props.symbol)>-1){
       this.setState(prevState => ({ saved: !this.state.saved }));
     }
@@ -72,7 +73,7 @@ class SimpleModal extends React.Component {
     
     this.setState(prevState => ({ saved: !this.state.saved }));
 
-    // return console.log('FAVORITE! ' + mySymbolList);
+    return console.log('FAVORITE! ' + mySymbol);
 
   }
 
@@ -92,6 +93,9 @@ class SimpleModal extends React.Component {
       symbol,
       id
     } = this.props;
+
+    var favoriteListArr = JSON.parse(localStorage.getItem("favoriteList"));
+    if(favoriteListArr.length < 1){ favoriteListArr='';}
 
     return (
       <Fragment>

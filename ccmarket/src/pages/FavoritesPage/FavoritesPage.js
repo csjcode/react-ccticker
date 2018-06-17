@@ -10,9 +10,19 @@ class FavoritesPage extends Component {
   };
 
   handleListFavorites = () => {
-    var favoriteList = this.props.favorites;
-    console.log(`Favorites: ${favoriteList}`);
-    return favoriteList.map((v,i)=>{
+
+    var favoriteListArr = JSON.parse(localStorage.getItem("favoriteList"));
+
+    if(favoriteListArr.length < 1) { return (
+      <div>
+        No Favorites.
+      </div>
+    ) }
+    // OLD with state/props only: var favoriteList = this.props.favorites;
+    
+    console.log(`Favorites: ${favoriteListArr}`);
+
+    return favoriteListArr.map((v,i)=>{
       return (
         <div key={v}>
           {v}
@@ -39,6 +49,7 @@ class FavoritesPage extends Component {
             ) : (
 
               <div className="FavoritesPage--container-favorites">
+              <h4>This area is in DEVELOPMENT currently.</h4>
                 <h4>Here are your<br />Favorites</h4>
                 {this.handleListFavorites()}
               </div>  

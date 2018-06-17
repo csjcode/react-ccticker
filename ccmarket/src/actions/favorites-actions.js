@@ -11,18 +11,20 @@ export const SHOW_LOADING = "favorites:showLoading";
 
 
 export function toggleFavorite(mySymbol) {
-  var favoriteList = store.getState().favorites;
+  // var favoriteList = store.getState().favorites;
+  var favoriteListArr = JSON.parse(localStorage.getItem("favoriteList"));
   // console.log(favoriteList);
-  var checkSymbol = favoriteList.indexOf(mySymbol);
+  var checkSymbol = favoriteListArr.indexOf(mySymbol);
   if(checkSymbol>-1){
-    var toggleSymbols = favoriteList.splice(favoriteList.indexOf(mySymbol),1);
+    var toggleSymbols = favoriteListArr.splice(favoriteListArr.indexOf(mySymbol),1);
   } else {
-    var toggleSymbols = favoriteList.push(mySymbol);
+    var toggleSymbols = favoriteListArr.push(mySymbol);
   }
+  localStorage.setItem("favoriteList", JSON.stringify(favoriteListArr));
 	return {
 	  type: TOGGLE_FAVORITE,
 	  payload: {
-		 favorites: favoriteList
+		 favorites: favoriteListArr
 	  }
 	};
  }
