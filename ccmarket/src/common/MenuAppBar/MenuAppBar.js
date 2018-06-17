@@ -8,6 +8,7 @@ import Typography from "material-ui/Typography";
 import IconButton from "material-ui/IconButton";
 import Button from "material-ui/Button";
 import Favorite from "material-ui-icons/Favorite";
+import AccountCircle from "material-ui-icons/AccountCircle";
 import MenuIcon from "material-ui-icons/Menu";
 import Whatshot from "material-ui-icons/Whatshot";
 import ViewHeadline from "material-ui-icons/ViewHeadline";
@@ -89,7 +90,10 @@ class MenuAppBar extends Component {
                 <Link to="/news">Coin News</Link>
               </MenuItem>
               <MenuItem onClick={this.handleClose}>
-                <Link to="/favorities">Favorities</Link>
+                <Link to="/favorites">Favorites</Link>
+              </MenuItem>
+              <MenuItem onClick={this.handleClose}>
+                <Link to="/signup">Sign Up</Link>
               </MenuItem>
             </Menu>
             <MenuIcon />
@@ -143,6 +147,14 @@ class MenuAppBar extends Component {
                   <Favorite className="iconspace-Favorite" /> Favorites
                 </Button>
               </Link>
+
+              <Link to="/signup">
+                <Button className="MenuAppBar--AppBar-menuButtons-mui">
+                  <AccountCircle className="iconspace-AccountCircle" /> Sign Up
+                </Button>
+              </Link>
+
+              
   
             </div>
           </Toolbar>

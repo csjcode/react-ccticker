@@ -60,3 +60,26 @@ export const PASSWORD_FORGET = '/pw-forget';
 
 ```
 
+In Firebase
+
+* “Authentication”. 
+* “Sign-In Method”
+* Enable the authentication with Email/Password
+* Copy code from "Web setup" buttone (currently top right)
+```
+
+<script src="https://www.gstatic.com/firebasejs/5.0.4/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "[long number was here]",
+    authDomain: "coinapi-2801a.firebaseapp.com",
+    databaseURL: "https://coinapi-2801a.firebaseio.com",
+    projectId: "coinapi-2801a",
+    storageBucket: "coinapi-2801a.appspot.com",
+    messagingSenderId: "1092095185403"
+  };
+  firebase.initializeApp(config);
+</script>
+```
+
