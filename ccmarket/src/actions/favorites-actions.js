@@ -13,6 +13,7 @@ export const SHOW_LOADING = "favorites:showLoading";
 export function toggleFavorite(mySymbol) {
   // var favoriteList = store.getState().favorites;
   var favoriteListArr = JSON.parse(localStorage.getItem("favoriteList"));
+  if(localStorage.getItem("favoriteList") === null){ favoriteListArr=[];}
   // console.log(favoriteList);
   var checkSymbol = favoriteListArr.indexOf(mySymbol);
   if(checkSymbol>-1){

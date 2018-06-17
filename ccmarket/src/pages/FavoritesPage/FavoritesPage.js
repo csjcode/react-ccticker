@@ -11,21 +11,25 @@ class FavoritesPage extends Component {
 
   handleListFavorites = () => {
 
-    var favoriteListArr = JSON.parse(localStorage.getItem("favoriteList"));
+    
 
-    if(favoriteListArr.length < 1) { return (
+    if(localStorage.getItem("favoriteList") === 'null') { return (
       <div>
         No Favorites.
       </div>
     ) }
+
+    var favoriteListArr = JSON.parse(localStorage.getItem("favoriteList"));
+
+
     // OLD with state/props only: var favoriteList = this.props.favorites;
     
     console.log(`Favorites: ${favoriteListArr}`);
 
     return favoriteListArr.map((v,i)=>{
       return (
-        <div key={v}>
-          {v}
+        <div key={v} style={{backgroundColor:'#f5f5f5', margin:5, padding: 10}}>
+          <span style={{marginRight: 10}}>{i+1}.</span> {v}
         </div>
       )
     }
