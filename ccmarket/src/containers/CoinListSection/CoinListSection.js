@@ -4,7 +4,7 @@ import { withRouter } from "react-router-dom";
 import "./CoinListSection.css";
 import LoadingView from "../../common/LoadingView/LoadingView";
 import ErrorView from "../../common/ErrorView/ErrorView";
-import { Paper , TableBody} from "material-ui";
+import { Paper } from "material-ui";
 import numberWithCommas from "../../utils/numberWithCommas";
 import coinListDescriptions from "../../data/coinlist-description.js";
 
@@ -40,7 +40,6 @@ class CoinListSection extends Component {
             </h4>
           </div>
           <table style={{ padding: 20, maxWidth: 900 }}>
-          <tbody>
             <tr>
               <th style={{ width: 50 }} />
               <th style={{ width: 150 }} />
@@ -48,9 +47,7 @@ class CoinListSection extends Component {
               <th />
               <th />
             </tr>
-            
             {this.renderTableRows()}
-            </tbody>
           </table>
           {/* {this.renderCoinListDescription()}  */}
         </Paper>
@@ -76,7 +73,7 @@ class CoinListSection extends Component {
       }
 
       return (
-        <tr key={data.rank}>
+        <tr>
           <td style={{ padding: 20, width: 50 }}>{data.rank}</td>
           <td style={{ padding: 20, width: 150 }}>{data.name}</td>
           <td style={{ padding: 20, width: 50 }}>{data.symbol}</td>

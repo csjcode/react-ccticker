@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 import "./MarketDataModal.css";
 import { withStyles } from "material-ui/styles";
 import Typography from "material-ui/Typography";
-// import Favorite from "material-ui-icons/Favorite";
+import Favorite from "material-ui-icons/Favorite";
 import FavoriteStatus from "../FavoriteStatus/FavoriteStatus";
 import Modal from "material-ui/Modal";
 import { TableCell, TableRow } from "material-ui/Table";
@@ -70,16 +70,17 @@ class SimpleModal extends React.Component {
     var mySymbol = e.currentTarget.getAttribute('data-symbol');
     // var myName = e.currentTarget.getAttribute('data-name');
 
-    this.setState(prevState => ({ saved: !this.state.saved }));
-
     this.props.onToggleFavorite(mySymbol);
     
+    this.setState(prevState => ({ saved: !this.state.saved }));
+
     return console.log('FAVORITE! ' + mySymbol);
 
   }
 
   render(props) {
     const {
+      classes,
       rank,
       name,
       price_usd_commas,
@@ -94,8 +95,8 @@ class SimpleModal extends React.Component {
       id
     } = this.props;
 
-    // var favoriteListArr = JSON.parse(localStorage.getItem("favoriteList"));
-    // if(localStorage.getItem("favoriteList") === null){ favoriteListArr='';}
+    var favoriteListArr = JSON.parse(localStorage.getItem("favoriteList"));
+    if(localStorage.getItem("favoriteList") === null){ favoriteListArr='';}
 
     return (
       <Fragment>
@@ -134,21 +135,21 @@ class SimpleModal extends React.Component {
 
           <TableCell className="MarketDataTickerApi--col ">
             {percent_change_1h > 0 ? (
-              <span style={{ color: "green" }}>+{percent_change_1h}%</span>
+              <span style={{ color: "green" }}>{percent_change_1h}%</span>
             ) : (
               <span style={{ color: "red" }}>{percent_change_1h}%</span>
             )}
           </TableCell>
           <TableCell className="MarketDataTickerApi--col ">
             {percent_change_24h > 0 ? (
-              <span style={{ color: "green" }}>+{percent_change_24h}%</span>
+              <span style={{ color: "green" }}>{percent_change_24h}%</span>
             ) : (
               <span style={{ color: "red" }}>{percent_change_24h}%</span>
             )}
           </TableCell>
           <TableCell className="MarketDataTickerApi--col collapsible">
             {percent_change_7d > 0 ? (
-              <span style={{ color: "green" }}>+{percent_change_7d}%</span>
+              <span style={{ color: "green" }}>{percent_change_7d}%</span>
             ) : (
               <span style={{ color: "red" }}>{percent_change_7d}%</span>
             )}

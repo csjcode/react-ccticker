@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import "./NewsPage.css";
 import DataBranchNews from "../../containers/DataBranchNews/DataBranchNews";
 import Link from "react-router-dom/Link";
-// import NavLink from "react-router-dom/NavLink";
+import NavLink from "react-router-dom/NavLink";
 
 class NewsPage extends Component {
   state = {

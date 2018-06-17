@@ -4,24 +4,10 @@ import './FavoritesPage.css';
 // import '../../store/store.js';
 // import { listFavorites } from "../../actions/favorites-actions";
 
-// import coinListDescriptions from "../../data/coinlist-description.js";
-// var coinListArr = coinListDescriptions.split("\n").map(x => x.split("|"));
-// console.log('coinListArr: ' + coinListArr);
-
 class FavoritesPage extends Component {
   state = {
-    favorites: true,
-    coinlist: []
+    favorites: true
   };
-
-  componentDidMount() {
-    fetch("https://api.coinmarketcap.com/v1/ticker/?limit=100")
-      .then(res => res.json())
-      .then(
-        coinlist => this.setState(prev => ({ loading: false, coinlist })),
-        error => this.setState(prev => ({ loading: false, error }))
-      );
-  }
 
   handleListFavorites = () => {
 
@@ -32,7 +18,7 @@ class FavoritesPage extends Component {
     ) }
 
     var favoriteListArr = JSON.parse(localStorage.getItem("favoriteList"));
-    favoriteListArr = favoriteListArr.sort();
+
     // OLD with state/props only: var favoriteList = this.props.favorites;
     
     console.log(`Favorites: ${favoriteListArr}`);
