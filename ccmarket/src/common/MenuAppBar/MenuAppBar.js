@@ -16,6 +16,33 @@ import InfoOutline from "material-ui-icons/InfoOutline";
 import ShowChart from "material-ui-icons/ShowChart";
 import Menu, { MenuItem } from "material-ui/Menu";
 import Link from "react-router-dom/Link";
+import MenuLogin from '../../pages/MenuLogin';
+// import * as routes from '../../constants/routes';
+
+
+// const Navigation = ({ authUser }) =>
+//   <div>
+//     { authUser
+//         ? <NavigationAuth />
+//         : <NavigationNonAuth />
+//     }
+//   </div>
+
+// const NavigationAuth = () =>
+// <Link to="/signin">
+//   <Button className="MenuAppBar--AppBar-menuButtons-mui">
+//     <AccountCircle className="iconspace-AccountCircle" /> Sign In
+//   </Button>
+// </Link>
+
+// const NavigationNonAuth = () =>
+// <Link to="/signin">
+//   <Button className="MenuAppBar--AppBar-menuButtons-mui">
+//     <AccountCircle className="iconspace-AccountCircle" /> Sign In
+//   </Button>
+// </Link>
+
+
 
 const styles = {
   root: {
@@ -33,7 +60,8 @@ const styles = {
 class MenuAppBar extends Component {
   state = {
     auth: true,
-    anchorEl: null
+    anchorEl: null,
+    authstate: this.props.authUser
   };
   handleClick = event => {
     this.setState({ anchorEl: event.currentTarget });
@@ -54,7 +82,7 @@ class MenuAppBar extends Component {
     this.setState({ anchorEl: event.currentTarget });
   };
 
-  render() {
+  render(props) {
     const { classes } = this.props;
     const { anchorEl } = this.state;
     const open = Boolean(anchorEl);
@@ -147,14 +175,9 @@ class MenuAppBar extends Component {
                   <Favorite className="iconspace-Favorite" /> Favorites
                 </Button>
               </Link>
-
-              <Link to="/signup">
-                <Button className="MenuAppBar--AppBar-menuButtons-mui">
-                  <AccountCircle className="iconspace-AccountCircle" /> Sign Up
-                </Button>
-              </Link>
-
               
+
+              <MenuLogin {...this.props} />
   
             </div>
           </Toolbar>

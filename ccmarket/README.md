@@ -83,3 +83,4 @@ In Firebase
 </script>
 ```
 
+* authstate props are passed from RouterIndex -> HeaderSection -> MenuAppBar -> Navigation 

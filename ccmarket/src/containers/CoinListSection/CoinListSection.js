@@ -93,7 +93,7 @@ class CoinListSection extends Component {
         <div style={{ marginTop: 30 }}>
           <Paper style={{ maxWidth: 1000, margin: "0 auto", padding: 20 }}>
             <div style={{ marginLeft: 30 }}>
-              <h1>Top 100 Coin List</h1>
+              <h3>Top 100 Coin List</h3>
               <h4>
                 A descriptive listing of the 100 of the most active
                 cryptocurrencies

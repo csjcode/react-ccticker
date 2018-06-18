@@ -1,4 +1,4 @@
-import React from "react";
+import React, {Component} from "react";
 import { Route, Switch } from "react-router-dom";
 import Reboot from "material-ui/Reboot";
 import { MuiThemeProvider, createMuiTheme } from "material-ui/styles";
@@ -23,6 +23,7 @@ import App from "../containers/App";
 import grey from "material-ui/colors/grey";
 import green from "material-ui/colors/green";
 import * as routes from '../constants/routes';
+import { firebase } from '../firebase';
 // import MarketDataView from "../common/MarketDataView/MarketDataView";
 
 const theme = createMuiTheme({
@@ -35,13 +36,30 @@ const theme = createMuiTheme({
   }
 });
 
-const RouterIndex = props => {
-  return (
+class RouterIndex extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      authUser: null,
+    };
+  }
+
+  componentDidMount() {
+    firebase.auth.onAuthStateChanged(authUser => {
+      authUser
+        ? this.setState(() => ({ authUser }))
+        : this.setState(() => ({ authUser: null }));
+    });
+  }
+
+  render() {
+    return (
     <MuiThemeProvider theme={theme}>
       <div>
         <Reboot />
         {/* <AlertSection /> */}
-        <HeaderSection />
+        <HeaderSection authstate={this.state.authUser} />
         <div style={{ marginTop: 80, minHeight: 800 }}>
           <Switch>
             <Route exact path="/" render={() => <App pageOn="app" />} />
@@ -110,5 +128,6 @@ const RouterIndex = props => {
     </MuiThemeProvider>
   );
 };
+}
 
 export default RouterIndex;

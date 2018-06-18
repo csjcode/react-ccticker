@@ -6,7 +6,7 @@ const HeaderSection = props => {
   return (
     <div>
       {/* My HeaderSection */}
-      <MenuAppBar />
+      <MenuAppBar {...props} />
     </div>
   );
 };

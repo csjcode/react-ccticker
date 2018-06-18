@@ -4,7 +4,7 @@ import ChartPageContent from "../../containers/ChartPageContent/ChartPageContent
 
 class ChartPage extends Component {
   componentDidMount() {
-    fetch("https://api.coinmarketcap.com/v1/ticker/?limit=20")
+    fetch("https://api.coinmarketcap.com/v1/ticker/?limit=15")
       .then(res => res.json())
       .then(
         data => this.setState(prev => ({ loading: false, data })),
@@ -33,7 +33,7 @@ class ChartPage extends Component {
       <Fragment>
         <div className="ChartPage--container">
           <div className="ChartPage--heading">
-            <h1>Coin Charts</h1>
+            <h3>Coin Charts</h3>
           </div>
 
           {this.renderLinks()}
