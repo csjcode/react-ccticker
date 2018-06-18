@@ -11,7 +11,7 @@ import './FavoritesPage.css';
 
 class FavoritesPage extends Component {
   state = {
-    favorites: true,
+    // favorites: true,
     coinlist: []
   };
 
@@ -26,7 +26,7 @@ class FavoritesPage extends Component {
 
   handleListFavorites = () => {
 
-    if(localStorage.getItem("favoriteList") === 'null') { return (
+    if(localStorage.getItem("favoriteList") === null) { return (
       <div>
         No Favorites.
       </div>
