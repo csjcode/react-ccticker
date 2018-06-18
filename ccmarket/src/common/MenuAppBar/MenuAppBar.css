@@ -25,6 +25,16 @@
    transition-duration: 0.3s;
 }
 
+.MenuAppBar--AppBar-menuButtons-mui-noborder {
+   margin: 0 15px 0 0 !important;
+   border: 0px solid indianred !important;
+   padding:8px 3px;
+   text-decoration: none;
+   color: black;
+   transition-duration: 0.3s;
+}
+
+
 .MenuAppBar--AppBar-menuButtons-mui:hover {
    background-color: rgb(226, 226, 226) !important;
    border: 1px solid rgb(0, 0, 0) !important;

@@ -86,7 +86,7 @@ class RouterIndex extends Component {
             />
             <Route
               exact path={routes.ACCOUNT}
-              component={() => <AccountPage />}
+              component={() => <AccountPage authstate={this.state.authUser} />}
             />
 
 

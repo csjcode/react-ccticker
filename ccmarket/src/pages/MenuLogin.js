@@ -15,13 +15,28 @@ const MenuLogin = ({ authstate }) =>
   </Fragment>
 
 const NavigationAuth = () =>
-	<SignOutButton />
+  <Fragment>
+    <SignOutButton/>
+    <Link to="/account" style={{marginLeft:10}}>
+      <Button className="MenuAppBar--AppBar-menuButtons-mui">
+        <AccountCircle className="iconspace-AccountCircle" /> Account
+      </Button>
+    </Link>
+  </Fragment>
 
 const NavigationNonAuth = () =>
-<Link to="/signin">
-  <Button className="MenuAppBar--AppBar-menuButtons-mui">
-    <AccountCircle className="iconspace-AccountCircle" /> Sign In
-  </Button>
-</Link>
+<Fragment>
+  <Link to="/signin">
+    <Button className="MenuAppBar--AppBar-menuButtons-mui">
+      <AccountCircle className="iconspace-AccountCircle" style={{color:'green'}} /> Sign In
+    </Button>
+  </Link>
+  <Link to="/account">
+    <Button className="MenuAppBar--AppBar-menuButtons-mui">
+      <AccountCircle className="iconspace-AccountCircle" /> Account
+    </Button>
+  </Link>
+</Fragment>
+
 
 export default MenuLogin;

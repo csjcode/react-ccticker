@@ -5,10 +5,12 @@ import { PasswordForgetLink } from '../PasswordForgetPage/PasswordForgetPage';
 import { SignUpLink } from './../SignUpPage/SignUpPage';
 import { auth } from '../../firebase';
 import * as routes from '../../constants/routes';
+import AccountCircle from "material-ui-icons/AccountCircle";
 
 const SignInPage = ({ history }) =>
-  <div>
-    <h1>SignIn</h1>
+  <div style={{margin:'50 auto', width:'100%', textAlign:'center'}}>
+    <AccountCircle style={{color:'green',width:100,height:100}} /> 
+    <h3>Sign In</h3>
     <SignInForm history={history} />
     <SignUpLink />
   </div>
@@ -65,21 +67,34 @@ class SignInForm extends Component {
 
     return (
       <form onSubmit={this.onSubmit}>
-        <input
-          value={email}
-          onChange={event => this.setState(byPropKey('email', event.target.value))}
-          type="text"
-          placeholder="Email Address"
-        />
-        <input
-          value={password}
-          onChange={event => this.setState(byPropKey('password', event.target.value))}
-          type="password"
-          placeholder="Password"
-        />
-        <button disabled={isInvalid} type="submit">
-          Sign In
-        </button>
+      {/* style={{marginLeft:10, paddingLeft:10,paddingRight:10,paddingTop:10, paddingBottom:10}} */}
+        <div style={{margin:10}}>
+          <input
+            value={email}
+            onChange={event => this.setState(byPropKey('email', event.target.value))}
+            type="text"
+            placeholder="Email Address"
+            style={{marginLeft:10, paddingLeft:10,paddingRight:10,paddingTop:10, paddingBottom:10}}
+          />
+        </div>
+        <div style={{margin:10}}>
+          <input
+            value={password}
+            onChange={event => this.setState(byPropKey('password', event.target.value))}
+            type="password"
+            placeholder="Password"
+            style={{marginLeft:10, paddingLeft:10,paddingRight:10,paddingTop:10, paddingBottom:10}}
+          />
+        </div>
+        <div style={{margin:10}}>
+          <button 
+            disabled={isInvalid} 
+            type="submit"
+            style={{backgroundColor:'#00a7ff', color: 'white', marginLeft:7, marginTop:20,paddingLeft:12,paddingRight:12,paddingTop:8, paddingBottom:8}}
+          >
+            Sign In
+          </button>
+        </div>
 
         { error && <p>{error.message}</p> }
       </form>
