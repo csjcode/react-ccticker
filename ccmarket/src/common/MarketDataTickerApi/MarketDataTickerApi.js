@@ -17,7 +17,7 @@ class MarketDataTickerApi extends Component {
   render() {
     return (
       <div style={{ minHeight: 800 }}>
-        <MarketDataBranch {...this.state} />
+        <MarketDataBranch {...this.state} {...this.props}/>
       </div>
     );
   }

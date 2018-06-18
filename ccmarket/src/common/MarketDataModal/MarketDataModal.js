@@ -99,6 +99,9 @@ class SimpleModal extends React.Component {
     Math.abs(this.props.percent_change_7d) > 15 ? cellBold7d = 'cellHighlight' : null;
     this.props.percent_change_7d > 15 ? cellBold7d = 'cellHighlightGreen' : null;
 
+  
+
+
     const {
       rank,
       name,
@@ -116,7 +119,10 @@ class SimpleModal extends React.Component {
 
     
 
-    
+    if((this.props.onlyFavorites===true) && (this.state.saved!==true)){
+      return null;
+    }
+    // onlyFavorites
 
     // var favoriteListArr = JSON.parse(localStorage.getItem("favoriteList"));
     // if(localStorage.getItem("favoriteList") === null){ favoriteListArr='';}

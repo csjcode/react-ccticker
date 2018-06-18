@@ -25,7 +25,7 @@ class AccountPage extends Component {
 const AccountPageNoAuth = ({ authstate }) =>
 <Fragment>
 	<div style={{margin:'50 auto', width:'100%', textAlign:'center'}}>
-		<h3>Account Page NOT active - You must log in</h3>
+		<h3>Account Page not active - You must log in</h3>
 		<div style={{margin:20}}>
 			<Link to="/signin">
 				<Button className="MenuAppBar--AppBar-menuButtons-mui">

@@ -21,7 +21,8 @@ class MarketDataTableRows extends Component {
 			var volume_usd_commas = numberWithCommas(volume_usd);
 	  
 			var price_btc = parseFloat(data.price_btc).toFixed(5);
-		 
+			
+			
 			return (
 				<SimpleModalWrapped 
 					key={data.rank}
@@ -36,6 +37,7 @@ class MarketDataTableRows extends Component {
 					market_cap_usd_commas = {market_cap_usd_commas} 
 					price_btc = {price_btc} 
 					date = {date} 
+					onlyFavorites = {this.props.onlyFavorites}
 				/>				 
 			)
 		 })

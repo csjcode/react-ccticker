@@ -3,6 +3,10 @@
 	font-weight: bold;
 }
 
+.hiddenRow {
+	display: none;
+}
+
 .cellHighlight {
 	font-weight: bold;
 	padding: 3px;
