@@ -14,7 +14,7 @@ const MarketDataSection = props => {
 
       <div className="MarketDataSection--intro">
         <p className="large-content">
-          <b>BETA:</b>This is an experimental service. Cryptocurrencies are used
+          <b>BETA:</b>This is an experimental service using React, Redux, Firebase, Node.js, D3(vx). Cryptocurrencies are used
           primarily outside existing banking and governmental institutions and
           are exchanged over the Internet. While these alternative,
           decentralized modes of exchange are in the early stages of

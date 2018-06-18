@@ -55,15 +55,14 @@ class SimpleModal extends React.Component {
       this.setState(prevState => ({ saved: !this.state.saved }));
     }
 
-    Math.abs(this.props.percent_change_24h) > 3 ? cellBold24h = 'cellBold' : cellBold24h = '';
-    Math.abs(this.props.percent_change_24h) > 4 ? cellBold24h = 'cellHighlight' : null;
-    this.props.percent_change_24h > 4 ? cellBold24h = 'cellHighlightGreen' : null;
-    Math.abs(this.props.percent_change_7d) > 10 ? cellBold7d = 'cellBold' : cellBold7d = '';
-    Math.abs(this.props.percent_change_7d) > 15 ? cellBold7d = 'cellHighlight' : null;
-    this.props.percent_change_7d > 15 ? cellBold7d = 'cellHighlightGreen' : null;
 
 
   }
+  
+  componentDidMount(props) {
+    
+  }
+  
 
   handleOpenModal = symbol => {
     this.setState(prevState => ({
@@ -91,10 +90,15 @@ class SimpleModal extends React.Component {
 
   }
 
-  
-
-
   render(props) {
+
+    Math.abs(this.props.percent_change_24h) > 3 ? cellBold24h = 'cellBold' : cellBold24h = '';
+    Math.abs(this.props.percent_change_24h) > 4 ? cellBold24h = 'cellHighlight' : null;
+    this.props.percent_change_24h > 4 ? cellBold24h = 'cellHighlightGreen' : null;
+    Math.abs(this.props.percent_change_7d) > 10 ? cellBold7d = 'cellBold' : cellBold7d = '';
+    Math.abs(this.props.percent_change_7d) > 15 ? cellBold7d = 'cellHighlight' : null;
+    this.props.percent_change_7d > 15 ? cellBold7d = 'cellHighlightGreen' : null;
+
     const {
       rank,
       name,
