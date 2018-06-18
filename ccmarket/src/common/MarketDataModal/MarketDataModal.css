@@ -1,4 +1,21 @@
 
+.cellBold {
+	font-weight: bold;
+}
+
+.cellHighlight {
+	font-weight: bold;
+	padding: 3px;
+	background-color: #eaff6a;
+}
+
+.cellHighlightGreen {
+	border:2px solid green;
+	font-weight: bold;
+	padding: 3px;
+	background-color: #9effa2;
+}
+
 .MarketDataModal--modal {
 	background-color: white;
 	position: absolute;

@@ -37,6 +37,10 @@ const styles = theme => ({
   }
 });
 
+var cellBold24h, cellBold7d
+    
+
+
 class SimpleModal extends React.Component {
   state = {
     open: false,
@@ -44,12 +48,21 @@ class SimpleModal extends React.Component {
     saved: false
   };
 
-  componentWillMount(){
+  componentWillMount(props){
     // var mySymbolList = this.props.favorites;
     var mySymbolList = JSON.parse(localStorage.getItem("favoriteList"));
     if((localStorage.getItem("favoriteList")!==null) && (mySymbolList.indexOf(this.props.symbol)>-1)){
       this.setState(prevState => ({ saved: !this.state.saved }));
     }
+
+    Math.abs(this.props.percent_change_24h) > 3 ? cellBold24h = 'cellBold' : cellBold24h = '';
+    Math.abs(this.props.percent_change_24h) > 4 ? cellBold24h = 'cellHighlight' : null;
+    this.props.percent_change_24h > 4 ? cellBold24h = 'cellHighlightGreen' : null;
+    Math.abs(this.props.percent_change_7d) > 10 ? cellBold7d = 'cellBold' : cellBold7d = '';
+    Math.abs(this.props.percent_change_7d) > 15 ? cellBold7d = 'cellHighlight' : null;
+    this.props.percent_change_7d > 15 ? cellBold7d = 'cellHighlightGreen' : null;
+
+
   }
 
   handleOpenModal = symbol => {
@@ -78,6 +91,9 @@ class SimpleModal extends React.Component {
 
   }
 
+  
+
+
   render(props) {
     const {
       rank,
@@ -94,6 +110,10 @@ class SimpleModal extends React.Component {
       id
     } = this.props;
 
+    
+
+    
+
     // var favoriteListArr = JSON.parse(localStorage.getItem("favoriteList"));
     // if(localStorage.getItem("favoriteList") === null){ favoriteListArr='';}
 
@@ -108,7 +128,8 @@ class SimpleModal extends React.Component {
           <TableCell className="MarketDataTickerApi--col text-bigger collapsible">
             {rank}
           </TableCell>
-          <TableCell className="MarketDataTickerApi--col text-bigger">
+          <TableCell 
+            className="MarketDataTickerApi--col text-bigger">
             {name}
           </TableCell>
           <TableCell className="MarketDataTickerApi--col text-bigger">
@@ -141,16 +162,18 @@ class SimpleModal extends React.Component {
           </TableCell>
           <TableCell className="MarketDataTickerApi--col ">
             {percent_change_24h > 0 ? (
-              <span style={{ color: "green" }}>+{percent_change_24h}%</span>
+              <span className={cellBold24h} style={{ color: "green" }}>+{percent_change_24h}%</span>
             ) : (
-              <span style={{ color: "red" }}>{percent_change_24h}%</span>
+              <span className={cellBold24h} style={{ color: "red" }}>{percent_change_24h}%</span>
             )}
           </TableCell>
+          
           <TableCell className="MarketDataTickerApi--col collapsible">
+            
             {percent_change_7d > 0 ? (
-              <span style={{ color: "green" }}>+{percent_change_7d}%</span>
+              <span className={cellBold7d} style={{ color: "green" }}>+{percent_change_7d}%</span>
             ) : (
-              <span style={{ color: "red" }}>{percent_change_7d}%</span>
+              <span className={cellBold7d} style={{ color: "red" }}>{percent_change_7d}%</span>
             )}
           </TableCell>
           <TableCell className="MarketDataTickerApi--col collapsible">

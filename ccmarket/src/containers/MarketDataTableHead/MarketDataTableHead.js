@@ -23,7 +23,7 @@ const MarketDataTableHead = () => {
           Fav
         </TableCell> 
         <TableCell className="DataTickerApi--col-head" style={{ width: 80 }}>
-          USD
+          USD ($M)/Vol.
         </TableCell>
         <TableCell className="DataTickerApi--col-head" style={{ width: 60 }}>
           1 Hr &Delta;
