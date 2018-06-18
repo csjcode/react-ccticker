@@ -122,11 +122,7 @@ class SimpleModal extends React.Component {
     if((this.props.onlyFavorites===true) && (this.state.saved!==true)){
       return null;
     }
-    // onlyFavorites
-
-    // var favoriteListArr = JSON.parse(localStorage.getItem("favoriteList"));
-    // if(localStorage.getItem("favoriteList") === null){ favoriteListArr='';}
-
+   
     return (
       <Fragment>
         <TableRow
