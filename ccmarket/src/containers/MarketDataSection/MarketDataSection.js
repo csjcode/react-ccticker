@@ -1,5 +1,7 @@
 import React, {Component} from "react";
 import MarketDataTickerApi from "../../common/MarketDataTickerApi/MarketDataTickerApi";
+import Whatshot from "material-ui-icons/Whatshot";
+import Favorite from "material-ui-icons/Favorite";
 import "./MarketDataSection.css";
 import Button from "material-ui/Button";
 // import PropTypes from "prop-types";
@@ -7,18 +9,24 @@ import Button from "material-ui/Button";
 class MarketDataSection extends Component {
 
   state = {
-    onlyFavorites:false
+    onlyFavorites:false,
+    rows24hHigh:false
   }
 
   handleFavoriteRows = () => {
     // alert('button clicked');
     return this.setState(prevState=>({onlyFavorites: !this.state.onlyFavorites}));
-    // return alert(this.state.onlyFavorites);
+  }
+
+
+  handleRows24hHigh = () => {
+    // alert('button clicked');
+    return this.setState(prevState=>({rows24hHigh: !this.state.rows24hHigh}));
   }
 
   render(props){
 
-    var classNameFavorites = this.state.onlyFavorites ? 'click-state' : 'base-state';
+    // var classNameFavorites = this.state.onlyFavorites ? 'click-state' : 'base-state';
 
     return (
       <div className="MarketDataSection--container">
@@ -38,12 +46,20 @@ class MarketDataSection extends Component {
             systems of currency and payments.
           </p>
           <div>
-            {this.state.onlyFavorites===false ? (
-              <Button style={{padding:10, width: 200, border:'1px solid silver'}} onClick={this.handleFavoriteRows}>View Favorites Only</Button>
-            ) : (
-              <Button style={{padding:10, width: 200,border:'1px solid red'}} onClick={this.handleFavoriteRows}>View Full List</Button>
-            )}
-            
+            <span style={{marginRight:5}}>
+              {this.state.onlyFavorites===false ? (
+                <Button style={{padding:10, width: 220, border:'1px solid silver'}} onClick={this.handleFavoriteRows}><Favorite className="iconspace-Favorite" /> View Favorites Only</Button>
+              ) : (
+                <Button style={{padding:10, width: 220,border:'1px solid red'}} onClick={this.handleFavoriteRows}><Favorite className="iconspace-Favorite" /> View Full List</Button>
+              )}
+            </span>
+            <span style={{marginRight:5}}>
+              {this.state.rows24hHigh===false ? (
+                <Button style={{padding:10, width: 220, border:'1px solid silver'}} onClick={this.handleRows24hHigh}><Whatshot className="iconspace-Whatshot" /> 24hr Hot Movers</Button>
+              ) : (
+                <Button style={{padding:10, width: 220,border:'1px solid red'}} onClick={this.handleRows24hHigh}><Whatshot className="iconspace-Whatshot" style={{color:'silver'}}/> All Symbols</Button>
+              )}
+            </span>
           </div>
         </div>
 
@@ -54,6 +70,7 @@ class MarketDataSection extends Component {
     );
   }
 };
+
 
 // MarketDataSection.propTypes = {
 //   pageOn: PropTypes.string.isRequired

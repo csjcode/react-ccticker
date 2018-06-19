@@ -19,7 +19,6 @@ import Link from "react-router-dom/Link";
 import MenuLogin from '../../pages/MenuLogin';
 // import * as routes from '../../constants/routes';
 
-
 // const Navigation = ({ authUser }) =>
 //   <div>
 //     { authUser

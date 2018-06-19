@@ -38,6 +38,7 @@ class MarketDataTableRows extends Component {
 					price_btc = {price_btc} 
 					date = {date} 
 					onlyFavorites = {this.props.onlyFavorites}
+					rows24hHigh = {this.props.rows24hHigh}
 				/>				 
 			)
 		 })

@@ -117,12 +117,17 @@ class SimpleModal extends React.Component {
       id
     } = this.props;
 
+    console.log(`24h change: ${this.props.percent_change_24h}`)
     
 
     if((this.props.onlyFavorites===true) && (this.state.saved!==true)){
       return null;
     }
-   
+  
+    if((this.props.rows24hHigh===true) && (this.props.percent_change_24h<3)){
+      return null;
+    }
+
     return (
       <Fragment>
         <TableRow
