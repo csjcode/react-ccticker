@@ -39,6 +39,7 @@ class MarketDataTableRows extends Component {
 					date = {date} 
 					onlyFavorites = {this.props.onlyFavorites}
 					rows24hHigh = {this.props.rows24hHigh}
+					rows7DayLow = {this.props.rows7DayLow}
 				/>				 
 			)
 		 })

@@ -2,6 +2,8 @@ import React, {Component} from "react";
 import MarketDataTickerApi from "../../common/MarketDataTickerApi/MarketDataTickerApi";
 import Whatshot from "material-ui-icons/Whatshot";
 import Favorite from "material-ui-icons/Favorite";
+import SentimentVeryDissatisfied from "material-ui-icons/SentimentVeryDissatisfied";
+
 import "./MarketDataSection.css";
 import Button from "material-ui/Button";
 // import PropTypes from "prop-types";
@@ -10,7 +12,8 @@ class MarketDataSection extends Component {
 
   state = {
     onlyFavorites:false,
-    rows24hHigh:false
+    rows24hHigh:false,
+    rows7DayLow:false
   }
 
   handleFavoriteRows = () => {
@@ -23,6 +26,12 @@ class MarketDataSection extends Component {
     // alert('button clicked');
     return this.setState(prevState=>({rows24hHigh: !this.state.rows24hHigh}));
   }
+
+  handleRows7DayLow = () => {
+    // alert('button clicked');
+    return this.setState(prevState=>({rows7DayLow: !this.state.rows7DayLow}));
+  }
+
 
   render(props){
 
@@ -48,16 +57,23 @@ class MarketDataSection extends Component {
           <div>
             <span style={{marginRight:5}}>
               {this.state.onlyFavorites===false ? (
-                <Button style={{padding:10, width: 220, border:'1px solid silver'}} onClick={this.handleFavoriteRows}><Favorite className="iconspace-Favorite" /> View Favorites Only</Button>
+                <Button style={{padding:10, width: 220, border:'1px solid silver',backgroundColor:'#eee'}} onClick={this.handleFavoriteRows}><Favorite className="iconspace-Favorite" /> View Favorites Only</Button>
               ) : (
                 <Button style={{padding:10, width: 220,border:'1px solid red'}} onClick={this.handleFavoriteRows}><Favorite className="iconspace-Favorite" /> View Full List</Button>
               )}
             </span>
             <span style={{marginRight:5}}>
               {this.state.rows24hHigh===false ? (
-                <Button style={{padding:10, width: 220, border:'1px solid silver'}} onClick={this.handleRows24hHigh}><Whatshot className="iconspace-Whatshot" /> 24hr Hot Movers</Button>
+                <Button style={{padding:10, width: 220, border:'1px solid silver',backgroundColor:'#eee'}} onClick={this.handleRows24hHigh}><Whatshot className="iconspace-Whatshot" style={{color:'lightgreen'}} /> 24hr Hot Movers</Button>
               ) : (
-                <Button style={{padding:10, width: 220,border:'1px solid red'}} onClick={this.handleRows24hHigh}><Whatshot className="iconspace-Whatshot" style={{color:'silver'}}/> All Symbols</Button>
+                <Button style={{padding:10, width: 220,border:'1px solid red'}} onClick={this.handleRows24hHigh}><Whatshot className="iconspace-Whatshot" style={{color:'silver'}}/> Hot Movers (ON)</Button>
+              )}
+            </span>
+            <span style={{marginRight:5}}>
+              {this.state.rows7DayLow===false ? (
+                <Button style={{padding:10, width: 220, border:'1px solid silver', backgroundColor:'#eee'}} onClick={this.handleRows7DayLow}><SentimentVeryDissatisfied className="iconspace-Whatshot" style={{color:'black'}}/> 7 Day Slides</Button>
+              ) : (
+                <Button style={{padding:10, width: 220,border:'1px solid red'}} onClick={this.handleRows7DayLow}><SentimentVeryDissatisfied className="iconspace-Whatshot" style={{color:'silver'}}/> 7 Day Slides (ON)</Button>
               )}
             </span>
           </div>
