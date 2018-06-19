@@ -28,30 +28,31 @@ class NewsPage extends Component {
 
   render() {
     console.log(this.state.query);
+    var stateQuery = this.state.query.replace(/\+/g,' ').toLowerCase();
     return (
       <div className="NewsPage--container">
         {/* <ContentSection /> */}
         <div className="NewsPage--container-inner">
           <div className="NewsPage--pagename">
-            <h1>Coin News</h1>
-            <h3>Bitcoin News Updates</h3>
+            <h2>Coin News</h2>
+            <h3><span style={{textTransform:'capitalize'}}>{stateQuery}</span> News Updates</h3>
             <div className="NewsPage--container-inner-links">
-              <Link to="/news/Coindesk">
+              <a href="/news/Coindesk">
                 <span>Coindesk</span>
-              </Link>
-              <Link to="/news/BTC">
+              </a>
+              <a href="/news/">
                 <span>BTC</span>
-              </Link>
-              <Link to="/news/Blockchain">
+              </a>
+              <a href="/news/Blockchain">
                 <span>Blockchain</span>
-              </Link>
-              <Link to="/news/Cryptocurrency">
+              </a>
+              <a href="/news/Cryptocurrency">
                 <span>Cryptocurrency</span>
-              </Link>
-              <Link to="/news/Ethereum">
+              </a>
+              <a href="/news/Ethereum">
                 <span>Ethereum</span>
-              </Link>
-              <a href="/news/Initial+Coin+Offering">
+              </a>
+             <a href="/news/Initial+Coin+Offering">
                 <span>Initial Coin Offering</span>
               </a>
               <a href="/news/Vitalik+Buterin">
