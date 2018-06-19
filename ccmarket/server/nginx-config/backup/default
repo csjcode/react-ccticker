@@ -13,22 +13,12 @@
 
 # Default server configuration
 #
-
 server {
     listen         80;
-    listen         [::]:80;
-    server_name    transit.api.cc;
-    root           /var/www/transit.api.cc/public/;
-    index          index.html;
-    try_files $uri /index.html;
-}
-
-server {
-    listen         80 default_server;
     return 301 https://$host$request_uri;
 }
 server {
-	listen 8081;
+	listen 8081 default_server;
 
 	# SSL configuration
 	#
