@@ -36,11 +36,11 @@ class NewsPage extends Component {
             <h1>Coin News</h1>
             <h3>Bitcoin News Updates</h3>
             <div className="NewsPage--container-inner-links">
-              <Link to="/news/Bitcoin">
-                <span>Bitcoin</span>
+              <Link to="/news/Coindesk">
+                <span>Coindesk</span>
               </Link>
-              <Link to="/market/">
-                <span>Bitcoin</span>
+              <Link to="/news/BTC">
+                <span>BTC</span>
               </Link>
               <Link to="/news/Blockchain">
                 <span>Blockchain</span>
