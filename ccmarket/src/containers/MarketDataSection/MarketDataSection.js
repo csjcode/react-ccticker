@@ -2,7 +2,7 @@ import React, {Component} from "react";
 import MarketDataTickerApi from "../../common/MarketDataTickerApi/MarketDataTickerApi";
 import Whatshot from "material-ui-icons/Whatshot";
 import Favorite from "material-ui-icons/Favorite";
-import SentimentVeryDissatisfied from "material-ui-icons/SentimentVeryDissatisfied";
+import ArrowDropDown  from "material-ui-icons/ArrowDropDown";
 
 import "./MarketDataSection.css";
 import Button from "material-ui/Button";
@@ -71,9 +71,9 @@ class MarketDataSection extends Component {
             </span>
             <span style={{marginRight:5}}>
               {this.state.rows7DayLow===false ? (
-                <Button style={{padding:10, width: 220, border:'1px solid silver', backgroundColor:'#eee'}} onClick={this.handleRows7DayLow}><SentimentVeryDissatisfied className="iconspace-Whatshot" style={{color:'black'}}/> 7 Day Slides</Button>
+                <Button style={{padding:10, width: 220, border:'1px solid silver', backgroundColor:'#eee'}} onClick={this.handleRows7DayLow}><ArrowDropDown  className="iconspace-Whatshot" style={{color:'silver'}}/> Low Weekly</Button>
               ) : (
-                <Button style={{padding:10, width: 220,border:'1px solid red'}} onClick={this.handleRows7DayLow}><SentimentVeryDissatisfied className="iconspace-Whatshot" style={{color:'silver'}}/> 7 Day Slides (ON)</Button>
+                <Button style={{padding:10, width: 220,border:'1px solid red'}} onClick={this.handleRows7DayLow}><ArrowDropDown className="iconspace-Whatshot" style={{color:'silver'}}/> Low Weekly (ON)</Button>
               )}
             </span>
           </div>
