@@ -41,8 +41,12 @@ const AccountPageAuth = ({ authstate }) =>
 		 <div style={{padding:20}}>
 			 <h3>Account Page active</h3>
 			<p>We'll be filling in some personalized info here.</p>
-			<p>In the meantime, enjoyt this....</p>
-			<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Error, nostrum, voluptatibus doloribus aut eveniet vel ea molestiae quod cum sit distinctio quae corrupti doloremque voluptatum pariatur atque, deserunt neque libero! Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ea et, quas assumenda facere porro doloremque magni illo dolorem inventore delectus nesciunt laborum sint quam explicabo laudantium eum necessitatibus eius reiciendis. </p>
+			<ul>
+				<li>Account Details</li>
+				<li>Account Subscriptions</li>
+				<li>Account Privacy</li>
+				<li>Account Keyword Monitoring</li>
+			</ul>
 		 </div>
   </Fragment>
 
