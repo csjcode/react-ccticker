@@ -3,7 +3,7 @@ import "./MarketDataTickerApi.css";
 import MarketDataBranch from "../MarketDataBranch/MarketDataBranch";
 
 class MarketDataTickerApi extends Component {
-  state = { loading: true };
+  state = { loading: true};
 
   componentDidMount() {
     fetch("https://api.coinmarketcap.com/v1/ticker/?limit=100")

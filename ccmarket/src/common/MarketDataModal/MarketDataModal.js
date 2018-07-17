@@ -124,11 +124,15 @@ class SimpleModal extends React.Component {
       return null;
     }
   
-    if((this.props.rows24hHigh===true) && (this.props.percent_change_24h<3)){
+    if((this.props.rows24hHigh===true) && (this.props.percent_change_24h < 3)){
       return null;
     }
 
-    if((this.props.rows7DayLow===true) && (this.props.percent_change_7d>-10)){
+    if((this.props.rows7DayLow===true) && (this.props.percent_change_7d > -10)){
+      return null;
+    }  
+  
+    if((this.props.rows7DayHigh===true) && (this.props.percent_change_7d < 10)){
       return null;
     }  
     
@@ -320,10 +324,6 @@ const mapStateToProps = (state, props) => {
 const mapDispatchToProps = {
   onToggleFavorite: toggleFavorite
 };
-
-
-
-
 
 // We need an intermediary variable for handling the recursive nesting.
 const SimpleModalWrapped = withStyles(styles)(SimpleModal);

@@ -3,18 +3,16 @@ import LoadingView from "../LoadingView/LoadingView";
 import ErrorView from "../ErrorView/ErrorView";
 import MarketDataView from "../MarketDataView/MarketDataView";
 
-const MarketDataBranch = ({ loading, data, onlyFavorites, rows24hHigh, rows7DayLow }) => {
-  if (loading) {
-    return <LoadingView />;
-  } else if (data) {
+const MarketDataBranch = (props) => {
+  // var { loading, data, onlyFavorites, rows24hHigh, rows7DayLow, rows7DayHigh } = props;
+  if (props.loading) {
+    return <LoadingView {...props} />;
+  } else if (props.data) {
     return <MarketDataView 
-            data={data} 
-            onlyFavorites={onlyFavorites} 
-            rows24hHigh={rows24hHigh} 
-            rows7DayLow={rows7DayLow}
+            {...props}
             />;
   } else {
-    return <ErrorView />;
+    return <ErrorView {...props} />;
   }
 };
 
