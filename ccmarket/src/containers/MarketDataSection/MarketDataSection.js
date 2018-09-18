@@ -3,6 +3,7 @@ import MarketDataTickerApi from "../../common/MarketDataTickerApi/MarketDataTick
 import Whatshot from "material-ui-icons/Whatshot";
 import Favorite from "material-ui-icons/Favorite";
 import ArrowDropDown  from "material-ui-icons/ArrowDropDown";
+import ArrowDropUp  from "material-ui-icons/ArrowDropUp";
 
 import "./MarketDataSection.css";
 import Button from "material-ui/Button";
@@ -13,7 +14,8 @@ class MarketDataSection extends Component {
   state = {
     onlyFavorites:false,
     rows24hHigh:false,
-    rows7DayLow:false
+    rows7DayLow:false,
+    rows7DayHigh: false
   }
 
   handleFavoriteRows = () => {
@@ -32,6 +34,10 @@ class MarketDataSection extends Component {
     return this.setState(prevState=>({rows7DayLow: !this.state.rows7DayLow}));
   }
 
+  handleRows7DayHigh = () => {
+    // alert('button clicked');
+    return this.setState(prevState=>({rows7DayHigh: !this.state.rows7DayHigh}));
+  }
 
   render(props){
 
@@ -57,23 +63,30 @@ class MarketDataSection extends Component {
           <div>
             <span style={{marginRight:5}}>
               {this.state.onlyFavorites===false ? (
-                <Button style={{padding:10, width: 220, border:'1px solid silver',backgroundColor:'#eee'}} onClick={this.handleFavoriteRows}><Favorite className="iconspace-Favorite" /> View Favorites Only</Button>
+                <Button style={{padding:10, width: 220, border:'1px solid silver',backgroundColor:'#fff'}} onClick={this.handleFavoriteRows}><Favorite className="iconspace-Favorite" /> Favorites Only</Button>
               ) : (
-                <Button style={{padding:10, width: 220,border:'1px solid red'}} onClick={this.handleFavoriteRows}><Favorite className="iconspace-Favorite" /> View Full List</Button>
+                <Button style={{padding:10, width: 220,border:'1px solid red',backgroundColor:'#eee'}} onClick={this.handleFavoriteRows}><Favorite className="iconspace-Favorite" /> Favorites (ON)</Button>
               )}
             </span>
             <span style={{marginRight:5}}>
               {this.state.rows24hHigh===false ? (
-                <Button style={{padding:10, width: 220, border:'1px solid silver',backgroundColor:'#eee'}} onClick={this.handleRows24hHigh}><Whatshot className="iconspace-Whatshot" style={{color:'lightgreen'}} /> 24hr Hot Movers</Button>
+                <Button style={{padding:10, width: 220, border:'1px solid silver',backgroundColor:'#fff'}} onClick={this.handleRows24hHigh}><Whatshot className="iconspace-Whatshot" style={{color:'darkgreen'}} /> 24hr Hot Movers</Button>
               ) : (
-                <Button style={{padding:10, width: 220,border:'1px solid red'}} onClick={this.handleRows24hHigh}><Whatshot className="iconspace-Whatshot" style={{color:'silver'}}/> Hot Movers (ON)</Button>
+                <Button style={{padding:10, width: 220,border:'1px solid red',backgroundColor:'#eee'}} onClick={this.handleRows24hHigh}><Whatshot className="iconspace-Whatshot" style={{color:'silver'}}/> 24hr Hot Movers (ON)</Button>
+              )}
+            </span>
+            <span style={{marginRight:5}}>
+              {this.state.rows7DayHigh===false ? (
+                <Button style={{padding:10, width: 220, border:'1px solid silver', backgroundColor:'#fff'}} onClick={this.handleRows7DayHigh}><ArrowDropUp  className="iconspace-Whatshot" style={{color:'gray'}}/> 7 Day Hot Movers</Button>
+              ) : (
+                <Button style={{padding:10, width: 220,border:'1px solid red',backgroundColor:'#eee'}} onClick={this.handleRows7DayHigh}><ArrowDropUp className="iconspace-Whatshot" style={{color:'gray'}}/> 7 Day Hot Movers (ON)</Button>
               )}
             </span>
             <span style={{marginRight:5}}>
               {this.state.rows7DayLow===false ? (
-                <Button style={{padding:10, width: 220, border:'1px solid silver', backgroundColor:'#eee'}} onClick={this.handleRows7DayLow}><ArrowDropDown  className="iconspace-Whatshot" style={{color:'silver'}}/> Low Weekly</Button>
+                <Button style={{padding:10, width: 220, border:'1px solid silver', backgroundColor:'#fff'}} onClick={this.handleRows7DayLow}><ArrowDropDown  className="iconspace-Whatshot" style={{color:'gray'}}/> 7 Day Laggards</Button>
               ) : (
-                <Button style={{padding:10, width: 220,border:'1px solid red'}} onClick={this.handleRows7DayLow}><ArrowDropDown className="iconspace-Whatshot" style={{color:'silver'}}/> Low Weekly (ON)</Button>
+                <Button style={{padding:10, width: 220,border:'1px solid red',backgroundColor:'#eee'}} onClick={this.handleRows7DayLow}><ArrowDropDown className="iconspace-Whatshot" style={{color:'silver'}}/> 7 Day Laggards (ON)</Button>
               )}
             </span>
           </div>

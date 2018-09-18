@@ -2,7 +2,9 @@
 
 # dependencies
 /node_modules
-/node_modules2
+/node_modules2*
+/node_modules3*
+old*
 
 # testing
 /coverage
@@ -24,3 +26,5 @@ yarn-error.log*
 *private/
 
 firebase.js
+
+.zip

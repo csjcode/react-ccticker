@@ -1,3 +1,4 @@
+
 const express = require('express');
 const path = require('path');
 const app = express();
@@ -42,12 +43,3 @@ function ensureSecure(req, res, next){
 
 
 app.all('/*', ensureSecure);
-
-
-
-
-//app.listen(3000);
-//app.listen(8080);
-
-// ca: fs.readFileSync("/etc/letsencrypt/archive/example.com/chain1.pem")
-

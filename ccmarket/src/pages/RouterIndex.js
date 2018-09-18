@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 import { Route, Switch } from "react-router-dom";
-import Reboot from "material-ui/Reboot";
+// import Reboot from "material-ui/Reboot";
 import { MuiThemeProvider, createMuiTheme } from "material-ui/styles";
 import HeaderSection from "../containers/HeaderSection/HeaderSection";
 import FooterSection from "../containers/FooterSection/FooterSection";
@@ -57,7 +57,7 @@ class RouterIndex extends Component {
     return (
     <MuiThemeProvider theme={theme}>
       <div>
-        <Reboot />
+        {/* <Reboot /> */}
         {/* <AlertSection /> */}
         <HeaderSection authstate={this.state.authUser} />
         <div style={{ marginTop: 80, minHeight: 800 }}>

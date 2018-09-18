@@ -24,13 +24,6 @@ Some features:
 
 ...and more 
 
-#### Core of the API Data Table Display
-* MarketPage
-  * MarketDataSection > MarketDataTickerApi > 
-  * MarketDataBranch > MarketDataView [needs propname for filters] >
-  * MarketDataTableRows > 
-  * MarketDataModal [data transforms are done here]
-
 
 #### Notes & References
 
@@ -91,5 +84,3 @@ In Firebase
 ```
 
 * authstate props are passed from RouterIndex -> HeaderSection -> MenuAppBar -> MenuLogin 
-
-
